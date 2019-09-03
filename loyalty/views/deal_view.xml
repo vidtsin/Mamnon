@@ -1,0 +1,177 @@
+<odoo>
+	<data>
+
+		 <!-- Rejection Reason Wizard -->
+		<record id="common_rejection_wizard_view" model="ir.ui.view">
+			<field name="name">deal.service.common.reject.reason.wizard</field>
+			<field name="model">deal.service.common.reject.reason.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Add a reason" version="7.0">
+					<group>
+						<field name="reason"/>
+					</group>
+					<footer>
+						<button name="reject" string="Reject" type="object" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="open_common_reject_wizard_action_id" model="ir.actions.act_window">
+			<field name="name">Rejection Reason</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">deal.service.common.reject.reason.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<record id="view_loyalty_deal_tree" model="ir.ui.view">
+	        <field name="name">loyalty.deal.tree</field>
+	        <field name="model">loyalty.deal</field>
+	        <field name="arch" type="xml">
+            	<tree string="Deals" fonts="bold:state=='publish'" >
+	            	<field name="name"/>
+					<field name="merchant_id" groups="base.group_system,loyalty.group_operation"/>
+	            	<field name="type_id"/>
+	            	<field name="category_id"/>
+	            	<field name="plan_id"/>
+					<field name="publish_date"/>
+					<field name="expiration_date"/>
+	            	<field name="state"/>
+	            </tree>
+	        </field>
+	    </record>
+
+		<record id="view_loyalty_deal_form" model="ir.ui.view">
+	        <field name="name">loyalty.deal.form</field>
+	        <field name="model">loyalty.deal</field>
+	        <field name="arch" type="xml">
+	            <form string="Deals">
+	            	<header>
+	            		<button name="generate_invoice" type="object" groups="loyalty.group_operation,base.group_system" attrs="{'invisible':[('state', '!=', 'approval'), ('need_approval', '=', False), ('invoice_id','=', False)]}" string="Generate Invoice"/>
+         				<button name="publish" attrs="{'invisible':['|', ('state','!=','unpublish'), ('need_approval','=',True)]}" type="object" string="Publish"/>
+	            		<button name="unpublish" attrs="{'invisible':[('state','!=','publish')]}" type="object" string="Unpublish"/>
+	            		<button name="send_for_approval" attrs="{'invisible':['|', ('state','in',['publish',
+	            		'approval']), ('need_approval','!=',True)]}" type="object" string="Send for Approval"/>
+	            		<button name="approve" attrs="{'invisible':[('state','!=','approval')]}" type="object" string="Approve" groups="loyalty.group_operation,base.group_system"/>
+						<button name="%(open_common_reject_wizard_action_id)d" type="action" groups="loyalty.group_operation,base.group_system"  string="Reject"  attrs="{'invisible':[('state','!=','approval')]}" />
+	            		<!-- <button name="generate_img_urls" string="Generate Image" type="object" />    -->
+	            		<field name="state" widget="statusbar" statusbar_visible="publish,unpublish"/>
+	            	</header>
+	            	<sheet>
+	            		<h1># <field name="name"/></h1>
+	            		<group>
+	            			<group>
+	            				<field name="type_id" attrs="{'readonly':[('state','in',['approval', 'publish'])]}" options="{'no_open': True, 'no_quick_create': True, 'no_create_edit' : True}"/>
+	            				<field name="merchant_id" invisible="0"  attrs="{'readonly':[('state','in',['approval', 'publish'])]}" groups="base.group_system,loyalty.group_operation"/>
+	            				<field name="need_approval" attrs="{'readonly':[('state','in',['approval', 'publish'])]}" invisible="1"/>
+	            				<field name="image" attrs="{'invisible':[('allow_image', '=', False)], 'readonly':[('state','in',['approval', 'publish'])]}" widget="image"/>
+	            				<field name="image_url" invisible="1" attrs="{'readonly':[('state','in',['approval', 'publish'])]}"  />	
+	            				<field name="image_url_public" invisible="0" attrs="{'readonly':[('state','in',['approval', 'publish'])]}"  />
+	            				<field name="publish_date" readonly="1" />
+	            			</group>
+	            			<group>
+	            				<field name="title"  attrs="{'readonly':[('state','in',['approval', 'publish'])]}"/>
+	            				<field name="allow_description" invisible="1"  attrs="{'readonly':[('state','in',['approval', 'publish'])]}"/>
+	            				<field name="category_id" attrs="{'readonly':[('state','in',['approval', 'publish'])]}" readonly="1" groups="loyalty.group_operation,base.group_system"/>
+
+	            				<field name="allow_image"  attrs="{'readonly':[('state','in',['approval', 'publish'])]}" invisible="1"/>
+	            				<field name="description" attrs="{'invisible':[('allow_description', '=', False)], 'readonly':[('state','in',['approval', 'publish'])]}"/>
+            					<field name="invoice_id" groups="loyalty.group_operation,base.group_system" attrs="{'invisible':[('state', '!=', 'approval'), ('need_approval', '=', False)]}" options="{'no_quick_create':True,'no_create_edit':True}" readonly="1" domain="[('state', '=', 'paid')]"/>	            				
+            					<button class="oe_inline" type="object" name="view_invoice" string="View Invoice" attrs="{'invisible':[('invoice_id','=', False)]}"/>
+            				
+	            				<field name="auto_expire" invisible="1"  attrs="{'readonly':[('state','in',['approval', 'publish'])]}" />
+	            				<field name="expiration_date" readonly="1" attrs="{'invisible':[('auto_expire', '=', False)]}"/>
+	            				<field name="is_extra_transaction_needed"  attrs="{'readonly':[('state','in',['approval', 'publish'])]}" invisible="1"/>
+	            				<field name="extra_transaction_limit" attrs="{'invisible':[('is_extra_transaction_needed', '=', False)],'readonly':[('state','in',['approval', 'publish'])]}"/>
+	            			</group>
+	            			<group>		            			
+		            			<field name="reason" readonly="1" states="reject" attrs="{'readonly':[('state','in',['approval', 'publish'])]}" />
+	            			</group>
+	            		</group>
+	            		<group>
+	            			<group>
+	            				<field name="rating"/>
+	            			</group>
+	            		</group>
+	            		<notebook>
+	            			<page string="Reviews &amp; Ratings">
+	            				<field name="rating_line">
+	            					<tree editable="bottom">
+	            						<field name="customer_id"/>
+	            						<field name="review"/>
+	            						<field name="rating"/> 
+	            					</tree>
+	            				</field>
+	            			</page>
+	            		</notebook>
+	            	</sheet>
+	            </form>
+	        </field>
+	    </record>
+
+
+	    <record id="view_deal_type_tree" model="ir.ui.view">
+			<field name="name">loyalty.deal.type.tree</field>
+			<field name="model">loyalty.deal.type</field>
+			<field name="arch" type="xml">
+			    <tree string="Deal Type" editable="bottom">
+			        <field name="name"/>
+					<field name="allow_description"/>
+					<field name="allow_image"/>
+					<field name="need_approval"/>
+					<field name="allow_merchant_request"/>
+					<field name="auto_expire"/>
+					<field name="expire_days_count" attrs="{'readonly':[('auto_expire','=', False)]}" />
+					<field name="product_id" attrs="{'readonly':[('need_approval','=', False)]}"/>
+		    	</tree>
+			</field>
+		</record>
+
+
+		<record id="action_loyalty_deal" model="ir.actions.act_window">
+			<field name="name">Deals</field>
+			<field name="res_model">loyalty.deal</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<record id="action_approval_loyalty_deal" model="ir.actions.act_window">
+			<field name="name">Deals Waiting Approval</field>
+			<field name="res_model">loyalty.deal</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('state', '=', 'approval')]</field>
+		</record>
+		<record id="action_rejected_loyalty_deal" model="ir.actions.act_window">
+			<field name="name">Deals</field>
+			<field name="res_model">loyalty.deal</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="domain">[('state', '=', 'reject')]</field>
+			<field name="context">{'group_by':'state'}</field>
+		</record>
+
+		<record id="action_loyalty_deal_type" model="ir.actions.act_window">
+			<field name="name">Service Type</field>
+			<field name="res_model">loyalty.deal.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree</field>
+		</record>
+
+
+		<menuitem id="menu_loyalty_deal" name="Deals" sequence="1" parent="loyalty.menu_loyalty_system" groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_active"/>
+
+		<menuitem id="menu_loyalty_all_deal" name="Deals" sequence="2" parent="menu_loyalty_deal"  action="action_loyalty_deal"  groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_active"/>
+
+		<menuitem id="menu_loyalty_reject_deal" name="Rejected Deals" sequence="4" parent="menu_loyalty_deal"  action="action_rejected_loyalty_deal"  groups="base.group_system,loyalty.group_operation"/>
+
+		<menuitem id="menu_loyalty_approved_deal" name="Deal Waiting Approval" sequence="3" parent="menu_loyalty_deal"  action="action_approval_loyalty_deal" groups="base.group_system,loyalty.group_operation"/>
+		
+		<menuitem id="menu_loyalty_deal_type" name="Deal Type" sequence="1" parent="loyalty.menu_loyalty_configuration" groups="base.group_system,loyalty.group_operation" action="action_loyalty_deal_type"/>
+
+	</data>
+</odoo>

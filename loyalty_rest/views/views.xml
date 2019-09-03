@@ -1,0 +1,48 @@
+<odoo>
+	<data>
+
+		<menuitem id="cat_menu_rest" 
+			name="REST"
+			sequence="50"
+			parent="base.menu_custom" />
+
+		<record id="view_rest_token_tree" model="ir.ui.view">
+			<field name="name">loyalty_rest_token.tree</field>
+			<field name="model">loyalty_rest.token</field>
+			<field name="arch" type="xml">
+				<tree string="Document Settings">
+					<field name="token" />
+					<field name="lifetime"/>
+					<field name="user" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_rest_token_form" model="ir.ui.view">
+			<field name="name">loyalty_rest_token.form</field>
+			<field name="model">loyalty_rest.token</field>
+			<field name="arch" type="xml">
+				<form string="Token">
+					<sheet>
+						<group>
+							<field name="token" />
+							<field name="lifetime"/>
+							<field name="user" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_rest_token" model="ir.actions.act_window">
+			<field name="name">Tokens</field>
+			<field name="res_model">loyalty_rest.token</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="menu_rest_token" name="Token"
+			parent="cat_menu_rest" action="action_rest_token" />
+			
+
+	</data>
+</odoo>

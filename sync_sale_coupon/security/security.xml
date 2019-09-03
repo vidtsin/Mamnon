@@ -1,0 +1,35 @@
+<odoo>
+	<data>
+		<record id="restrict_merchant_coupon_rule" model="ir.rule">
+            <field name="name">restrict.merchant.coupon.rule</field>
+            <field name="model_id" ref="sync_sale_coupon.model_sale_coupon_rule"/>
+            <field name="domain_force">
+                ['|', ('merchant_id', '=', user.partner_id.parent_id.id), ('merchant_id', '=', user.partner_id.id)]                
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="restrict_merchant_coupon" model="ir.rule">
+            <field name="name">restrict.merchant.coupon</field>
+            <field name="model_id" ref="sync_sale_coupon.model_sale_coupon"/>
+            <field name="domain_force">
+                ['|', ('merchant_id', '=', user.partner_id.parent_id.id), ('merchant_id', '=', user.partner_id.id)]                
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+	</data>
+</odoo>

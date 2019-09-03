@@ -1,0 +1,2548 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* loyalty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-02 09:52+0000\n"
+"PO-Revision-Date: 2019-04-02 09:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: loyalty
+#: model:mail.template,body_html:loyalty.notification_reg_by_merchant
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"font-size:14px;width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.name},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">		\n"
+"																				Congratulations!! You have been successfully registered by our Merchant : <b> ${object.registering_merchant_id.name} .\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td>\n"
+"																				Please use details below to login to your account using the Mamnon mobile application :\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\">\n"
+"																				Login : <strong>${object.email}</strong>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\">\n"
+"																				Password : <strong>${ctx['password']}</strong>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td>\n"
+"																				<small>Please change your password at the earliest. </small>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td>\n"
+"																				<small>You can download the mobile application from Google App Store.</small>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\">\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: loyalty
+#: model:mail.template,body_html:loyalty.notification_deal_request
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.merchant_id.name},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"\n"
+"																				${ctx['msg']}\n"
+"																				<br/><br/>\n"
+"\n"
+"																				<b><u>Summary</u> : </b><br/><br/>\n"
+"\n"
+"\n"
+"																					<b> Deal Reference - </b> ${object.name} <br/><br/>\n"
+"\n"
+"\n"
+"																					<b> Deal Type - </b> ${object.type_id.name} <br/><br/>\n"
+"\n"
+"\n"
+"																					% if object.state == 'reject':\n"
+"																						\n"
+"\n"
+"																						<b>Reason for Rejection - </b>  ${ctx['reason']} <br/><br/>\n"
+"																					\n"
+"																					% endif\n"
+"\n"
+"\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		\n"
+"																		<tr>\n"
+"																			<td align=\"center\">Thanks You</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: loyalty
+#: model:mail.template,body_html:loyalty.notification_txn_request
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.merchant_id.name},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"\n"
+"																				${ctx['msg']}\n"
+"																				<br/><br/>\n"
+"\n"
+"																				<b><u>Summary</u> : </b><br/><br/>\n"
+"\n"
+"\n"
+"																					<b> Request Number - </b> ${object.name} <br/><br/>\n"
+"\n"
+"\n"
+"\n"
+"																					<b>Request Status - </b>  ${object.state} <br/><br/>\n"
+"\n"
+"																					% if object.state == 'reject':\n"
+"																						\n"
+"\n"
+"																						<b>Reason - </b>  ${ctx['reason']} <br/><br/>\n"
+"																					\n"
+"																					% endif\n"
+"\n"
+"\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		\n"
+"																		<tr>\n"
+"																			<td align=\"center\">Thanks You</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: loyalty
+#: model:mail.template,body_html:loyalty.notification_redeem
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.name},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"\n"
+"																				${ctx['msg']}\n"
+"																				<br/><br/>\n"
+"\n"
+"																				<b><u>Redeemption Summary</u> : <b><br/><br/>\n"
+"\n"
+"\n"
+"\n"
+"																					<b> Points Redeemed - </b> ${ctx['points']} Points <br/><br/>\n"
+"\n"
+"																					<b>Discounted Value - </b>  ${ctx['discount']} ${ctx['currency']} <br/><br/>\n"
+"\n"
+"																					<b>Points Remained - </b> ${object.loyalty_points} Points <br/><br/>\n"
+"\n"
+"\n"
+"																					\n"
+"\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		\n"
+"																		<tr>\n"
+"																			<td align=\"center\">Thanks For Shopping with Us</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: loyalty
+#: model:mail.template,body_html:loyalty.notification_reward
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.name},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"\n"
+"																				${ctx['msg']}<br/><br/>\n"
+"\n"
+"																				<b><u>Redeemption Summary</u> : </b><br/><br/>\n"
+"\n"
+"																					<b> Points Rewarded - </b> ${ctx['points']} Points <br/><br/>\n"
+"\n"
+"																					<b>Purchase Amount -</b> ${ctx['purchase_amount']} ${ctx['currency']}   <br/><br/>\n"
+"\n"
+"																					<b>Total Points - </b> ${object.loyalty_points} Points <br/><br/>\n"
+"\n"
+"																					<b>Merchant Name - </b> ${ctx['merchant_name']}<br/><br/> \n"
+"\n"
+"\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a;  align=\"center\">Thanks for shopping with us.</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: loyalty
+#: model:mail.template,body_html:loyalty.notification_registration
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.name},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"\n"
+"																				You have been successfully registered to Manmon Account.\n"
+"\n"
+"\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: loyalty
+#: model:mail.template,body_html:loyalty.reset_password_email
+msgid "\n"
+"				\n"
+"					<html>\n"
+"                        <head>\n"
+"                            <meta charset=\"utf-8\">\n"
+"                            <title>MAMNON</title>\n"
+"                            <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"                            <meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"                            <style type=\"text/css\">\n"
+"                                .preheader {\n"
+"                                display: none !important;\n"
+"                                visibility: hidden;\n"
+"                                opacity: 0;\n"
+"                                color: transparent;\n"
+"                                height: 0;\n"
+"                                width: 0;\n"
+"                                }\n"
+"                                a:focus {\n"
+"                                outline: none;\n"
+"                                }\n"
+"                                .white {\n"
+"                                color: #fff !important;\n"
+"                                }\n"
+"                                @media only screen and (max-width:640px) {\n"
+"                                .full-container {\n"
+"                                width: 100% !important;\n"
+"                                }\n"
+"                                .no-br br {\n"
+"                                display: none;\n"
+"                                }\n"
+"                                .full-width.height10 {\n"
+"                                height: 20px;\n"
+"                                }\n"
+"                                }\n"
+"                            </style>\n"
+"                        </head>\n"
+"                        <body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"                            <table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"                                <tbody>\n"
+"                                    <tr>\n"
+"                                        <td width=\"100%\" style=\"width:100%;\">\n"
+"                                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"                                                <tbody>\n"
+"                                                    <tr>\n"
+"                                                        <td>\n"
+"                                                            <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"                                                                <tr>\n"
+"                                                                    <td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"                                                                        <a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"                                                                            <img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"                                                                        </a>\n"
+"                                                                    </td>\n"
+"                                                                    <td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"                                                                    <td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"                                                                </tr>\n"
+"                                                            </table>\n"
+"                                                        </td>\n"
+"                                                    </tr>\n"
+"                                                </tbody>\n"
+"                                            </table>\n"
+"                                        </td>\n"
+"                                    </tr>\n"
+"                                    <!--logo ends--> \n"
+"                                    <!--body html-->\n"
+"                                    <tr>\n"
+"                                        <td align=\"center\">\n"
+"                                            <table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"                                                <tr>\n"
+"                                                    <td class=\"width15\" width=\"25\"></td>\n"
+"                                                    <td align=\"center\">\n"
+"                                                        <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"                                                            <tr>\n"
+"                                                                <!--content1--> \n"
+"                                                                <!--content1-->\n"
+"                                                                <td valign=\"top\" style=\"width:100%;\">\n"
+"                                                                    <table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"font-size:14px;width:100%; border:0;\">\n"
+"                                                                        <tr>\n"
+"                                                                            <td class=\"height10\" height=\"40\"></td>\n"
+"                                                                        </tr>\n"
+"                                                                        <tr>\n"
+"                                                                            <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                                                                                <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"                                                                                    <tr><td valign=\"top\" style=\"font-size: 13px;\">\n"
+"                                                                                        <div>\n"
+"                                                                                            Dear ${object.name},<br/><br/>\n"
+"                                                                                            A password reset was requested for the Odoo account linked to this email.\n"
+"                                                                                            You may change your password by following this link which will remain valid during 24 hours:<br/>\n"
+"                                                                                            <div style=\"margin: 40px 0px;\">\n"
+"                                                                                                <center>\n"
+"                                                                                                <a href=\"${object.signup_url}\"\n"
+"                                                                                                    style=\"background-color: #0f5052; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;\">\n"
+"                                                                                                    Change password\n"
+"                                                                                                </a>\n"
+"                                                                                                </center>\n"
+"                                                                                            </div>\n"
+"                                                                                            If you do not expect this, you can safely ignore this email.<br/><br/>\n"
+"                                                                                            Thanks,<br/>\n"
+"                                                                                            ${user.signature | safe}<br/>\n"
+"                                                                                        </div>\n"
+"                                                                                    </td></tr>\n"
+"                                                                                    \n"
+"                                                                                </table>\n"
+"                                                                            </td>\n"
+"                                                                        </tr>\n"
+"                                                                        \n"
+"                                                                        <tr>\n"
+"                                                                            <td class=\"height5\" height=\"40\"></td>\n"
+"                                                                        </tr>\n"
+"                                                                        <tr>\n"
+"                                                                            <td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"                                                                            </td>\n"
+"                                                                        </tr>\n"
+"                                                                        <tr>\n"
+"                                                                            <td class=\"height5\" height=\"10\"></td>\n"
+"                                                                        </tr>\n"
+"                                                                        <tr>\n"
+"                                                                            <td class=\"height5\" height=\"40\"></td>\n"
+"                                                                        </tr>\n"
+"                                                                    </table>\n"
+"                                                                </td>\n"
+"                                                                <!--content1--> \n"
+"                                                            </tr>\n"
+"                                                        </table>\n"
+"                                                    </td>\n"
+"                                                    <td class=\"width15\" width=\"25\"></td>\n"
+"                                                </tr>\n"
+"                                            </table>\n"
+"                                        </td>\n"
+"                                    </tr>\n"
+"                                    <!--body html--> \n"
+"                                    <!--footer html-->\n"
+"                                    <tr>\n"
+"                                        <td>\n"
+"                                            <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"                                                <tr>\n"
+"                                                    <td width=\"20\"></td>\n"
+"                                                    <td>\n"
+"                                                        <table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"                                                            <tr>\n"
+"                                                                <td height=\"20\"></td>\n"
+"                                                            </tr>\n"
+"                                                            <tr>\n"
+"                                                                <td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"                                                            </tr>\n"
+"                                                            <tr>\n"
+"                                                                <td height=\"20\"></td>\n"
+"                                                            </tr>\n"
+"                                                        </table>\n"
+"                                                    </td>\n"
+"                                                    <td width=\"20\"></td>\n"
+"                                                </tr>\n"
+"                                            </table>\n"
+"                                        </td>\n"
+"                                    </tr>\n"
+"                                </tbody>\n"
+"                            </table>\n"
+"                        </body>\n"
+"                    </html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: loyalty
+#: selection:merchant.plan,free_mnth:0
+msgid "0 Month"
+msgstr "بدون"
+
+#. module: loyalty
+#: selection:merchant.plan,free_mnth:0
+msgid "1 Month"
+msgstr "شهر واحد"
+
+#. module: loyalty
+#: selection:merchant.plan,free_mnth:0
+msgid "2 Month"
+msgstr "شهران"
+
+#. module: loyalty
+#: selection:merchant.plan,free_mnth:0
+msgid "3 Month"
+msgstr "ثلاثة اشهر"
+
+#. module: loyalty
+#: selection:merchant.plan,free_mnth:0
+msgid "4 Month"
+msgstr "اربعة اشهر"
+
+#. module: loyalty
+#: selection:merchant.plan,free_mnth:0
+msgid "5 Month"
+msgstr "خمسة اشهر"
+
+#. module: loyalty
+#: selection:merchant.plan,free_mnth:0
+msgid "6 Month"
+msgstr "ستة اشهر"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_partner_form_inherit
+msgid "<span class=\"o_stat_text\">Points</span>"
+msgstr "<span class=\"o_stat_text\">نقطة</span>"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_partner_form_inherit
+msgid "<span class=\"o_stat_text\">Redeem Points</span>"
+msgstr "<span class=\"o_stat_text\">استهلاك نقاط</span>"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_partner_form_inherit
+msgid "<span class=\"o_stat_text\">Reward Points</span>"
+msgstr "<span class=\"o_stat_text\">نقاط مكتسبة</span>"
+
+#. module: loyalty
+#: model:mail.template,subject:loyalty.notification_reg_by_merchant
+msgid "Account Registered - Mamnon"
+msgstr "حساب مسجل - ممنون"
+
+#. module: loyalty
+#: model:res.groups,name:loyalty.group_merchant_active
+msgid "Active Merchant"
+msgstr "مُفَعل"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_ir_actions_server__activity_user_type
+msgid "Activity User Type"
+msgstr "وظيفة المستخدم"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.common_rejection_wizard_view
+msgid "Add a reason"
+msgstr "اضافة اسباب"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__discount_amount
+msgid "Amount Discounted"
+msgstr "مبلغ الخصم"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__point_value
+msgid "Amount per point"
+msgstr "قيمة كل نقطة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__answer
+msgid "Answer"
+msgstr "اجابة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__need_approval
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__need_approval
+msgid "Approval Needed?"
+msgstr "يحتاج تاييد؟"
+
+#. module: loyalty
+#: model:ir.model.fields,help:loyalty.field_loyalty_deal__need_approval
+#: model:ir.model.fields,help:loyalty.field_loyalty_deal_type__need_approval
+msgid "Approval required from operation team"
+msgstr "تاييد فريق الدعم مطلوب"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_deal_form
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_extra_tx_request
+msgid "Approve"
+msgstr "تاييد"
+
+#. module: loyalty
+#: selection:loyalty.extra.txn.request,state:0
+msgid "Approved"
+msgstr "تاييد"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__auto_expire
+msgid "Auto Expiration?"
+msgstr "انتهاء الصلاحية التلقائي؟"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__allow_merchant_request
+msgid "Can Merchant Request?"
+msgstr "يمكن طلب التاجر"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.common_rejection_wizard_view
+#: model_terms:ir.ui.view,arch_db:loyalty.loyalty_customer_register_wizard
+#: model_terms:ir.ui.view,arch_db:loyalty.redeem_points_wizard_form
+#: model_terms:ir.ui.view,arch_db:loyalty.reward_points_wizard_form
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: loyalty
+#: code:addons/loyalty/models/res.py:234
+#, python-format
+msgid "Cannot send email: user %s has no email address."
+msgstr "الايميل غير معرف"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_category__name
+msgid "Category"
+msgstr "الفئة"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_res_city
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_res_city
+msgid "Cities"
+msgstr "المدن"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__city
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__city
+#: model:ir.model.fields,field_description:loyalty.field_res_users__city
+msgid "City"
+msgstr "المدينة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_res_city__name
+msgid "City Name"
+msgstr "المدينة"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.loyalty_redeem_success_message_wizard
+msgid "Close"
+msgstr "إقفال"
+
+#. module: loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_configuration
+msgid "Configuration"
+msgstr "الإعدادات"
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_res_partner
+msgid "Contact"
+msgstr "جهة الاتصال"
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_account_abstract_payment
+msgid "Contains the logic shared between models which allows to register payments"
+msgstr "يحتوي علي المنطق المشترك بين الموديلات مما يسمح بتسجيل الدفع"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__count
+msgid "Count"
+msgstr "العدد"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__country_id
+#: model:ir.model.fields,field_description:loyalty.field_res_city__country_id
+msgid "Country"
+msgstr "دولة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_deal_service_common_reject_reason_wizard__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_category__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq_category__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_success_message_wizard__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_setting__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__create_uid
+#: model:ir.model.fields,field_description:loyalty.field_res_city__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_deal_service_common_reject_reason_wizard__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_category__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq_category__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_success_message_wizard__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__create_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_setting__create_date
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__create_date
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__create_date
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__create_date
+#: model:ir.model.fields,field_description:loyalty.field_res_city__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__currency_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__currency_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__currency_id
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__customer_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__customer_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__customer_id
+msgid "Customer Reference"
+msgstr "المرجع"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.loyalty_customer_register_wizard_action
+#: model_terms:ir.ui.view,arch_db:loyalty.loyalty_customer_register_wizard
+msgid "Customer Registration"
+msgstr "تسجيل عميل"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.open_point_wizard_action_id
+msgid "Customer's Points"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_customer
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_customer
+msgid "Customers"
+msgstr "العملاء"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__dob
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__dob
+#: model:ir.model.fields,field_description:loyalty.field_res_users__dob
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_partner_form_inherit
+msgid "Date of Birth"
+msgstr "التولد"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__expiration_date
+msgid "Deal Expiration Date"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.actions.server,name:loyalty.ir_cron_check_deal_expiry_action_ir_actions_server
+#: model:ir.cron,cron_name:loyalty.ir_cron_check_deal_expiry_action
+#: model:ir.cron,name:loyalty.ir_cron_check_deal_expiry_action
+msgid "Deal Expire Daily Check"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__name
+msgid "Deal Name Type"
+msgstr "اسم نوع العرض"
+
+#. module: loyalty
+#: model:mail.template,subject:loyalty.notification_deal_request
+msgid "Deal Notification"
+msgstr "اشعارات العرض"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__name
+msgid "Deal Reference"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__category_id
+msgid "Deal Shop Category"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__type_id
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__deal_type_id
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_deal_type
+#: model_terms:ir.ui.view,arch_db:loyalty.view_deal_type_tree
+msgid "Deal Type"
+msgstr "نوع العرض"
+
+#. module: loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_approved_deal
+msgid "Deal Waiting Approval"
+msgstr "بانتظار التاييد"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_deal
+#: model:ir.actions.act_window,name:loyalty.action_rejected_loyalty_deal
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_all_deal
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_deal
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_deal_form
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_deal_tree
+msgid "Deals"
+msgstr "العروض"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__deal_line
+msgid "Deals Allowed"
+msgstr "العروض مسموحة"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_approval_loyalty_deal
+msgid "Deals Waiting Approval"
+msgstr "عروض بانتظار التاييد"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__description
+msgid "Description"
+msgstr "الوصف"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__allow_description
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__allow_description
+msgid "Description Allowed?"
+msgstr "الوصف مسموح؟"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_res_users__device_id
+msgid "Device ID"
+msgstr "شفرة الجهاز"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_deal_service_common_reject_reason_wizard__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_category__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq_category__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_success_message_wizard__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__display_name
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_setting__display_name
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__display_name
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__display_name
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__display_name
+#: model:ir.model.fields,field_description:loyalty.field_res_city__display_name
+msgid "Display Name"
+msgstr "اسم العرض"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__duration
+msgid "Duration In Months"
+msgstr "المدة بالاشهر"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_earn_rule
+msgid "Earn Rules"
+msgstr "قواعد الفوز بالنقاط"
+
+#. module: loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_earn_rule
+msgid "Earning Rules"
+msgstr "قواعد الفوز بالنقاط"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__email
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_rule_form
+msgid "Equivalent Amount Value"
+msgstr "المبلغ المعادل"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_rule_form
+msgid "Equivalent Earn Points"
+msgstr "النقاط المكتسبة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__point
+msgid "Equivalent Reward Points"
+msgstr "النقاط المكتسبة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__expire_days_count
+msgid "Expire in (Days)"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__txn_count
+msgid "Extra Transaction Count"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__extra_transaction_limit
+msgid "Extra Transaction Limit"
+msgstr "حدود الحركة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__is_extra_transaction_needed
+msgid "Extra Transaction Needed ?"
+msgstr "يحتاج الى تحديد الحركات؟"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_extra_tx_request
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_txn_tree
+msgid "Extra Transaction Request"
+msgstr "عدد الحركات المطلوبة"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_extra_tx_service
+msgid "Extra Transaction Requests"
+msgstr "عدد طلبات الحركات"
+
+#. module: loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_extra_tx_request
+msgid "Extra Transactions Request"
+msgstr "عدد الحركات المطلوبة"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_faq
+msgid "FAQ"
+msgstr "الاسئلة والاجوبة الدارجة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__category_id
+msgid "FAQ Category"
+msgstr "التبويب"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq_category__name
+msgid "FAQ Category Name"
+msgstr "اسم التبويب"
+
+#. module: loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_faq
+msgid "FAQ's"
+msgstr "الاسئلة والاجوبة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__social_fb_link
+#: model:ir.model.fields,field_description:loyalty.field_res_users__social_fb_link
+msgid "Facebook Link"
+msgstr "رابط فيسبوك"
+
+#. module: loyalty
+#: selection:loyalty.customer.register.wizard,gender:0
+#: selection:res.partner,gender:0
+msgid "Female"
+msgstr "انثى"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__free_mnth
+msgid "Free Month"
+msgstr "شهر مجانا"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__gender
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__gender
+#: model:ir.model.fields,field_description:loyalty.field_res_users__gender
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_partner_form_inherit
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: loyalty
+#: selection:ir.actions.server,activity_user_type:0
+msgid "Generic User From Record"
+msgstr "المسخدم"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__social_gplus_link
+#: model:ir.model.fields,field_description:loyalty.field_res_users__social_gplus_link
+msgid "Google+ Link"
+msgstr "رابط كوكل"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_deal_service_common_reject_reason_wizard__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_category__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq_category__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_success_message_wizard__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_setting__id
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__id
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__id
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__id
+#: model:ir.model.fields,field_description:loyalty.field_res_city__id
+msgid "ID"
+msgstr "الرقم التعريفي"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_rule_form
+msgid "If Points are less than"
+msgstr "نقط اقل من"
+
+#. module: loyalty
+#: model:ir.model.fields,help:loyalty.field_loyalty_deal_type__allow_merchant_request
+msgid "If checked, then this type of request can be created by merchants."
+msgstr "في حالة تحديده ، يمكن إنشاء هذا النوع من الطلب بواسطة التجار"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__image
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__image
+msgid "Image"
+msgstr "الصورة"
+
+#. module: loyalty
+#: code:addons/loyalty/models/deal.py:109
+#: code:addons/loyalty/models/deal.py:188
+#, python-format
+msgid "Image Size Too Large. Should not exceed %s KB"
+msgstr "حجم الصورة كبير جدا. يجب ألا يتجاوز %s كيلوبايت"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__image_url
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__image_url
+#: model:ir.model.fields,field_description:loyalty.field_res_users__image_url
+msgid "Image URL"
+msgstr "رابط الصورة"
+
+#. module: loyalty
+#: selection:loyalty.extra.txn.request,state:0
+msgid "In Approval"
+msgstr "في الموافقة"
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_account_invoice
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__invoice_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__invoice_id
+msgid "Invoice"
+msgstr "فاتورة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__mobile_verified
+#: model:ir.model.fields,field_description:loyalty.field_res_users__mobile_verified
+msgid "Is Mobile Verified"
+msgstr "تم التحقق موبايل"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_res_users__notified
+msgid "Is Notified ?"
+msgstr "أٌعلم ؟"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_deal_service_common_reject_reason_wizard____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_category____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq_category____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_success_message_wizard____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule____last_update
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_setting____last_update
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan____last_update
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line____last_update
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type____last_update
+#: model:ir.model.fields,field_description:loyalty.field_res_city____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_deal_service_common_reject_reason_wizard__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_category__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq_category__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_success_message_wizard__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_setting__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__write_uid
+#: model:ir.model.fields,field_description:loyalty.field_res_city__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_deal_service_common_reject_reason_wizard__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_category__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq_category__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_success_message_wizard__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__write_date
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_setting__write_date
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__write_date
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__write_date
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__write_date
+#: model:ir.model.fields,field_description:loyalty.field_res_city__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_partner_form_inherit
+msgid "Loyalty"
+msgstr "ممنون"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__loyalty_points
+#: model:ir.model.fields,field_description:loyalty.field_res_users__loyalty_points
+msgid "Loyalty Points"
+msgstr "النقاط"
+
+#. module: loyalty
+#: model:mail.template,subject:loyalty.notification_redeem
+msgid "Loyalty Points Redeem - Mamnon"
+msgstr "النقاط المستخدمة"
+
+#. module: loyalty
+#: model:mail.template,subject:loyalty.notification_reward
+msgid "Loyalty Points Rewarded - Mamnon"
+msgstr "نقاط الولاء مكافأة - مامنون"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_rule_form
+msgid "Loyalty Rules"
+msgstr "قواعد الولاء"
+
+#. module: loyalty
+#: model:ir.module.category,name:loyalty.module_category_loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_system
+msgid "Loyalty System"
+msgstr "نظام ممنون لادارة الولاء"
+
+#. module: loyalty
+#: selection:loyalty.customer.register.wizard,gender:0
+#: selection:res.partner,gender:0
+msgid "Male"
+msgstr "ذكر"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__card_id
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__card_id
+#: model:ir.model.fields,field_description:loyalty.field_res_users__card_id
+msgid "Mamnon Card Number"
+msgstr "رقم بطاقة ممنون"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__auto_expire
+msgid "Manual Expire Allowed?"
+msgstr "انتهاء الصلاحية يدوي؟"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__merchant_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__merchant_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__merchant_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__merchant_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__merchant_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__merchant_id
+msgid "Merchant"
+msgstr "المشترك"
+
+#. module: loyalty
+#: model:res.groups,name:loyalty.group_merchant_admin
+msgid "Merchant Admin"
+msgstr "مدير نظام"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__merchant_point_history_id
+msgid "Merchant Points Reference"
+msgstr "المرجع"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_merchant_points_history
+#: model:ir.ui.menu,name:loyalty.menu_merchant_transaction_history
+msgid "Merchant Transaction History"
+msgstr "حركات محل"
+
+#. module: loyalty
+#: model:res.groups,name:loyalty.group_merchant_user
+msgid "Merchant User"
+msgstr "مستحدم النظام"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_merchant_plan_form
+#: model_terms:ir.ui.view,arch_db:loyalty.view_merchant_shop_type_form
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_city_form
+msgid "Merchants"
+msgstr "المشتركون"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_success_message_wizard__message
+msgid "Message"
+msgstr "الرسالة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__minimum_edge
+msgid "Minimum Edge"
+msgstr "الحد الادني"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__mobile
+msgid "Mobile"
+msgstr "النقال"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register__mobile
+msgid "Mobile No."
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: loyalty
+#: code:addons/loyalty/models/deal.py:44
+#: code:addons/loyalty/models/deal.py:146
+#: code:addons/loyalty/models/deal.py:147
+#: code:addons/loyalty/models/deal.py:164
+#: code:addons/loyalty/models/deal.py:165
+#: code:addons/loyalty/models/points.py:88
+#: code:addons/loyalty/models/points.py:119
+#: code:addons/loyalty/models/services.py:13
+#: code:addons/loyalty/models/services.py:22
+#: code:addons/loyalty/models/services.py:23
+#: selection:loyalty.extra.txn.request,state:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__point
+msgid "No. of Redeem Points"
+msgstr "عدد النقاط المستهلكة"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.loyalty_webclient_notification
+msgid "OK"
+msgstr "تم"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_mobile_otp_register__otp
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_redeem_points_wizard__otp
+msgid "OTP"
+msgstr "OTP"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__allow_image
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal_type__allow_image
+msgid "Offer Image Allowed?"
+msgstr "مسموح رفع صورة للعرض؟"
+
+#. module: loyalty
+#: model:ir.actions.server,name:loyalty.model_loyalty_action_customer
+msgid "Open Filtered Customers"
+msgstr "افتح العملاء المصفاة"
+
+#. module: loyalty
+#: model:res.groups,name:loyalty.group_operation
+msgid "Operation Team"
+msgstr "فريق الدهم"
+
+#. module: loyalty
+#: model:mail.template,subject:loyalty.reset_password_email
+msgid "Password reset"
+msgstr "تصفير كلمة المرور"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_account_abstract_payment__journal_id
+#: model:ir.model.fields,field_description:loyalty.field_account_payment__journal_id
+#: model:ir.model.fields,field_description:loyalty.field_account_register_payments__journal_id
+msgid "Payment Journal"
+msgstr "يومية السداد"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__name
+msgid "Plan Name"
+msgstr "اسم الحزمة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan_deal_line__plan_id
+msgid "Plan Reference"
+msgstr "مرجع الحزمة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__purchase_line
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__merchant_points_line
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__points_line
+#: model:ir.model.fields,field_description:loyalty.field_res_users__merchant_points_line
+#: model:ir.model.fields,field_description:loyalty.field_res_users__points_line
+msgid "Point History"
+msgstr "تاريخ الحركات"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__point_type
+msgid "Point Type"
+msgstr "نوع النقطة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__points
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__point
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__points
+msgid "Points"
+msgstr "النقط"
+
+#. module: loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_points_mgmt
+msgid "Points Management"
+msgstr "ادارة النقط"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__price
+msgid "Price"
+msgstr "السعر"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_deal_form
+msgid "Publish"
+msgstr "تفعيل"
+
+#. module: loyalty
+#: selection:loyalty.deal,state:0
+msgid "Published"
+msgstr "مفعل"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__purchase_amount
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_reward_points_wizard__purchase_amount
+msgid "Purchase Amount"
+msgstr "مبلغ الشراء"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history_purchase_lines__date
+msgid "Purchase Date"
+msgstr "تاريخ الشراء"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_customer_points_history_purchase_line_form
+msgid "Purchase/Discount Amount"
+msgstr "مبلغ الخصم"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_faq__question
+msgid "Question"
+msgstr "سؤال"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_deal_service_common_reject_reason_wizard__reason
+msgid "Reason"
+msgstr "السبب"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.redeem_points_wizard_form
+#: selection:loyalty.points.history.purchase.lines,point_type:0
+#: selection:loyalty.rule,rule_type:0
+msgid "Redeem"
+msgstr "الاستخدام"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.open_redeem_point_wizard_action_id
+#: model_terms:ir.ui.view,arch_db:loyalty.redeem_points_wizard_form
+msgid "Redeem Points"
+msgstr "استهلاك النقاط"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_redeem_rule
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_redeem_rule
+msgid "Redeem Rules"
+msgstr "قواعد الاستهلاك"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.loyalty_redeem_success_message_wizard
+msgid "Redemption Successful"
+msgstr "نجحت عملية الاستهلاك"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.loyalty_customer_register_wizard
+msgid "Register"
+msgstr "تسجيل"
+
+#. module: loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_register_customer_wizard
+msgid "Register new Customer"
+msgstr "تشجيل زبون"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_res_partner__registering_merchant_id
+#: model:ir.model.fields,field_description:loyalty.field_res_users__registering_merchant_id
+msgid "Registering Merchant"
+msgstr "تسجيل الشركات"
+
+#. module: loyalty
+#: model:mail.template,subject:loyalty.notification_registration
+msgid "Registration Successful - Mamnon"
+msgstr "ممنون - تم التسجيل بنجاح"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.common_rejection_wizard_view
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_deal_form
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_extra_tx_request
+msgid "Reject"
+msgstr "رفض"
+
+#. module: loyalty
+#: selection:loyalty.deal,state:0
+#: selection:loyalty.extra.txn.request,state:0
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: loyalty
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_reject_deal
+msgid "Rejected Deals"
+msgstr "طلبات مرفوضة"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.open_common_reject_wizard_action_id
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__reason
+msgid "Rejection Reason"
+msgstr "سبب الرفض"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.reward_points_wizard_form
+#: selection:loyalty.points.history.purchase.lines,point_type:0
+#: selection:loyalty.rule,rule_type:0
+msgid "Reward"
+msgstr "المكافئات"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.open_reward_point_wizard_action_id
+#: model_terms:ir.ui.view,arch_db:loyalty.reward_points_wizard_form
+msgid "Reward Points"
+msgstr "النقاط المكتسبة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__name
+msgid "Rule Reference"
+msgstr "مرجع القاعدة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_rule__rule_type
+msgid "Rule Type"
+msgstr "نوع القاعدة"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.redeem_points_wizard_form
+msgid "Send OTP to customer"
+msgstr "ارسال التاكيد الى الزبون"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_deal_form
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_extra_tx_request
+msgid "Send for Approval"
+msgstr "ارسال للتاكيد"
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_ir_actions_server
+msgid "Server Action"
+msgstr "إجراء الخادم"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_deal_type
+msgid "Service Type"
+msgstr "نوع الخدمة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__icon_img
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__icon_img_url
+msgid "Shop Icon"
+msgstr "متجر أيقونة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__icon_img_with_bg
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__icon_img_with_bg_url
+msgid "Shop Icon with Background"
+msgstr "متجر أيقونة مع الخلفية"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_shop_type__name
+msgid "Shop Type"
+msgstr "نوع الشركة او التاجر"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_merchant_shop_type
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_merchant_shop_type
+#: model_terms:ir.ui.view,arch_db:loyalty.view_merchant_shop_type_tree
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_city_tree
+msgid "Shop Types"
+msgstr "نوع الشركة او التاجر"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_res_partner_form_inherit
+msgid "Social Links"
+msgstr "روابط اجتماعية"
+
+#. module: loyalty
+#: selection:ir.actions.server,activity_user_type:0
+msgid "Specific User"
+msgstr "مستخدم مخصص"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__state
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__street
+msgid "Street"
+msgstr "الشارع"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_customer_register_wizard__street2
+msgid "Street2"
+msgstr "الشارع 2"
+
+#. module: loyalty
+#: model:ir.actions.act_window,name:loyalty.action_loyalty_merchant_plan
+#: model:ir.ui.menu,name:loyalty.menu_loyalty_merchant_plan
+#: model_terms:ir.ui.view,arch_db:loyalty.view_merchant_plan_tree
+msgid "Subscription Plans"
+msgstr "نوع الاشتراك"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_rule_form
+msgid "Then each point value will be"
+msgstr "وعليه كل نقطة تساوي"
+
+#. module: loyalty
+#: code:addons/loyalty/models/services.py:83
+#, python-format
+msgid "This invoice is already registered with another request."
+msgstr "هذه الفاتورة مسجلة بالفعل مع طلب آخر"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_deal__title
+msgid "Title"
+msgstr "العنوان"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__total_earn_points
+msgid "Total Earn Points"
+msgstr "اجمالي النقاط المكتسبة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_points_history__total_redeem_points
+msgid "Total Redeem Points"
+msgstr "اجمالي النقاط المستهلكة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_merchant_plan__transactions
+msgid "Transaction Number"
+msgstr "رقم الحركة"
+
+#. module: loyalty
+#: model:mail.template,subject:loyalty.notification_txn_request
+msgid "Transaction Request Notification"
+msgstr "إشعار طلب المعاملة"
+
+#. module: loyalty
+#: model:ir.model.fields,field_description:loyalty.field_loyalty_extra_txn_request__name
+msgid "Transaction Request Reference"
+msgstr "مرجع طلب المعاملة"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_loyalty_deal_form
+msgid "Unpublish"
+msgstr "إلغاء النشر"
+
+#. module: loyalty
+#: selection:loyalty.deal,state:0
+msgid "Unpublished"
+msgstr "غير مفعلة"
+
+#. module: loyalty
+#: model:ir.model.fields,help:loyalty.field_ir_actions_server__activity_user_type
+msgid "Use 'Specific User' to always assign the same user on the next activity. Use 'Generic User From Record' to specify the field name of the user to choose on the record."
+msgstr ""
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.view_users_form_inherit_device_id
+msgid "User Device"
+msgstr "جهاز المستخدم"
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_res_users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: loyalty
+#: selection:loyalty.deal,state:0
+msgid "Waiting for Approval"
+msgstr "بانتظار المصادقة"
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.loyalty_webclient_notification
+msgid "Warning"
+msgstr "تحذير"
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_deal_service_common_reject_reason_wizard
+msgid "deal.service.common.reject.reason.wizard"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_customer_register_wizard
+msgid "loyalty.customer.register.wizard"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_deal
+msgid "loyalty.deal"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_deal_category
+msgid "loyalty.deal.category"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_deal_type
+msgid "loyalty.deal.type"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_extra_txn_request
+msgid "loyalty.extra.txn.request"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_faq
+msgid "loyalty.faq"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_faq_category
+msgid "loyalty.faq.category"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_mobile_otp_register
+msgid "loyalty.mobile.otp.register"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_points_history
+msgid "loyalty.points.history"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_points_history_purchase_lines
+msgid "loyalty.points.history.purchase.lines"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_redeem_points_wizard
+msgid "loyalty.redeem.points.wizard"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_redeem_success_message_wizard
+msgid "loyalty.redeem.success.message.wizard"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_reward_points_wizard
+msgid "loyalty.reward.points.wizard"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_rule
+msgid "loyalty.rule"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_loyalty_setting
+msgid "loyalty.setting"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_merchant_plan
+msgid "merchant.plan"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_merchant_plan_deal_line
+msgid "merchant.plan.deal.line"
+msgstr ""
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_merchant_shop_type
+msgid "merchant.shop.type"
+msgstr ""
+
+#. module: loyalty
+#: model_terms:ir.ui.view,arch_db:loyalty.common_rejection_wizard_view
+#: model_terms:ir.ui.view,arch_db:loyalty.loyalty_customer_register_wizard
+#: model_terms:ir.ui.view,arch_db:loyalty.redeem_points_wizard_form
+#: model_terms:ir.ui.view,arch_db:loyalty.reward_points_wizard_form
+msgid "or"
+msgstr "أو"
+
+#. module: loyalty
+#: model:ir.model,name:loyalty.model_res_city
+msgid "res.city"
+msgstr ""
+

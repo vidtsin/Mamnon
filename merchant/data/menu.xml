@@ -1,0 +1,10 @@
+<odoo>
+	<data>
+		<record id="menu_merchant_register" model="website.menu">
+		    <field name="name">Merchant Registration</field>
+		    <field name="url">/merchant/register</field>
+		    <field name="parent_id" ref="website.main_menu"/>
+		    <field name="sequence" type="int">15</field>
+		</record>
+	</data>
+</odoo>

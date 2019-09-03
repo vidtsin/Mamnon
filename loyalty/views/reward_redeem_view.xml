@@ -1,0 +1,192 @@
+<odoo>
+	<data>
+		<record id="view_customer_points_history_purchase_line_form" model="ir.ui.view">
+	        <field name="name">loyalty.points.history.form</field>
+	        <field name="model">loyalty.points.history</field>
+	        <field name="arch" type="xml">
+	            <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="merchant_id"/>
+                            </group>
+                            <group>
+                                <field name="customer_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Earning History">
+                                <field name="purchase_line">
+                                	<tree>
+                                        <field name="merchant_id"/>
+                                		<field name="date"/>
+                                		<field name="point_type" invisible="1"/>
+                                    	<field name="purchase_amount" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                    	<field name="currency_id" invisible='1'/>
+                                		<field name="point"/>
+                                        <field name="point_redeem"/>
+                                        <field name="point_remaining"/>
+                                        <field name="is_closed"/>
+                                        <field name="is_group"/>
+                                        <field name="is_settled"/>
+                                	</tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="date"/>
+                                                <field name="point_type" invisible="1"/>
+                                                <field name="purchase_amount" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                                <field name="currency_id" invisible='1'/>
+                                                <field name="point"/>
+                                            </group>
+                                            <group>
+                                                <field name="is_closed"/>
+                                                <field name="is_group"/>
+                                                <field name="is_settled"/>
+                                                <field name="point_redeem"/>
+                                                <field name="point_remaining"/>
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Redemption History">
+                                                <field name="redeem_line">
+                                                    <tree editable="bottom" create="false">
+                                                        <field name="reward_merchant_id" invisible="0"/>
+                                                        <field name="redeem_merchant_id"/>
+                                                        <field name="is_settled"/>
+                                                        <field name="redeem_point"/>
+                                                    </tree>
+                                                </field>                                        
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>                                
+                            </page>
+                        </notebook>
+                         <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                            <field name="total_earn_points"/>
+                            <field name="total_redeem_points"/>
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="points" />
+                            </div>
+                            <field name="points" nolabel="1" class="oe_subtotal_footer_separator"/>
+                        </group>
+                    </sheet>
+                </form>
+	        </field>
+	    </record>
+
+        <record id="reward_points_wizard_form" model="ir.ui.view">
+            <field name="name">loyalty.reward.points.wizard</field>
+            <field name="model">loyalty.reward.points.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Reward Points" version="7.0">
+                    <group>
+                        <group>
+                            <field name="purchase_amount"/>
+                        </group>
+                        <group>
+                            <field name="point"/>                            
+                        </group>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                    <footer>
+                        <button name="reward" string="Reward" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="open_reward_point_wizard_action_id" model="ir.actions.act_window">
+            <field name="name">Reward Points</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loyalty.reward.points.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+         <record id="open_point_wizard_action_id" model="ir.actions.act_window">
+            <field name="name">Customer's Points</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loyalty.redeem.success.message.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+
+        <record id="redeem_points_wizard_form" model="ir.ui.view">
+            <field name="name">loyalty.redeem.points.wizard</field>
+            <field name="model">loyalty.redeem.points.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Redeem Points" version="7.0">
+                    <group>
+                        <group>
+                            <field name="customer_id" invisible="0"/>
+                        </group>
+                        <group>
+                        	<field name="merchant_id" invisible="0"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="redeem_type" widget="radio" class="oe_inline"/>
+                        </group>
+                        <group>
+                            <field name="point" attrs="{'invisible':[('redeem_type','=','coupon')], 'required':[('redeem_type','=','point')]}"/>
+                            <field name="discount_amount" attrs="{'invisible':[('redeem_type','=','coupon')],'required':[('redeem_type','=','point')]}"/>
+                            <field name="redeem_merchant_group_id" options="{'no_create':1}" attrs="{'invisible':[('redeem_type','=','coupon')]}"/>
+                            <field name="coupon_line_id" options="{'no_create':1}" attrs="{'invisible':[('redeem_type','=','point')], 'required':[('redeem_type','=','coupon')]}"/>
+                            <field name="otp_status" invisible="1"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                        </group>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                    <h3>OTP Verification</h3>
+                    <div class="o_group text-center">
+                        <div class="o_group_col_6">
+                            <h3><field style="letter-spacing: 15px;padding: 12px;" name="otp" placeholder="OTP"/></h3>
+                        </div>
+                        <div>
+                            <button name="request_otp" attrs="{'invisible':[('otp_status','=','sent')]}" id="send_otp" class="btn-primary" type="object" string="Send OTP to customer"/>
+                        </div>
+                    </div>
+                    <footer>
+                        <button name="redeem" string="Redeem" context="{'otp':context.get('otp')}" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+        <record id="open_redeem_point_wizard_action_id" model="ir.actions.act_window">
+            <field name="name">Redeem Points</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loyalty.redeem.points.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id="loyalty_redeem_success_message_wizard" model="ir.ui.view">
+            <field name="name">loyalty.redeem.success.message.wizard.form</field>
+            <field name="model">loyalty.redeem.success.message.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Redemption Successful">
+                    <field name="message" readonly="1"/>
+                    <footer>
+                       <button string="Close" class="btn-default" special="cancel"/>
+                    </footer>
+               </form>
+            </field>
+        </record>
+
+	</data>
+</odoo>

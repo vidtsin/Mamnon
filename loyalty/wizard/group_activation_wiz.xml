@@ -1,0 +1,45 @@
+<odoo>
+	<data>
+		<record id="loyalty_group_activate_wizard_form" model="ir.ui.view">
+			<field name="name">loyalty.group.activate.wizard</field>
+			<field name="model">loyalty.group.activate.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Activate Group" version="7.0">
+					<group>
+						<group>
+							<field name="start_date"/>
+						</group>
+						<group>
+							<field name="expire_date"/>							
+						</group>
+					</group>
+					<notebook>
+						<page string="Payment Lines">
+							<field name="invoice_line">
+								<tree string="Payment Lines" editable="bottom" create="false" delete="false">
+									<field name="partner_id" readonly="1"/>
+									<field name="invoice_id" options="{'no_create':True}"/>
+								</tree>
+							</field>
+							<button  name="view_invoices" string="View Invoices" type="object"/>
+						</page>
+					</notebook>
+					<footer>
+						<button name="active" string="Activate" type="object" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+		<record id="open_action_activate_group_wizard_id" model="ir.actions.act_window">
+			<field name="name">Activate Merchant Group</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">loyalty.group.activate.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</odoo>

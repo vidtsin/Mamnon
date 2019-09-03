@@ -1,0 +1,1131 @@
+<odoo>
+	<data>		
+		<record id="merchant_register_template" model="mail.template">
+			<field name="name">Merchant Registeration E-Mail</field>
+			<field name="email_from">${object.company_id and object.company_id.email or ''}</field>
+			<field name="subject">Registeration Request - ${object.name}</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="merchant.model_merchant_request"/>
+			<field name="auto_delete" eval="True"/>
+			<field name="body_html">
+				<![CDATA[
+					<html>
+						<head>
+							<meta charset="utf-8">
+							<title>MAMNON</title>
+							<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+							<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+							<style type="text/css">
+								.preheader {
+								display: none !important;
+								visibility: hidden;
+								opacity: 0;
+								color: transparent;
+								height: 0;
+								width: 0;
+								}
+								a:focus {
+								outline: none;
+								}
+								.white {
+								color: #fff !important;
+								}
+								@media only screen and (max-width:640px) {
+								.full-container {
+								width: 100% !important;
+								}
+								.no-br br {
+								display: none;
+								}
+								.full-width.height10 {
+								height: 20px;
+								}
+								}
+							</style>
+						</head>
+						<body style="background-color:#fff; margin:0; padding:0; font-family:Arial;">
+							<table align="center" class="full-container" width="640" border="0" cellspacing="0" cellpadding="0" style="width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;">
+								<tbody>
+									<tr>
+										<td width="100%" style="width:100%;">
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;">
+												<tbody>
+													<tr>
+														<td>
+															<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0; ">
+																<tr>
+																	<td class="width150" height="80" width="100%" align="center" valign="middle" style="text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;">
+																		<a href="#" target="_blank" style="display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;">
+																			<img src="/merchant/static/src/images/logo.png" alt="Mamnon Logo" style="height: 75px;"/>
+																		</a>
+																	</td>
+																	<td class="font-11" style="background:#2d358e; font-size:19px; color:#262626;" headers="65px;" align="right"></td>
+																	<td style="background:#2d358e;" headers="65px;" width="23"></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<!--logo ends--> 
+									<!--body html-->
+									<tr>
+										<td align="center">
+											<table align="center" cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+												<tr>
+													<td class="width15" width="25"></td>
+													<td align="center">
+														<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+															<tr>
+																<!--content1--> 
+																<!--content1-->
+																<td valign="top" style="width:100%;">
+																	<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+																		<tr>
+																			<td class="height10" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-14" align="left" style="font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;"><b>Dear ${object.username},</b></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="20"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">We have successfully received your request to register as our merchant.
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="5"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr style="text-align: center;font-weight: bold;">
+																			<td class="height10" height="30">
+																				Your Registeration Request ID : ${object.name}
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">You will receive another email after approval from our team. </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; ">Sincerely, </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;"><strong>MAMNON</strong> </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">In case of any queries or assistance, Write us at our support email at - <a href="mailto:support@mamnon.com?Subject=Support" target="_top">support@mamnon.com</a>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																	</table>
+																</td>
+																<!--content1--> 
+															</tr>
+														</table>
+													</td>
+													<td class="width15" width="25"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<!--body html--> 
+									<!--footer html-->
+									<tr>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;">
+												<tr>
+													<td width="20"></td>
+													<td>
+														<table align="center" width="100%" cellpadding="0" cellspacing="" border="0" style="width:100%; border:0;" >
+															<tr>
+																<td height="20"></td>
+															</tr>
+															<tr>
+																<td class="font-11" align="center" style="font-size:14px; color:#000; text-decoration:none;">Copyright @ Mamnon - 2019</td>
+															</tr>
+															<tr>
+																<td height="20"></td>
+															</tr>
+														</table>
+													</td>
+													<td width="20"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</body>
+					</html>
+				]]>
+			</field>
+		</record>
+		
+		<record id="merchant_register_email_template_approve_reject" model="mail.template">
+			<field name="name">Merchant Approval/Rejection E-Mail</field>
+			<field name="email_from">${object.company_id and object.company_id.email or 'support@mamnon.com'}</field>
+			<field name="subject">Registeration Request 
+				% if object.state == 'approved': 
+					${'Approved'}
+				% elif object.state == 'reject':
+					${'Rejected'}
+				% endif 
+				- ${object.name}
+			</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="merchant.model_merchant_request"/>
+			<field name="auto_delete" eval="True"/>
+			<field name="body_html">
+				<![CDATA[
+					<html>
+						<head>
+							<meta charset="utf-8">
+							<title>MAMNON</title>
+							<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+							<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+							<style type="text/css">
+								.preheader {
+								display: none !important;
+								visibility: hidden;
+								opacity: 0;
+								color: transparent;
+								height: 0;
+								width: 0;
+								}
+								a:focus {
+								outline: none;
+								}
+								.white {
+								color: #fff !important;
+								}
+								@media only screen and (max-width:640px) {
+								.full-container {
+								width: 100% !important;
+								}
+								.no-br br {
+								display: none;
+								}
+								.full-width.height10 {
+								height: 20px;
+								}
+								}
+							</style>
+						</head>
+						<body style="background-color:#fff; margin:0; padding:0; font-family:Arial;">
+							<table align="center" class="full-container" width="640" border="0" cellspacing="0" cellpadding="0" style="width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;">
+								<tbody>
+									<tr>
+										<td width="100%" style="width:100%;">
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;">
+												<tbody>
+													<tr>
+														<td>
+															<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0; ">
+																<tr>
+																	<td class="width150" height="80" width="100%" align="center" valign="middle" style="text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;">
+																		<a href="#" target="_blank" style="display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;">
+																			<img src="/merchant/static/src/images/logo.png" alt="Mamnon Logo" style="height: 75px;"/>
+																		</a>
+																	</td>
+																	<td class="font-11" style="background:#2d358e; font-size:19px; color:#262626;" headers="65px;" align="right"></td>
+																	<td style="background:#2d358e;" headers="65px;" width="23"></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<!--logo ends--> 
+									<!--body html-->
+									<tr>
+										<td align="center">
+											<table align="center" cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+												<tr>
+													<td class="width15" width="25"></td>
+													<td align="center">
+														<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+															<tr>
+																<!--content1--> 
+																<!--content1-->
+																<td valign="top" style="width:100%;">
+																	<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+																		<tr>
+																			<td class="height10" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-14" align="left" style="font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;"><b>Dear ${object.username},</b></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="20"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																				Your merchant registration request - <strong>
+																					${object.name} 
+																				</strong> has been 
+																				<strong>
+																					% if object.state == 'approved':
+																						${'Approved'}
+																					% elif object.state == 'reject':
+																						${'Rejected'}
+																					% endif  
+																				</strong>
+																				by our operation team.
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="5"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr style="text-align: left;font-weight: bold;">
+																			<td class="height10" height="30">
+																				% if object.state == 'reject':
+																					${'Reason for Rejection : '} 
+																					${ctx['reason']}
+																				% endif
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; ">Sincerely, </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;"><strong>MAMNON</strong> </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">In case of any queries or assistance, Write us at our support email at - <a href="mailto:support@mamnon.com?Subject=Support" target="_top">support@mamnon.com</a>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																	</table>
+																</td>
+																<!--content1--> 
+															</tr>
+														</table>
+													</td>
+													<td class="width15" width="25"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<!--body html--> 
+									<!--footer html-->
+									<tr>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;">
+												<tr>
+													<td width="20"></td>
+													<td>
+														<table align="center" width="100%" cellpadding="0" cellspacing="" border="0" style="width:100%; border:0;" >
+															<tr>
+																<td height="20"></td>
+															</tr>
+															<tr>
+																<td class="font-11" align="center" style="font-size:14px; color:#000; text-decoration:none;">Copyright @ Mamnon - 2019</td>
+															</tr>
+															<tr>
+																<td height="20"></td>
+															</tr>
+														</table>
+													</td>
+													<td width="20"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</body>
+					</html>
+				]]>
+			</field>
+		</record>
+
+		<record id="merchant_register_email_template_suspend" model="mail.template">
+			<field name="name">Merchant Suspension E-Mail</field>
+			<field name="email_from">${object.company_id and object.company_id.email or 'support@mamnon.com'}</field>
+			<field name="subject">Account Suspended</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="merchant.model_merchant_request"/>
+			<field name="auto_delete" eval="True"/>
+			<field name="body_html">
+				<![CDATA[
+					<html>
+						<head>
+							<meta charset="utf-8">
+							<title>MAMNON</title>
+							<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+							<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+							<style type="text/css">
+								.preheader {
+								display: none !important;
+								visibility: hidden;
+								opacity: 0;
+								color: transparent;
+								height: 0;
+								width: 0;
+								}
+								a:focus {
+								outline: none;
+								}
+								.white {
+								color: #fff !important;
+								}
+								@media only screen and (max-width:640px) {
+								.full-container {
+								width: 100% !important;
+								}
+								.no-br br {
+								display: none;
+								}
+								.full-width.height10 {
+								height: 20px;
+								}
+								}
+							</style>
+						</head>
+						<body style="background-color:#fff; margin:0; padding:0; font-family:Arial;">
+							<table align="center" class="full-container" width="640" border="0" cellspacing="0" cellpadding="0" style="width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;">
+								<tbody>
+									<tr>
+										<td width="100%" style="width:100%;">
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;">
+												<tbody>
+													<tr>
+														<td>
+															<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0; ">
+																<tr>
+																	<td class="width150" height="80" width="100%" align="center" valign="middle" style="text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;">
+																		<a href="#" target="_blank" style="display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;">
+																			<img src="/merchant/static/src/images/logo.png" alt="Mamnon Logo" style="height: 75px;"/>
+																		</a>
+																	</td>
+																	<td class="font-11" style="background:#2d358e; font-size:19px; color:#262626;" headers="65px;" align="right"></td>
+																	<td style="background:#2d358e;" headers="65px;" width="23"></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<!--logo ends--> 
+									<!--body html-->
+									<tr>
+										<td align="center">
+											<table align="center" cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+												<tr>
+													<td class="width15" width="25"></td>
+													<td align="center">
+														<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+															<tr>
+																<!--content1--> 
+																<!--content1-->
+																<td valign="top" style="width:100%;">
+																	<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+																		<tr>
+																			<td class="height10" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-14" align="left" style="font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;"><b>Dear ${object.username},</b></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="20"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																				Your Account has been 
+																				<strong>
+																					Suspended 
+																				</strong>
+																				by our operation team.
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="5"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr style="text-align: left;font-weight: bold;">
+																			<td class="height10" height="30">
+																					${'Reason for Suspension : '} ${object.reason}
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; ">Sincerely, </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;"><strong>MAMNON</strong> </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">In case of any queries or assistance, Write us at our support email at - <a href="mailto:support@mamnon.com?Subject=Support" target="_top">support@mamnon.com</a>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																	</table>
+																</td>
+																<!--content1--> 
+															</tr>
+														</table>
+													</td>
+													<td class="width15" width="25"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<!--body html--> 
+									<!--footer html-->
+									<tr>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;">
+												<tr>
+													<td width="20"></td>
+													<td>
+														<table align="center" width="100%" cellpadding="0" cellspacing="" border="0" style="width:100%; border:0;" >
+															<tr>
+																<td height="20"></td>
+															</tr>
+															<tr>
+																<td class="font-11" align="center" style="font-size:14px; color:#000; text-decoration:none;">Copyright @ Mamnon - 2019</td>
+															</tr>
+															<tr>
+																<td height="20"></td>
+															</tr>
+														</table>
+													</td>
+													<td width="20"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</body>
+					</html>
+				]]>
+			</field>
+		</record>
+		<record id="merchant_register_email_template_pre_expire" model="mail.template">
+			<field name="name">Merchant Expire Pre-Notification E-Mail</field>
+			<field name="email_from">${object.company_id and object.company_id.email or 'support@mamnon.com'}</field>
+			<field name="subject">Account Expiring Soon</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="merchant.model_merchant_request"/>
+			<field name="auto_delete" eval="True"/>
+			<field name="body_html">
+				<![CDATA[
+					<html>
+						<head>
+							<meta charset="utf-8">
+							<title>MAMNON</title>
+							<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+							<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+							<style type="text/css">
+								.preheader {
+								display: none !important;
+								visibility: hidden;
+								opacity: 0;
+								color: transparent;
+								height: 0;
+								width: 0;
+								}
+								a:focus {
+								outline: none;
+								}
+								.white {
+								color: #fff !important;
+								}
+								@media only screen and (max-width:640px) {
+								.full-container {
+								width: 100% !important;
+								}
+								.no-br br {
+								display: none;
+								}
+								.full-width.height10 {
+								height: 20px;
+								}
+								}
+							</style>
+						</head>
+						<body style="background-color:#fff; margin:0; padding:0; font-family:Arial;">
+							<table align="center" class="full-container" width="640" border="0" cellspacing="0" cellpadding="0" style="width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;">
+								<tbody>
+									<tr>
+										<td width="100%" style="width:100%;">
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;">
+												<tbody>
+													<tr>
+														<td>
+															<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0; ">
+																<tr>
+																	<td class="width150" height="80" width="100%" align="center" valign="middle" style="text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;">
+																		<a href="#" target="_blank" style="display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;">
+																			<img src="/merchant/static/src/images/logo.png" alt="Mamnon Logo" style="height: 75px;"/>
+																		</a>
+																	</td>
+																	<td class="font-11" style="background:#2d358e; font-size:19px; color:#262626;" headers="65px;" align="right"></td>
+																	<td style="background:#2d358e;" headers="65px;" width="23"></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<!--logo ends--> 
+									<!--body html-->
+									<tr>
+										<td align="center">
+											<table align="center" cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+												<tr>
+													<td class="width15" width="25"></td>
+													<td align="center">
+														<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+															<tr>
+																<!--content1--> 
+																<!--content1-->
+																<td valign="top" style="width:100%;">
+																	<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+																		<tr>
+																			<td class="height10" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-14" align="left" style="font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;"><b>Dear ${object.username},</b></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="20"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																				You subscription is about to expire in 3 day(s). 
+																				Please renew your subscription to keep using MAMNON services otherwise your account will be suspended.
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="5"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; ">Sincerely, </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;"><strong>MAMNON</strong> </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">In case of any queries or assistance, Write us at our support email at - <a href="mailto:support@mamnon.com?Subject=Support" target="_top">support@mamnon.com</a>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																	</table>
+																</td>
+																<!--content1--> 
+															</tr>
+														</table>
+													</td>
+													<td class="width15" width="25"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<!--body html--> 
+									<!--footer html-->
+									<tr>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;">
+												<tr>
+													<td width="20"></td>
+													<td>
+														<table align="center" width="100%" cellpadding="0" cellspacing="" border="0" style="width:100%; border:0;" >
+															<tr>
+																<td height="20"></td>
+															</tr>
+															<tr>
+																<td class="font-11" align="center" style="font-size:14px; color:#000; text-decoration:none;">Copyright @ Mamnon - 2019</td>
+															</tr>
+															<tr>
+																<td height="20"></td>
+															</tr>
+														</table>
+													</td>
+													<td width="20"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</body>
+					</html>
+				]]>
+			</field>
+		</record>
+
+		<record id="merchant_register_email_template_expire" model="mail.template">
+			<field name="name">Merchant Expire E-Mail</field>
+			<field name="email_from">${object.company_id and object.company_id.email or 'support@mamnon.com'}</field>
+			<field name="subject">Account Expired</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="merchant.model_merchant_request"/>
+			<field name="auto_delete" eval="True"/>
+			<field name="body_html">
+				<![CDATA[
+					<html>
+						<head>
+							<meta charset="utf-8">
+							<title>MAMNON</title>
+							<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+							<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+							<style type="text/css">
+								.preheader {
+								display: none !important;
+								visibility: hidden;
+								opacity: 0;
+								color: transparent;
+								height: 0;
+								width: 0;
+								}
+								a:focus {
+								outline: none;
+								}
+								.white {
+								color: #fff !important;
+								}
+								@media only screen and (max-width:640px) {
+								.full-container {
+								width: 100% !important;
+								}
+								.no-br br {
+								display: none;
+								}
+								.full-width.height10 {
+								height: 20px;
+								}
+								}
+							</style>
+						</head>
+						<body style="background-color:#fff; margin:0; padding:0; font-family:Arial;">
+							<table align="center" class="full-container" width="640" border="0" cellspacing="0" cellpadding="0" style="width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;">
+								<tbody>
+									<tr>
+										<td width="100%" style="width:100%;">
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;">
+												<tbody>
+													<tr>
+														<td>
+															<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0; ">
+																<tr>
+																	<td class="width150" height="80" width="100%" align="center" valign="middle" style="text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;">
+																		<a href="#" target="_blank" style="display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;">
+																			<img src="/merchant/static/src/images/logo.png" alt="Mamnon Logo" style="height: 75px;"/>
+																		</a>
+																	</td>
+																	<td class="font-11" style="background:#2d358e; font-size:19px; color:#262626;" headers="65px;" align="right"></td>
+																	<td style="background:#2d358e;" headers="65px;" width="23"></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<!--logo ends--> 
+									<!--body html-->
+									<tr>
+										<td align="center">
+											<table align="center" cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+												<tr>
+													<td class="width15" width="25"></td>
+													<td align="center">
+														<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+															<tr>
+																<!--content1--> 
+																<!--content1-->
+																<td valign="top" style="width:100%;">
+																	<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+																		<tr>
+																			<td class="height10" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-14" align="left" style="font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;"><b>Dear ${object.username},</b></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="20"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																				Your Account has been 
+																				<strong>
+																					Expired 
+																				</strong>
+																				automatically by our system. Please renew your subscription to keep using MAMNON services.
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="5"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; ">Sincerely, </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;"><strong>MAMNON</strong> </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">In case of any queries or assistance, Write us at our support email at - <a href="mailto:support@mamnon.com?Subject=Support" target="_top">support@mamnon.com</a>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																	</table>
+																</td>
+																<!--content1--> 
+															</tr>
+														</table>
+													</td>
+													<td class="width15" width="25"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<!--body html--> 
+									<!--footer html-->
+									<tr>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;">
+												<tr>
+													<td width="20"></td>
+													<td>
+														<table align="center" width="100%" cellpadding="0" cellspacing="" border="0" style="width:100%; border:0;" >
+															<tr>
+																<td height="20"></td>
+															</tr>
+															<tr>
+																<td class="font-11" align="center" style="font-size:14px; color:#000; text-decoration:none;">Copyright @ Mamnon - 2019</td>
+															</tr>
+															<tr>
+																<td height="20"></td>
+															</tr>
+														</table>
+													</td>
+													<td width="20"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</body>
+					</html>
+				]]>
+			</field>
+		</record>
+
+
+		<record id="merchant_register_email_template_renewal" model="mail.template">
+			<field name="name">Merchant Account Renewed</field>
+			<field name="email_from">${object.company_id and object.company_id.email or 'support@mamnon.com'}</field>
+			<field name="subject">Account Renewed</field>
+			<field name="email_to">${object.email|safe}</field>
+			<field name="lang">${object.lang}</field>
+			<field name="model_id" ref="merchant.model_merchant_request"/>
+			<field name="auto_delete" eval="True"/>
+			<field name="body_html">
+				<![CDATA[
+					<html>
+						<head>
+							<meta charset="utf-8">
+							<title>MAMNON</title>
+							<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+							<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+							<style type="text/css">
+								.preheader {
+								display: none !important;
+								visibility: hidden;
+								opacity: 0;
+								color: transparent;
+								height: 0;
+								width: 0;
+								}
+								a:focus {
+								outline: none;
+								}
+								.white {
+								color: #fff !important;
+								}
+								@media only screen and (max-width:640px) {
+								.full-container {
+								width: 100% !important;
+								}
+								.no-br br {
+								display: none;
+								}
+								.full-width.height10 {
+								height: 20px;
+								}
+								}
+							</style>
+						</head>
+						<body style="background-color:#fff; margin:0; padding:0; font-family:Arial;">
+							<table align="center" class="full-container" width="640" border="0" cellspacing="0" cellpadding="0" style="width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;">
+								<tbody>
+									<tr>
+										<td width="100%" style="width:100%;">
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;">
+												<tbody>
+													<tr>
+														<td>
+															<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0; ">
+																<tr>
+																	<td class="width150" height="80" width="100%" align="center" valign="middle" style="text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;">
+																		<a href="#" target="_blank" style="display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;">
+																			<img src="/merchant/static/src/images/logo.png" alt="Mamnon Logo" style="height: 75px;"/>
+																		</a>
+																	</td>
+																	<td class="font-11" style="background:#2d358e; font-size:19px; color:#262626;" headers="65px;" align="right"></td>
+																	<td style="background:#2d358e;" headers="65px;" width="23"></td>
+																</tr>
+															</table>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</td>
+									</tr>
+									<!--logo ends--> 
+									<!--body html-->
+									<tr>
+										<td align="center">
+											<table align="center" cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+												<tr>
+													<td class="width15" width="25"></td>
+													<td align="center">
+														<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+															<tr>
+																<!--content1--> 
+																<!--content1-->
+																<td valign="top" style="width:100%;">
+																	<table cellpadding="0" cellspacing="0" width="100%" style="width:100%; border:0;">
+																		<tr>
+																			<td class="height10" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-14" align="left" style="font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;"><b>Dear ${object.username},</b></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="20"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																				Your Account has been 
+																				<strong>
+																					Renewed
+																				</strong>
+																				by our operation team.
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="5"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="height10" height="30"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; ">Sincerely, </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;"><strong>MAMNON</strong> </td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																		<tr>
+																			<td class="font-11" align="left" style="font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left">In case of any queries or assistance, Write us at our support email at - <a href="mailto:support@mamnon.com?Subject=Support" target="_top">support@mamnon.com</a>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="10"></td>
+																		</tr>
+																		<tr>
+																			<td class="height5" height="40"></td>
+																		</tr>
+																	</table>
+																</td>
+																<!--content1--> 
+															</tr>
+														</table>
+													</td>
+													<td class="width15" width="25"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<!--body html--> 
+									<!--footer html-->
+									<tr>
+										<td>
+											<table width="100%" border="0" cellspacing="0" cellpadding="0" style="width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;">
+												<tr>
+													<td width="20"></td>
+													<td>
+														<table align="center" width="100%" cellpadding="0" cellspacing="" border="0" style="width:100%; border:0;" >
+															<tr>
+																<td height="20"></td>
+															</tr>
+															<tr>
+																<td class="font-11" align="center" style="font-size:14px; color:#000; text-decoration:none;">Copyright @ Mamnon - 2019</td>
+															</tr>
+															<tr>
+																<td height="20"></td>
+															</tr>
+														</table>
+													</td>
+													<td width="20"></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</body>
+					</html>
+				]]>
+			</field>
+		</record>
+
+		
+	</data>
+</odoo>

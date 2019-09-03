@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_coupon_view_form" model="ir.ui.view">
+        <field name="name">sale.coupon.form</field>
+        <field name="model">sale.coupon</field>
+        <field name="arch" type="xml">
+            <form string="Coupons" create="0" edit="0" delete="0">
+                <header>
+                    <button name="action_coupon_send" type="object" string="Send by Email" class="btn btn-primary" attrs="{'invisible': [('state', '!=', 'new')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="merchant_id"/>                            
+                            <field name="code"/>
+                            <field name="expiration_date"/>
+                        </group>
+                        <group>
+                            <field name="customer_id"/>
+                            <field name="sale_order_id"/>
+                        </group>                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_coupon_view_tree" model="ir.ui.view">
+        <field name="name">sale.coupon.form</field>
+        <field name="model">sale.coupon</field>
+        <field name="arch" type="xml">
+            <tree string="Coupons" create="0" edit="0" delete="0">
+                <field name="code"/>
+                <field name="expiration_date"/>
+                <field name="coupon_rule_id"/>
+                <field name="merchant_id" groups="base.group_system,loyalty.group_operation"/>
+                <field name="merchant_id" readonly="1" groups="loyalty.group_merchant_admin,loyalty.group_merchant_user"/>
+                <field name="customer_id"/>
+                <field name="sale_order_id"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_coupon_view_search" model="ir.ui.view">
+        <field name="name">sale.coupon.search</field>
+        <field name="model">sale.coupon</field>
+        <field name="arch" type="xml">
+            <search string="Search Coupon Rules">
+                <field name="code" string="Code" filter_domain="[('code', 'ilike', self)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="sale_coupon_action" model="ir.actions.act_window">
+        <field name="name">Coupons</field>
+        <field name="res_model">sale.coupon</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('coupon_rule_id', '=', active_id)]</field>
+        <field name="view_id" ref="sale_coupon_view_tree"/>
+        <field name="search_view_id" ref="sale_coupon_view_search"/>
+    </record>
+    <record id="sale_coupon_action_view_all" model="ir.actions.act_window">
+        <field name="name">Coupons</field>
+        <field name="res_model">sale.coupon</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="menu_loyalty_coupon_parent" name="Coupons" sequence="8" parent="loyalty.menu_loyalty_system"/> 
+    <menuitem id="menu_loyalty_coupon_sync" name="Coupons New" sequence="" parent="sync_sale_coupon.menu_loyalty_coupon_parent"  groups="" action="sale_coupon_action_view_all"/>
+
+</odoo>

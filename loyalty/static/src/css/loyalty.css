@@ -1,0 +1,11 @@
+img[name='icon_img_with_bg']{
+	background: black;
+}
+
+input[name='location']{
+	width:90% !important;
+}
+
+.gmap-container{
+	width:100% !important;
+}

@@ -1,0 +1,88 @@
+<odoo>
+	<data>
+        <record model="ir.module.category" id="module_category_loyalty">
+            <field name="name">Loyalty System</field>
+            <field name="sequence">50</field>
+        </record>
+        <record id="deal_type_text_ad" model="loyalty.deal.type">
+        	<field name="name">Text Ad</field>
+            <field name="allow_description">True</field>
+        </record>
+        <record id="deal_type_graphic_ad" model="loyalty.deal.type">
+        	<field name="name">Graphic Ad</field>
+            <field name="allow_description">True</field>
+            <field name="allow_image">True</field>
+        </record>
+        <record id="deal_type_top_graphic_ad" model="loyalty.deal.type">
+        	<field name="name">Top Graphic Ad</field>
+            <field name="allow_description">True</field>
+            <field name="allow_image">True</field>
+        </record>
+        <record id="deal_type_extra_text_ad" model="loyalty.deal.type">
+            <field name="name">Extra Text Ad</field>
+            <field name="allow_description">True</field>
+            <field name="allow_image">False</field>
+        </record>
+        <record id="deal_type_extra_graphic_ad" model="loyalty.deal.type">
+            <field name="name">Extra Graphic Ad</field>
+            <field name="allow_description">True</field>
+            <field name="allow_image">True</field>
+        </record>
+        <record id="deal_type_active_offer" model="loyalty.deal.type">
+            <field name="name">Active Offers</field>
+            <field name="allow_description">True</field>
+            <field name="allow_image">True</field>
+        </record>
+        <record id="deal_type_extra_top_graphic_ad" model="loyalty.deal.type">
+            <field name="name">Extra Top Graphic Ad</field>
+            <field name="allow_description">True</field>
+            <field name="allow_image">True</field>
+        </record>
+        <record id="deal_type_extra_vip_ad" model="loyalty.deal.type">
+            <field name="name">VIP Companies Ad</field>
+            <field name="allow_image">True</field>
+            <field name="allow_merchant_request">False</field>
+        </record>
+
+
+        <record id="ir_cron_check_deal_expiry_action" forcecreate='True' model="ir.cron">
+            <field name="name">Deal Expire Daily Check</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="state">code</field>
+            <field name="numbercall">-1</field>
+            <field name="model_id" ref="model_loyalty_deal"/>
+            <field name="code">
+                model.unpublish_expired_extra_deal()
+            </field>
+        </record>
+
+        <record id="cron_auto_expire_group" forcecreate='True' model="ir.cron">
+            <field name="name">Auto Expire Merchant Group</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_loyalty_group"/>
+            <field name="code">model.auto_expire_merchant_group()</field>
+        </record>
+
+        <record id="cron_auto_expire_coupon" forcecreate='True' model="ir.cron">
+              <field name="name">Auto Expire Merchant Coupon</field>
+              <field eval="True" name="active"/>
+              <field name="user_id" ref="base.user_root"/>
+              <field name="interval_number">1</field>
+              <field name="interval_type">days</field>
+              <field name="numbercall">-1</field>
+              <field name="state">code</field>
+              <field name="model_id" ref="model_loyalty_coupon"/>
+              <field name="code">model.auto_expire_merchant_coupon()</field>
+        </record>
+      
+
+	</data>
+</odoo>

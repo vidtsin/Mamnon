@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="view_card_type_form" model="ir.ui.view">
+			<field name="name">view.card.type.form</field>
+			<field name="model">card.type</field>
+			<field name="arch" type="xml">
+				<form string="Card Type">
+					<sheet>
+						<group>
+							<group>
+								<field name="name" colspan="2" />
+								<field name="period_id" widget='selection'/>
+								<field name="partner_id" invisible="1"/>
+							</group>
+							<group>
+								<field name="categ_id" widget='selection'/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="card_membership_form" model="ir.ui.view">
+			<field name="name">view.card.membership.form</field>
+			<field name="model">card.membership</field>
+			<field name="arch" type="xml">
+				<form string="Card Membership">
+					<group string="Card Membership">
+						<field name="name"/>
+						<field name="code"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_card_type_tree" model="ir.ui.view">
+			<field name="name">view.card.type.list</field>
+			<field name="model">card.type</field>
+			<field name="arch" type="xml">
+				<tree string="Card Type">
+					<field name="name" />
+					<field name="period_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_card_type_search" model="ir.ui.view">
+			<field name="name">view.card.type.search</field>
+			<field name="model">card.type</field>
+			<field name="arch" type="xml">
+				<search string="Card Type">
+					<field name="name" />
+					<field name="period_id" />
+					<group expand="0" string="Group By...">
+						<filter name="group_by_period" string="Period"
+							context="{'group_by':'period_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+	</data>
+</odoo>
+

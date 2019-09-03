@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_coupon_rule_common_view_form" model="ir.ui.view">
+        <field name="name">sale.coupon.rule.common.form</field>
+        <field name="model">sale.coupon.rule</field>
+        <field name="arch" type="xml">
+            <form string="Sale Coupon Rule">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open"/>
+                    <button name="set_open" type="object" string="Confirm" attrs="{'invisible': [('state', '!=', 'draft')]}" class="btn btn-primary"/>
+                    <button name="set_expired" type="object" string="Expire" attrs="{'invisible': [('state', '!=', 'open')]}"/>
+                    <button name="%(coupon_rule_cancel_reason_action)d" type="action" string="Cancel" attrs="{'invisible': [('state', 'not in', ['draft','open'])]}"/>
+                    <button name="set_draft" type="object" string="Reset To Draft" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button" options='{"terminology": "archive"}'/>
+                        </button>
+                        <button name="%(sync_sale_coupon.sale_coupon_action)d" type="action" icon="fa-ticket" class="oe_stat_button" attrs="{'invisible': [('state', '=', 'draft')]}">
+                            <field name="coupon_count" string="Coupons" widget="statinfo"/>
+                        </button>
+                        <button name="action_view_sales_orders" type="object" icon="fa-usd" class="oe_stat_button" attrs="{'invisible': [('state', '=', 'draft')]}">
+                            <field name="sales_count" string="Sales" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                    </div>
+                    <field name="promotion_type" invisible="1"/>
+                    <separator string="Rewards"/>
+                    <group name="rewards">
+                        <group>
+                            <field name="merchant_id" options="{'no_create_edit':1}"/>
+                            <field name="reward_type" widget="radio" readonly="1"/>
+                        </group>
+                        <group attrs="{'invisible': [('reward_type', '!=', 'discount')]}">
+                            <field name="reward_line_product_id" readonly="1" invisible="1" attrs="{'invisible': [('reward_line_product_id', '=', False)]}" required="0" context="{'sale_coupon': True}"/>
+                            <label for="discount_type" sting="Apply Discount"/>
+                            <div>
+                                <field name="discount_type" class="oe_inline" attrs="{'required': [('reward_type', '=', 'discount')]}"/>
+                                <span/>
+                                <field name="discount_percentage" attrs="{'invisible': [('discount_type', '!=', 'percentage')], 'required': [('discount_type', '=', 'percentage'), ('reward_type', '=', 'discount')]}" class="oe_inline"/>
+                                <span class="oe_inline" attrs="{'invisible': [('discount_type', '!=', 'percentage')]}"> %</span>
+                            </div>
+                            <field name="discount_apply_on" invisible="1" attrs="{'invisible': [('discount_type', '!=', 'percentage')]}" widget="radio"/>
+                            <field name="discount_specific_product_id" attrs="{'invisible': ['|', ('discount_type', '!=', 'percentage'), ('discount_apply_on', '!=', 'specific_product')], 'required': [('reward_type', '=', 'discount'), ('discount_apply_on', '=', 'specific_product')]}"/>
+                            <field name="discount_fixed_amount" attrs="{'invisible': [('discount_type', '=', 'percentage')], 'required': [('discount_type', '=', 'fixed_amount'), ('reward_type', '=', 'discount')]}" class="oe_inline"/>
+                            <label for="max_discount_amount" invisible="1" class="oe_inline" attrs="{'invisible': [('discount_type', '!=', 'percentage')]}"/>
+                            <div  invisible="1" attrs="{'invisible': [('discount_type', '!=', 'percentage')]}">
+                                <field name="max_discount_amount" attrs="{'invisible': [('discount_type', '!=', 'percentage')]}" class="oe_inline"/>
+                                <span class="oe_inline text-muted"> if 0, no limit</span>
+                            </div>
+                        </group>
+                        <group attrs="{'invisible': [('reward_type', '!=', 'product')]}">
+                            <field name="reward_product_id" attrs="{'required': [('reward_type', '=', 'product')]}"/>
+                            <label for="reward_product_qty" class="oe_inline" attrs="{'invisible': [('reward_product_id', '=', False)]}"/>
+                            <div class="oe_inline" attrs="{'invisible': [('reward_product_id', '=', False)]}">
+                                <field name="reward_product_qty" attrs="{'invisible': [('reward_product_id', '=', False)], 'required': [('reward_type', '=', 'product')]}" class="oe_inline"/>
+                                <field name="reward_product_uom_id" readonly="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group string="Validity &amp; Purchase Rule" name="validity">
+                        <group>
+                            <field name="website_id" invisible="1"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <!-- <field name="product_domain_rule" widget="domain" options="{'model': 'product.product'}"/> -->
+                            <field name="product_domain_rule" widget="domain" invisible="1" options="{'model': 'product.product'}"/>
+                            <field name="min_product_qty"  invisible="1"/>
+                            <label for="min_amount_rule" string="Min Purchase Of"/>
+                            <div>
+                                <field name="min_amount_rule" widget="monetary" class="oe_inline"/>
+                                <field name="min_amount_tax_rule" invisible="1" class="oe_inline"/>
+                            </div>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Notes" name="notes">
+                            <group string="General Note" name="general_note">
+                                <field name="note" nolabel="1" placeholder="General Notes..."/>
+                            </group>
+                            <group string="Cancellation Notes" name="cancel_reason" attrs="{'invisible': [('state', '!=', 'cancel')]}">
+                                <field name="cancel_reason" nolabel="1" readonly="1" placeholder="Cancellation Notes..."/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_coupon_rule_view_form" model="ir.ui.view">
+        <field name="name">sale.coupon.rule.form</field>
+        <field name="model">sale.coupon.rule</field>
+        <field name="inherit_id" ref="sync_sale_coupon.sale_coupon_rule_common_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='set_open']" position="before">
+                <button name="%(coupon_coupon_action)d" type="action" string="Generate Coupon" class="oe_highlight" attrs="{'invisible': ['|', ('state', '!=', 'open'), ('promotion_type', '!=', 'coupon')]}"/>
+            </xpath>
+            <xpath expr="//div[hasclass('oe_title')]" position="inside">
+                <label for="name" class="oe_edit_only" string="Coupon Name" attrs="{'invisible': [('promotion_type', '!=', 'coupon')]}"/>
+                <h1>
+                    <field name="name" attrs="{'readonly': [('state', '!=', 'draft')], 'invisible': [('promotion_type', '!=', 'coupon')]}"/>
+                </h1>
+            </xpath>
+            <xpath expr="//field[@name='website_id']" position="before">
+                <label for="duration" string="Validity" attrs="{'invisible': [('promotion_type', '!=', 'coupon')]}"/>
+                <div attrs="{'invisible': [('promotion_type', '!=', 'coupon')]}">
+                    <field name="duration" class="oe_inline"/>
+                    <span class="o_form_label oe_inline"> Days</span><span class="text-muted"> if 0, infinite use</span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_coupon_rule_view_tree" model="ir.ui.view">
+        <field name="name">sale.coupon.rule.form</field>
+        <field name="model">sale.coupon.rule</field>
+        <field name="arch" type="xml">
+            <tree string="Sale Coupon Rule">
+                <field name="name"/>
+                <field name="website_id"/>
+                <field name="active"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="sale_coupon_rule_view_search" model="ir.ui.view">
+        <field name="name">sale.coupon.rule.form</field>
+        <field name="model">sale.coupon.rule</field>
+        <field name="arch" type="xml">
+            <search string="Search Coupon Rules">
+                <field name="name" string="Rule Name" filter_domain="[('name', 'ilike', self)]"/>
+                <filter name="active" string="Active" domain="[('active', '=', True)]"/>
+                <filter name="archive" string="Archive" domain="[('active', '=', False)]"/>
+                <filter name="running" string="Open" domain="[('state', '=', 'open')]"/>
+                <filter name="expired" string="Expired" domain="[('state', '=', 'expired')]"/>
+                <filter name="cancel" string="Cancelled" domain="[('state', '=', 'cancel')]"/>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="status" domain="[]" context="{'group_by':'state'}"/>
+                    <filter name="reward" string="Reward" domain="[]" context="{'group_by':'reward_type'}"/>
+                    <filter string="Company" name="company_id" domain="[]" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="sale_coupon_rule_action" model="ir.actions.act_window">
+        <field name="name">Coupon Rule</field>
+        <field name="res_model">sale.coupon.rule</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('promotion_type', '=', 'coupon')]</field>
+        <field name="context">{'default_promotion_type': 'coupon', 'search_default_active': 1}</field>
+        <field name="search_view_id" ref="sale_coupon_rule_view_search"/>
+    </record>
+
+    <record id="sale_coupon_rule_form_action" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sale_coupon_rule_view_form"/>
+        <field name="act_window_id" ref="sale_coupon_rule_action"/>
+    </record>
+    
+    <record id="sale_coupon_rule_tree_action" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="sale_coupon_rule_view_tree"/>
+        <field name="act_window_id" ref="sale_coupon_rule_action"/>
+    </record>
+
+    <menuitem id="menu_loyalty_coupon_rule_sync" name="Coupons Rules New" parent="sync_sale_coupon.menu_loyalty_coupon_parent" sequence="1" groups="" action="sale_coupon_rule_action"/>
+
+
+</odoo>

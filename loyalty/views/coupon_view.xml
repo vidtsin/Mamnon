@@ -1,0 +1,81 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="loyalty.coupon_list">
+            <field name="name">loyalty_coupon coupon_list</field>
+            <field name="model">loyalty.coupon</field>
+            <field name="arch" type="xml">
+                <tree string="Status" colors="red:state=='inactive';green:state=='active';orange:state=='requested'">
+                  <field name="name"/>
+                  <field name="merchant_id"/>
+                  <field name="code"/>
+                  <field name="expire_date"/>
+                  <field name="limit"/>
+                  <field name="coupon_type"/>
+                  <field name="disc_amount"/>
+                  <field name="disc_percent"/>
+                  <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="loyalty.coupon_form">
+            <field name="name">loyalty_coupon coupon_form</field>
+            <field name="model">loyalty.coupon</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_draft" type="object" string="Set to Draft" states="requested,active,inactive"/>
+                        <button name="action_request_approve" type="object" string="Request for Approval" states="new"/>
+                        <button name="action_active" type="object"  string="Activate" states="new,requested,inactive" class="btn-primary" groups="loyalty.group_operation,base.group_system"/>
+                        <button name="action_inactive" type="object" string="Deactivate" states="active"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h3>
+                                <field name="name" placeholder="Coupon Name" attrs="{'readonly':[('state','!=', 'new')]}"/>
+                            </h3>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="merchant_id" readonly="1" attrs="{'readonly':[('state','!=', 'new')]}"/>
+                                <field name="coupon_type" attrs="{'readonly':[('state','!=', 'new')]}"/>
+                                <field name="expire_date" attrs="{'readonly':[('state','!=', 'new')]}"/>
+                                <field name="count_alloted" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="code" style="text-transform: uppercase;" attrs="{'readonly':[('state','!=', 'new')]}"/>                                
+                                <field name="disc_amount" attrs="{'invisible':[('coupon_type','=','percent')], 'readonly':[('state','!=', 'new')]}"/>
+                                <field name="disc_percent" attrs="{'invisible':[('coupon_type','=','amount')], 'readonly':[('state','!=', 'new')]}"/>
+                                <field name="limit"  attrs="{'readonly':[('state','!=', 'new')]}"/>
+                                <field name="count_remaining"  attrs="{'readonly':[('state','!=', 'new')]}"/>
+                            </group>
+                        </group>
+                        <label for="description"/>
+                        <field name="description" nolabel="1"  attrs="{'readonly':[('state','!=', 'new')]}"/>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+    
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="loyalty.action_window">
+        <field name="name">Coupons</field>
+        <field name="res_model">loyalty.coupon</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+
+    <menuitem name="Coupons" id="loyalty.menu_coupon_list" parent="loyalty.menu_loyalty_points_mgmt"
+              action="loyalty.action_window"/>
+
+  </data>
+</odoo>

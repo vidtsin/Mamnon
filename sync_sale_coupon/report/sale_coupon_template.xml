@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="sale_coupon_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.internal_layout">
+                    <style type="text/css">
+                        .mycard{
+                            top: 30px;
+                            position: relative;
+                            display: -webkit-box;
+                            display: -webkit-flex;
+                            display: flex;
+                            -webkit-box-orient: vertical;
+                            -webkit-box-direction: normal;
+                            -webkit-flex-direction: column;
+                            flex-direction: column;
+                            min-width: 0;
+                            word-wrap: break-word;
+                            background-color: #FFFFFF;
+                            background-clip: border-box;
+                            border: 2px dashed rgb(11, 11, 11);
+                            border-radius: 0px;
+                        }
+                        .mycard-body{
+                            -webkit-box-flex: 1;
+                            -webkit-flex: 1 1 auto;
+                            flex: 1 1 auto;
+                            padding: 1.25rem;
+                        }
+                        .card-tag{
+                            background-color: #dc3545;
+                            position: absolute;
+                            height: 39px;
+                            width: 600px;
+                            border: 2px solid #dc3545;
+                            margin-left: 120px;
+                            margin-top: -40px;
+                            color: white;
+                            font-weight: bold;
+                            font-size: 28px;
+                            text-align: center;
+                            vertical-align: center;
+                        }
+                        .card-tag-1{
+                            background-color: #dc3545;
+                            position: absolute;
+                            height: 39px;
+                            width: 600px;
+                            border: 2px solid #dc3545;
+                            margin-left: 130px;
+                            margin-top: -40px;
+                            color: white;
+                            font-weight: bold;
+                            font-size: 28px;
+                            text-align: center;
+                            vertical-align: center;
+                        }
+                        .card-main{
+                            min-height: 200px;
+                            height: auto;
+                            margin: 0px;
+                            margin-top: 15px;
+                        }
+                        .card-logo{
+                            margin: 0px;
+                            padding-top: 30px;
+                            min-height: 200px;
+                            float: left;
+                        }
+                        .card-offer{
+                            margin-top: 20px;
+                            font-size: 24px;
+                        }
+                        .card-val{
+                            height: auto;
+                            min-height: 100px;
+                            padding: 0px;
+                            padding-left: 15px;
+                            float: right;
+                            margin:0px;
+                            border-left: 1px solid #beb8b8;
+                        }
+                        .code{
+                            letter-spacing: 10px;
+                            text-align: center;
+                        }
+                        .code-1{
+                            letter-spacing: 10px;
+                            text-align: center;
+                        }
+                        .text-discount{
+                            font-size: 100px;
+                        }
+                        .text-discount-1{
+                            font-size: 70px;
+                        }
+                    </style>
+                    <div class="page">
+                        <div class="mycard">
+                            <div class="mycard-body">
+                                <div class="row">
+                                    <t t-if="o.coupon_rule_id.reward_type == 'discount'">
+                                        <div class="card-tag-1">
+                                            <span>Work Online Or In Store Ends</span>
+                                            <em><strong><span t-field="o.expiration_date"/></strong></em>
+                                        </div>
+                                    </t>
+                                    <t t-elif="o.coupon_rule_id.reward_type == 'fixed_amount' or 'product'">
+                                        <div class="card-tag">
+                                            <span>Work Online Or In Store Ends</span>
+                                            <em><strong><span t-field="o.expiration_date"/></strong></em>
+                                        </div>
+                                    </t>
+                                    <div class="col-lg-12 card-main">
+                                        <div class="col-12"  style="text-align:center;">
+                                            <span t-if="o.customer_id" style="font-size:45px;font-weight: bold;">
+                                                Congratulations
+                                                <t t-esc="o.customer_id.name"/>,
+                                            </span>
+                                        </div>
+                                        <div class="col-4 card-logo">
+                                            <div style="height:100px;">
+                                                <img t-if="user.company_id.logo" t-att-src="image_data_uri(user.company_id.logo)" style="padding: 0px; margin: 0px; height: auto;max-width:90%;" alt="Logo"/>
+                                            </div>
+                                            <div class="card-offer">
+                                                <span t-if="o.coupon_rule_id.min_product_qty &gt; 1">
+                                                    Minimum Purchase of
+                                                    <span t-field="o.coupon_rule_id.min_product_qty"/> Products
+                                                </span>
+                                                <span t-if="o.coupon_rule_id.min_amount_rule">
+                                                    Valid for Purchase above
+                                                    <span style="font-weight:bold;" t-field="o.coupon_rule_id.min_amount_rule" t-options="{'widget': 'monetary', 'display_currency': o.coupon_rule_id.currency_id}"/>
+                                                </span>
+                                                <t t-if="o.coupon_rule_id.reward_type == 'product'">
+                                                    <div style="text-align:center;">
+                                                        <img t-if="o.coupon_rule_id.reward_product_id.image_medium" t-att-src="image_data_uri(o.coupon_rule_id.reward_product_id.image_medium)" style="padding: 0px; margin: 0px; height: auto;max-width:90%;" alt="Logo"/>
+                                                    </div>
+                                                </t>
+                                                <!-- <br/> -->
+                                               <!--  <t t-if="o.coupon_rule_id.note">
+                                                    <span class="col-lg-12" t-field="o.coupon_rule_id.note"></span>
+                                                </t> -->
+                                            </div>
+                                        </div>
+                                        <div class="col-8 card-val">
+                                            <div>
+                                                <t t-if="o.coupon_rule_id.reward_type == 'discount'">
+                                                    <t t-if="o.coupon_rule_id.discount_type == 'percentage'">
+                                                        <div class="col-12">
+                                                            <div class="col-12" style="display: flex;min-height:50px;padding:0px;margin:0px;">
+                                                                <h1 class="text-danger text-discount float-left">
+                                                                    <strong>
+                                                                        <t t-if="o.coupon_rule_id.discount_percentage == int(o.coupon_rule_id.discount_percentage)">
+                                                                            <span t-esc="'%.0f'% o.coupon_rule_id.discount_percentage"/>
+                                                                        </t>
+                                                                        <t t-else="">
+                                                                            <span t-esc="'%.2f'% o.coupon_rule_id.discount_percentage"/>
+                                                                        </t>
+                                                                    </strong>
+                                                                </h1>
+                                                                <div style="position: relative;top: 55px;">
+                                                                    <span class="text-danger" style="font-size:30px">% OFF</span>
+                                                                    <div class="col-12" style="padding:0px;" t-if="o.coupon_rule_id.discount_apply_on == 'order'">
+                                                                        ON YOUR NEXT ORDER
+                                                                    </div>
+                                                                    <div class="col-12" style="padding:0px;" t-if="o.coupon_rule_id.discount_apply_on == 'cheapest_product'">
+                                                                        ON THE CHEAPEST PRODUCT
+                                                                    </div>
+                                                                    <div class="col-12" style="padding:0px;" t-if="o.coupon_rule_id.discount_apply_on == 'specific_product'">
+                                                                        <t t-esc="'On %s' % (o.coupon_rule_id.discount_specific_product_id.name.upper())"/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </t>
+                                                    <t t-if="o.coupon_rule_id.discount_type == 'fixed_amount'">
+                                                        <div class="col-12">
+                                                            <div class="col-12" style="display: flex;min-height:50px;;padding:0px;margin:0px;">
+                                                                <h1 class="text-danger text-discount-1 float-left">
+                                                                    <strong>
+                                                                        <span t-esc="o.coupon_rule_id.discount_fixed_amount" t-options="{'widget': 'monetary', 'display_currency': o.coupon_rule_id.currency_id}"/>
+                                                                    </strong>
+                                                                </h1>
+                                                                <div style="position: relative;top: 35px;">
+                                                                    <span class="text-danger" style="font-size:30px">OFF</span>
+                                                                    <div class="col-12" style="padding:0px;">ON YOUR NEXT ORDER!</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </t>
+                                                </t>
+                                                <t t-if="o.coupon_rule_id.reward_type == 'product'">
+                                                    <div class="col-12">
+                                                        <h1 class="text-danger" style="min-height:50px;">
+                                                            <t t-esc="'GET %s FREE %s ON YOUR NEXT ORDER!' % (o.coupon_rule_id.reward_product_id.name, o.coupon_rule_id.reward_product_qty)"/>
+                                                        </h1>
+                                                    </div>
+                                                </t>
+                                                <t t-if="o.coupon_rule_id.reward_type == 'free_shipping'">
+                                                    <div class="col-12">
+                                                        <h1 class="text-danger" style="min-height:150px;">
+                                                            <t t-esc="'GET FREE SHIPPING ON YOUR NEXT ORDER!'"/>
+                                                        </h1>
+                                                    </div>
+                                                </t>
+                                            </div>
+                                            <div style="text-align:center;">
+                                                <img class="barcode" alt="Barcode" t-att-src="'/report/barcode/Code128/%s' % o.code" style="max-height:100pt;max-width:100%;margin-top:50px;"/>
+                                                <t t-if="o.coupon_rule_id.reward_type == 'discount'">
+                                                    <span class="code" t-field="o.code"/>
+                                                </t>
+                                                <t t-elif="o.coupon_rule_id.reward_type == 'fixed_amount' or 'product'">
+                                                    <span class="code-1" t-field="o.code"/>
+                                                </t>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        id="sale_coupon_report"
+        string="Coupon"
+        model="sale.coupon"
+        report_type="qweb-pdf"
+        file="sync_sale_coupon.sale_coupon_template"
+        name="sync_sale_coupon.sale_coupon_template"
+    />
+
+</odoo>

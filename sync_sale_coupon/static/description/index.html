@@ -1,0 +1,367 @@
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_picture">
+            <h2 class="oe_slogan" style="color:#875A7B;">
+                Sales Coupons
+            </h2>
+        </div>
+        <div class="oe_span12" style="font-size: large;">
+            One of the best sales strategy is to provide discounts to shoppers so that they turn into customers and then turn into regular customers. Using Sales Coupon module, you can define various coupon rules, generate coupons, send coupons to customers.
+            <br/><br/>
+            This module can be used by manufacturers of consumer packaged goods or by retailers, to be used in retail stores as a part of sales promotions.
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Features</h2>
+        <div class="oe_span12" style="font-size: large;">
+            <ul style="list-style-type:square">
+                <li>Configure dynamic coupon rules.</li>
+                <li>Generate number of coupons based on customers, customer categories and generic.</li>
+                <li>Generate unquie code for coupons.</li>
+                <li>Automatic send coupons to customers via mail.</li>
+                <li>Automatic expire coupons based on its validity.</li>
+                <li>Keep track of Sale Order in which coupon is used.</li>
+                <li>Limit maximum discount applicable on Sales Order.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Coupon Rules and Coupons</h2>
+        <div class="oe_span12" style="font-size: large;">
+            <p>To configure Coupon Rule, go to <strong>Sales/Products/Coupon Rule.</strong>
+            </p>
+            <p>
+            Once coupon rule is confirmed, its coupons will be available for customers.
+            </p>
+            <p>
+                <b><u>Fields Description</u></b>
+            </p>
+            <table>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Reward: </b>
+                    </td>
+                    <td>
+                    Type of reward<br/>
+                    - Discount: Reward will be provided as discount on sales order<br/>
+                    - Product: Free product will be provided as reward on sales order if product is already added in order lines<br/>
+                    - Free Shipping: Shipping charges will be free as reward on sales order if shipping charges are applied<br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Apply Discount: </b>
+                    </td>
+                    <td>
+                    Type of Discount<br/>
+                    - Percentage: Entered percentage discount will be provided as reward on sales order<br/>
+                    - Fixed Amount: Entered fixed amount discount will be provided as reward on sales order
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Discount Apply: </b>
+                    </td>
+                    <td>
+                    Discount to apply on<br/>
+                    - On Order: Discount will be applied on whole order<br/>
+                    - On Cheapest Product: Discount will be applied on the cheapest product of order<br/>
+                    - On Specific Product: Discount will be applied on the selected specific product
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Max Discount Amount: </b>
+                    </td>
+                    <td>
+                    Maximum discount that can be provided on sale order.<br/>
+                    If discount amount exceeds maximum discount of applied coupon, it will apply maximum discount amount.
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Validity: </b>
+                    </td>
+                    <td>
+                    The expiry date of coupon will be after entered number of days<br/>
+                    If 0, coupon will have no expiry date
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Website: </b>
+                    </td>
+                    <td>
+                    Restrict coupon usage to this website
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Based on Products: </b>
+                    </td>
+                    <td>
+                    On purchase of selected product, reward will be given on sale order
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Min Quantity: </b>
+                    </td>
+                    <td>
+                    Minimum required product quantity to avail reward
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Min Purchase Of: </b>
+                    </td>
+                    <td>
+                    Minimum required sale order amount to avail reward
+                    </td>
+                </tr>
+            </table>
+            <img src="coupon_1.png" width="1000px" class="mt8">
+            <img src="coupon_1_1.png" width="1000px" class="mt8">
+            <p class="mt8">
+            <strong>GENERATE COUPON</strong> option will open a wizard form to configure coupon generation details.
+            </p>
+            <img src="coupon_2.png" width="1000px">
+            <p class="mt8">
+                <b><u>Fields Description</u></b>
+            </p>
+            <table>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Generation Type: </b>
+                    </td>
+                    <td>
+                        Choose option to generate coupon<br/>
+                        - Number of Coupons: Generic coupons will be generated<br/>
+                        - Number of Customers: Customer specific coupons will be generated
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Based On: </b>
+                    </td>
+                    <td>
+                        Choose option based on which coupon will be generated for customers<br/>
+                        - Customers: Coupons will be generated for selected customers<br/>
+                        - Customer Category: Coupons will be generated for customers of selected categories
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-left" style="vertical-align: text-top;" width="200px">
+                    <b>Number of Coupons: </b>
+                    </td>
+                    <td>Number of coupons to generate based on above configuration</td>
+                </tr>
+            </table>
+            <img src="coupon_generate_3_2.png" width="1000px" class="mt8">
+            <p class="mt8">
+            Once coupons are generated, Coupons will be send to customer via Email automatically, if coupon is assinged to any customer.
+            </p>
+            <img src="coupon_create_1.png" width="1000px" class="mt8">
+            <p class="mt8">
+            <strong>SEND BY EMAIL</strong> option is used to manually send Email to customers.
+            </p>
+            <img src="coupon_create_1_2.png" width="1000px" class="mt8">
+            <img src="coupons_report.png" width="1000px" class="mt8">
+            <p class="mt8">
+            <strong>Cancel</strong> option is used to cancel coupon rule.<br/>
+            It will open a wizard to enter cancellation reason.
+            </p>
+            <img src="coupon_cancel_1.png" width="1000px" class="mt8">
+            <p class="mt8">
+            <strong>Cancel Coupon Rule</strong> option will cancel the coupon rule and its related valid coupons.
+            </p>
+            <img src="coupon_cancel_1_2.png" width="1000px" class="mt8">
+            <img src="coupon_cancel_1_3.png" width="1000px" class="mt8">
+            <p>
+            Once coupon rule is cancelled, the cancellation reason is added to coupon rule under <strong>Cancellation Notes.</strong>
+            </p>
+            <img src="cancel_1_4.png" width="1000px" class="mt8">
+            <p class="mt8">
+            <strong>Expire</strong> option is used to expire coupon rule and its related coupons manually. Once coupon rule is expired, it cannot be reused again.
+            </p>
+            <img src="coupon_expire_1.png" width="1000px" class="mt8">
+            <img src="coupon_expire_1_2.png" width="1000px" class="mt8">
+            <p class="mt8">
+            <strong>Sale Coupon Expire</strong> scheduler will run at configured time to expire coupons automatically based on its expiration date.
+            </p>
+            <img src="coupon_cron.png" width="1000px" class="mt8">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Coupon Application</h2>
+        <div class="oe_span12" style="font-size: large;">
+            <p>
+            <strong>Apply Coupon</strong> option in Sale Order will allow sales person to enter coupon code.<br/>
+            It will open a wizard to enter couopon code.
+            </p>
+            <img src="apply_coupon_1.png" width="1000px">
+            <p class="mt8" >
+            <strong>Apply Coupon</strong> option will apply coupon in Sale Order.
+            </p>
+            <img src="apply_coupon_1_2.png" width="1000px">
+            <p class="mt8">
+            If coupon is vaild, it will be applied on order.<br/>
+            If coupon is invalid, it will raise Warning specifying reason.<br/>
+            Reward lines will be added as per order lines grouped by applied taxes.
+            </p>
+            <img src="apply_coupon_1_3.png" width="1000px">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+             <h2 class="oe_slogan"><a href="http://www.synconics.com/" style="color: #000000 !important;">Suggested Products</a></h2>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="row" style="display: flex;justify-content: center;align-items: center;flex-wrap: wrap;">
+        <div class="col-md-2">
+            <center><a href="https://apps.odoo.com/apps/modules/12.0/sync_sale_promotion/" target="_blank"><img src="sale_promotion.png" height="100" width="100"></a></center>
+            <center><a href="https://apps.odoo.com/apps/modules/12.0/sync_sale_promotion/" target="_blank"><h4 style="margin-top:15px;color: #2D7BB8;">Sales Promotions</h4></a></center>
+        </div>
+
+        <div class="col-md-2">
+            <center><a href="https://apps.odoo.com/apps/modules/12.0/sync_web_sale_coupon/" target="_blank"><img src="web_sale_coupon.png" height="100" width="100"></a></center>
+            <center><a href="https://apps.odoo.com/apps/modules/12.0/sync_web_sale_coupon/" target="_blank"><h4 style="margin-top:15px;color: #2D7BB8;">Sale Coupons for E-Commerce</h4></a></center>
+        </div>
+
+        <div class="col-md-2">
+            <center><a href="https://apps.odoo.com/apps/modules/12.0/sync_web_sale_promotion/" target="_blank"><img src="web_sale_promotion.png" height="100" width="100"></center>
+            <center><a href="https://apps.odoo.com/apps/modules/12.0/sync_web_sale_promotion/" target="_blank"  ><h4 style="margin-top:15px;color: #2D7BB8;">Sale Promotions for E-Commerce</h4></a></center>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan">Free Support</h2>
+        </div>
+        <div class="oe_span12">
+            <span>1) One month free bug support period will be offered pertaining to any one server used, testing or live.</span><br/>
+            <span>2) If an error appears in our app due to other custom modules installed in your system, we will charge for our efforts to resolve those errors. </span><br/>
+            <span>3) Please note that you are not allowed to distribute or resell this module after purchase. </span><br/>
+            <span>4) This module is tested and working on Odoo vanilla with Ubuntu OS. </span><br/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan"><a href="https://support.synconics.com/helpdesk/support-1/submit" style="color: #000000 !important;"> Get Help & Support</a></h2>
+        </div>
+        <div class="oe_slogan oe_spaced text-center">
+            <a class="btn btn-success mt8" title="Get Help !" style="background-color: rgb(31, 16, 140); color: rgb(255, 255, 255) !important; position: relative; overflow: hidden;" href="https://support.synconics.com/helpdesk/support-1/submit"><span class="o_ripple" style="height: 61px; width: 61px; top: -12.9688px; left: -8.76562px;"></span> Help & Support </a>&nbsp;&nbsp;
+            <a class="btn btn-success mt8" title="Request New Features now !" style="background-color: rgb(31, 16, 140); color: rgb(255, 255, 255) !important; position: relative; overflow: hidden;" href="http://www.synconics.com/opensource-erp-implementation-odoo-partner-india-gujarat-ahmedabad-expert-company-contact-us/"> Request New Features </a>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_slogan oe_spaced">
+            <span style="font-size: 20px">Checkout Other Apps Developed By Synconics Technologies <a href="https://apps.odoo.com/apps/modules/browse?search=synconics">Click Here</a></span>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12" style="float: none;">
+            <h2 class="oe_slogan"><a href="http://www.synconics.com/" style="color: #000000 !important;"> Our Services</a></h2>
+        </div>
+        <div class="oe_menu" style="display: flex;justify-content: center;align-items: center;flex-wrap: wrap;">
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-onpremise-cloudhosting-installation-expert/">Odoo ERP Installation</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-version-legacy-system-migration-upgradation-expert/">Odoo ERP Migration</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/organizational-digital-stratagy-legacy-system-transformation-modernisation/">Digital Stratagy</a>
+            </li>
+
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-module-configuration-setting-expert/">Odoo ERP configuration</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-onsite-onpremise-remote-working-monthly-projectwise-dedicated-functional-technical-expert-resources/">Odoo ERP Staffing</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/organizational-business-process-reengineering-digital-transformation-system-application-technology-selection/">Digital Technology Selection</a>
+            </li>
+
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-module-customization-expert/">Odoo ERP Customization</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-onpremise-remote-functional-training-by-expert-trainers/">Odoo Functional Training</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/organisational-digital-transformation-system-application-technology-selection-implementation/">Digital Transformation Implementation</a>
+            </li>
+
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-new-module-product-development-expert/">Odoo ERP New Module Development</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-onpremise-remote-technical-training-by-expert-trainers/">Odoo ERP Technical Training</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/organizational-business-process-reengineering-digital-transformation-legacy-system-application-technology-migration-modernisation/">Legacy Modernization</a>
+            </li>
+
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-integration-e-commerce-payment-gateway-document-management-shipping-accounting/">Odoo ERP Integrations</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/odoo-opensource-erp-expert-support-services/">Odoo ERP Support</a>
+            </li>
+            <li class="oe_flex_li" style="flex: 0 0 30%;text-align: left;">
+                <a href="http://www.synconics.com/organizational-business-process-reengineering-digital-transformation/">Organizational Transformation</a>
+            </li>
+
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <br/><br/>
+            <span style="font-size: 20px;text-align: right;">Do not mention your query in comments. Odoo does not inform us if there is any query sent on comments, with this there might be a delay from our side to respond on your query. So please forward your query on <a href="http://www.synconics.com/opensource-erp-implementation-odoo-partner-india-gujarat-ahmedabad-expert-company-contact-us/">contact@synconics.com</a> for fast response.</span>
+
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <span style="font-size: 20px">For product demo, please generate a ticket and mention your preferred time and date. Please make sure the demo timing you mentioned are as per Indian Standard Time (IST), between 10:30 AM to 7:00 PM (IST), Monday to Friday.</span>
+        </div>
+    </div>
+</section>

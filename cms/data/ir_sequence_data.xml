@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sequence_seq_card_nb" model="ir.sequence">
+            <field name="name">sequence_seq_card_nb</field>
+            <field name="code">sequence_seq_card_nb</field>
+            <field name="prefix"></field>
+            <field name="suffix"></field>
+            <field name="padding">1</field>
+        </record>
+
+
+        <record id="seq_new_card_card" model="ir.sequence">
+            <field name="name">Card Card</field>
+            <field name="code">card.card</field>
+            <field name="prefix">CR_%(year)s%(month)s%(day)s_</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_merchant_transfer" model="ir.sequence">
+            <field name="name">Merchant Card Transfer </field>
+            <field name="code">merchant.card.transfer</field>
+            <field name="prefix">MT</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+
+    </data>
+</odoo>

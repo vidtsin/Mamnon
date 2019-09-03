@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="merchnat_settings_view2" model="ir.ui.view">
+            <field name="name">Merchant Setting</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Merchant Configuration" string="Loyalty System" data-key="merchant">
+                        <h2>Merchant Configurations</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="image_count"/>
+                                    <div class="text-muted">
+                                        No. of Images requested from Merchant
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="image_count" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="max_img_size"/>
+                                    <div class="text-muted">
+                                        Maximum Size of Shop Images Upload (In KB)
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="max_img_size" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Twilio SMS API Configuration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="twilio_cid"/>
+                                    <div class="text-muted">
+                                        Twilio SMS API CID
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="twilio_cid" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="twilio_token"/>
+                                    <div class="text-muted">
+                                        Twilio SMS API Auth Token
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="twilio_token" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="twilio_number"/>
+                                    <div class="text-muted">
+                                        Twilio Number
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="twilio_number" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Leave Us Feedback Configuration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="ce_msg"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ce_msg" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="ce_subject"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ce_subject" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="ce_to"/>
+                                    <div class="text-muted">
+                                        Use Comma Sepration to add more Email
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ce_to" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="ce_cc"/>
+                                    <div class="text-muted">
+                                        Use Comma Sepration to add more Email
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ce_cc" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="ce_bcc"/>
+                                    <div class="text-muted">
+                                        Use Comma Sepration to add more Email
+                                    </div>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ce_bcc" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" hidden="1">
+                                <div class="o_setting_right_pane">
+                                    <label for="ce_file"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="ce_file" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Share App Configuration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="social_msg"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="social_msg" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="social_subject"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="social_subject" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box" hidden="1">
+                                <div class="o_setting_right_pane">
+                                    <label for="social_file"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="social_file" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="social_url"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="social_url" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>About Configuration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="fb_link"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="fb_link" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="insta_link"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="insta_link" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="gplus_link"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="gplus_link" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                        <h2>Push Notification API Configuration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="push_api_key"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="push_api_key" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Merchant Group Configuration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="merchant_group_age"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="merchant_group_age" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Coupon Configuration</h2>
+                        <div class="row mt16 o_settings_container">
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_right_pane">
+                                    <label for="max_coupon_type_generate"/>
+                                    <div class="content-group">
+                                        <div class="mt16">
+                                            <field name="max_coupon_type_generate" class="o_light_label"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_merchant_configuration" model="ir.actions.act_window">
+            <field name="name">Merchant Configuration</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="merchnat_settings_view2"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'merchant'}</field>
+        </record>
+
+
+        <menuitem name="Settings"
+            id="menu_merchant_settings"
+            action="merchant.action_merchant_configuration"
+            parent="loyalty.menu_loyalty_configuration"
+            sequence="0"/>     
+
+</odoo>

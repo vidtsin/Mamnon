@@ -1,0 +1,377 @@
+<odoo>
+   <data>
+      <record id="merchant_registration" model="ir.ui.view">
+         <field name="name">Merchant Registration</field>
+         <field name="type">qweb</field>
+         <field name="key">merchant.registration</field>
+         <field name="arch" type="xml">
+            <t name="Merchant Registration" t-name="merchant.registration">
+               <t t-call="website.layout">
+                  <div id="wrap">
+                     <link href="/merchant/static/src/css/style.css" rel="stylesheet" type="text/css" />
+                     <link href="/merchant/static/src/css/font-awesome.css" rel="stylesheet" type="text/css" />
+                     <link href="/merchant/static/src/css/fileup.css" rel="stylesheet" type="text/css"/>
+                     <link href="/merchant/static/src/css/jquery.growl.css" rel="stylesheet" type="text/css"/>
+                     <link href="/merchant/static/src/css/style.min.css" rel="stylesheet" type="text/css"/>
+                     <div class="inner-banner">
+                        <div class="banner-img">
+                           <img src="/merchant/static/src/images/registration.jpg" alt="banner" />
+                        </div>
+                        <div class="top-text-box">
+                           <div class="text-out text-center">
+                              <div class="text-inner">
+                                 <h3>Merchant Registration</h3>
+                              </div>
+                           </div>
+                           <!--top-text-box-->
+                        </div>
+                     </div>
+                     <!--inner-banner-->
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-sm-8 merchanht-left">
+                              <div class="mechant-form-box">
+                                 <form id="merchant-form" method="POST" enctype="multipart/form-data">
+                                    <h3>Become a Partner</h3>
+                                    <t t-if="field_errors">
+                                       <div class="alert alert-danger">
+                                          <p><strong>Please fix errors below - </strong></p>
+                                          <ul>
+                                             <t t-foreach="field_errors" t-as="error">
+                                                <li>
+                                                   <t t-esc="error"></t>
+                                                </li>
+                                             </t>
+                                          </ul>
+                                       </div>
+                                    </t>
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <div class="form-row" >
+                                       <div class="col">
+                                          <label for="username">Admin Name *</label>
+                                          <input type="text" class="form-control" placeholder="Admin Name" name="username" required="required"/>
+                                       </div>
+                                       <div class="col">
+                                          <label for="email">Admin Email *</label>
+                                          <input type="email" class="form-control" placeholder="yourname@email.com" name="email" required="required"/>
+                                       </div>
+                                    </div>
+                                    <div class="form-row" >
+                                       <div class="col">
+                                          <label for="username2">2nd User Name ? *</label>
+                                          <input type="text" class="form-control" placeholder="User Name" name="username2" required="required"/>
+                                       </div>
+                                       <div class="col">
+                                          <label for="email2">2nd User Email ? *</label>
+                                          <input type="email2" class="form-control" placeholder="yourname@email.com" name="email2" required="required"/>
+                                       </div>
+                                    </div>
+                                    <div class="form-row">
+                                       <div class="col">
+                                          <label for="shopname">Shop Name *</label>
+                                          <input type="text" class="form-control" placeholder="Shop Name" name="shopname" required="required"/>
+                                       </div>
+                                       <div class="col">
+                                          <label for="shop_type">Shop Type *</label>
+                                          <select name="shop_type_id" class="form-control" required="required">
+                                             <option value="">Select Shop Type</option>
+                                             <t t-foreach="shop_types" t-as="shop_type">
+                                                <option t-att-value="shop_type.id">
+                                                   <t t-esc="shop_type.name"></t>
+                                                </option>
+                                             </t>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="form-row" >
+                                       <div class="col">
+                                          <label for="">Subscription Plan *</label>
+                                          <select name="plan_id" class="form-control" required="required">
+                                             <option value="">Select Plan</option>
+                                             <t t-foreach="plans" t-as="plan">
+                                                <option t-att-value="plan.id">
+                                                   <t t-esc="plan.name"></t>
+                                                </option>
+                                             </t>
+                                          </select>
+                                       </div>
+                                       <div class="col">
+                                          <label for="mobile">Mobile *</label>
+                                          <input type="text" class="form-control" name="mobile" required="required"/>
+                                       </div>
+                                    </div>
+                                    <div class="form-row">
+                                       <div class="col">
+                                          <label for="location">Location *</label>
+                                          <input id="autocomplete" type="text" class="form-control" placeholder="Enter your address" name="location" onFocus="geolocate()" required="required"/>
+                                          <input type="hidden" id="lat" name="lat" value=''/>
+                                          <input type="hidden" id="lng" name="lng" value=''/>
+                                          <div class="container-fluid">
+                                             <button type="button" id="location-btn" class="btn btn-primary  map-show-btn" data-toggle="modal" data-target="#myModal" data-lat='' data-lng=''>
+                                             <i class="fa fa-map"></i>
+                                             </button>
+                                          </div>
+                                       </div>
+                                       <div class="col">
+                                          <label for="city">City *</label>
+                                          <select name="city_id" id="city" class="form-control" required="required">
+                                             <option value="">Select City</option>
+                                             <t t-foreach="cities" t-as="city">
+                                                <option t-att-value="city.id">
+                                                   <t t-esc="city.name"></t>
+                                                </option>
+                                             </t>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="form-row">
+                                       <div class="col">
+                                          <label for="location">Country *</label>
+                                          <select name="country_id" id="country" class="form-control" required="required">
+                                             <option value="">Select Country</option>
+                                             <t t-foreach="countries" t-as="country">
+                                                <option t-att-value="country.code">
+                                                   <t t-esc="country.name"></t>
+                                                </option>
+                                             </t>
+                                          </select>
+                                       </div>
+                                       <div class="col">
+                                          <!-- <label for="zip">Pincode/Zip *</label> -->
+                                          <!-- <input type="text" class="form-control" name="zip" required="required"/> -->
+                                       </div>
+                                    </div>
+                                    <div class="form-row">
+                                       <div class="col">
+                                          <label for="branches">Branches ?</label>
+                                          <input type="checkbox" id="branches" name="branches"/>
+                                          <label for="branches">
+                                          <small>Check if you have multiple branches of the shop.</small>
+                                          </label>
+                                       </div>
+                                       <div class="col">
+                                          <div class="input-file">
+                                             <label for="">Logo</label>
+                                             <div class="upload-img">
+                                                <div class="input-file-box">
+                                                   Choose file
+                                                   <input type="file" id="logo" name="logo" class="input-file"/>
+                                                </div>
+                                                <div class="preview-img">
+                                                   <img id="logo-preview"></img>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <hr/>
+                                       <div class="row">
+                                          <div class="col-xs-12 col-md-12">
+                                             <div class="col-md-12 col-lg-12 col-xs-12" id="columns">
+                                                <h3 class="form-label">Shop Description</h3>
+                                                <label>Details about your shop</label>
+                                                <div>
+                                                   <textarea style="width:100%" required="required" rows="5" name="description"></textarea>
+                                                </div>
+                                             </div>
+                                             <div class="clearfix"></div>
+                                          </div>
+                                       </div>
+                                    <hr/>
+                                       <div class="row">
+                                          <div class="col-xs-12 col-md-12">
+                                             <div class="col-md-12 col-lg-12 col-xs-12" id="columns">
+                                                <h3 class="form-label">Upload Shop images</h3>
+                                                <div id="uploads">
+                                                   <!-- Upload Content -->
+                                                </div>
+                                                <small>Maximum Upload File Size : <t t-esc="max_img_size"/> KB.</small>
+                                             </div>
+                                             <div class="clearfix"></div>
+                                          </div>
+                                       </div>
+                                    <hr/>
+                                       <div class="row">
+                                          <div class="col-xs-12 col-md-12">
+                                             <div class="col-md-12 col-lg-12 col-xs-12" id="columns">
+                                                <h3 class="form-label">Social Links</h3>       
+                                             </div>
+                                            <div class="form-row">
+                                             <div class="col">
+                                                <label for="social_fb_link">Facebook Link</label>
+                                                <input type="url" class="form-control" name="social_fb_link" placeholder="https://www.facebook.com/"/>
+                                             </div>
+                                             <div class="col">
+                                                <label for="social_gplus_link">Google+ Link</label>
+                                                <input type="url" class="form-control" name="social_gplus_link" placeholder="https://plus.google.com"/>
+                                             </div>
+                                          </div>
+                                          </div>
+                                       </div>
+                                    <hr/>
+                                    <div class="form-row">
+                                       <div class="col captcha-box">
+                                          <div class="capcha_code g-recaptcha"  data-callback="recaptchaCallback" data-expired-callback="capcha_expired" data-sitekey="6LcBD5oUAAAAABvRrmAJ1vv5y8Jb9MdUa7ooq4Rb"></div>
+                                       </div>
+                                       <div class="checkbox-con left-padding">
+                                          <input type="checkbox" id="terms" name="terms" />
+                                          <label class="check-box-label" for="terms">
+                                          <small>
+                                          I have read and agree to the terms and conditions.
+                                          </small>
+                                          </label>
+                                       </div>
+                                    </div>
+                                    <div class="form-row" >
+                                       <div class="btn-box">
+                                          <input type="submit" class="btn btn-primary" value="Submit"/>
+                                       </div>
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                           <div class="col-sm-4 merchanht-left">
+                              <div class="merchant-input">
+                                 <h3>Already Requested</h3>
+                                 <p>Track your request status here. Fill in the information below</p>
+                                 <form id="merchant-request-form" method="POST" >
+                                    <div class="input-box">
+                                       <label>Reg. Request Id</label>
+                                       <input class="form-control" type="text" placeholder="eg. REQ001" id="request_id" />
+                                    </div>
+                                    <div class="input-box">
+                                       <label>Reg. email Address</label>
+                                       <input class="form-control" type="text" id="request_email" />
+                                    </div>
+                                    <div class="btn-box">
+                                       <input type="submit" class="btn btn-primary" value="Track Status" id="track_status"/>
+                                    </div>
+                                 </form>
+                              </div>
+                              <div class="clearfix"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Modal -->
+                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h3>Location</h3>
+                                 <button type="button" id="set_curr_location" class="btn">
+                                    Set Current Location   
+                                 </button>
+                                 
+                              </div>
+                              <div class="modal-body">
+                                 <div class="row">
+                                 </div>
+                                 <div class="row">
+                                    <div class="col-md-12 modal_body_map">
+                                       <div class="location-map" id="location-map">
+                                          <div style="width: 600px; height: 400px;" id="map_canvas"></div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- merchant form box ends -->                  
+                     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+                     <script async='async' defer='defer' src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDAvsfyBcRQAbolUzzCKDkVk_VV3uowVJk&amp;callback=initMap&amp;libraries=places&amp;callback=initAutocomplete" ></script>
+                     <script src="/merchant/static/src/js/location.js"></script>
+                     <script src="https://www.google.com/recaptcha/api.js?render=6LcBD5oUAAAAAFyXUwD3E-HzBqteMLnMZrXLngNu"></script>
+                     <script src="/merchant/static/src/js/auth.js"></script>
+                     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+                     <script src="/merchant/static/src/js/uploadHBR.min.js"></script>
+                     <script src="/merchant/static/src/js/fileupload.js"></script>
+                     <script type="text/javascript">
+                        uploadHBR.init({
+                          "target": "#uploads",
+                          "max": <t t-esc="shop_img_count"/>,
+                          "textNew": "ADD",
+                          "textTitle": "Click here or drag to upload an imagem",
+                          "textTitleRemove": "Click here remove the imagem",
+                          "iconNew": 'fa fa-camera',
+                          "iconClose": 'fa fa-times',
+                          "mimes": ["image/jpeg", "image/png"]
+                        });
+                        var max_file_upload_size = <t t-esc="max_img_size"/>
+                        $("#track_status").click(function(e){
+                           e.preventDefault();
+                           $.ajax({
+                             type: "GET",
+                             url: "/merchant/request/status",
+                             data: { id: $("#request_id").val(), email: $("#request_email").val() },
+                             success: function (data) {
+                                 var data = JSON.parse(data)
+                                 bootbox.alert(data.msg)
+                              },
+                              error: function (data) {
+                                 bootbox.alert('Error getting status of your details.')                                   
+                              },
+                           });
+                        });                       
+         
+                     </script>
+                     <script src="/merchant/static/src/js/validation.js"></script>
+                     <script src="/merchant/static/src/js/maps.js"></script>
+                     <script src="/merchant/static/src/js/bootbox.min.js"></script>                     
+                  </div>
+               </t>
+            </t>
+         </field>
+      </record>
+      <record id="merchant_registration_success" model="ir.ui.view">
+         <field name="name">Merchant Registration Success</field>
+         <field name="type">qweb</field>
+         <field name="key">merchant.registration.success</field>
+         <field name="arch" type="xml">
+            <t name="Merchant Registration Success" t-name="merchant.registration.success">
+               <t t-call="website.layout">
+                  <div id="wrap">
+                     <link href="/merchant/static/src/css/style.css" rel="stylesheet" type="text/css" />
+                     <link href="/merchant/static/src/css/font-awesome.css" rel="stylesheet" type="text/css" />
+                     <div class="inner-banner">
+                        <div class="banner-img">
+                           <img src="/merchant/static/src/images/registration.jpg" alt="banner" />
+                        </div>
+                        <div class="top-text-box">
+                           <div class="text-out text-center">
+                              <div class="text-inner">
+                                 <h3>Merchant Registration</h3>
+                              </div>
+                           </div>
+                           <!--top-text-box-->
+                        </div>
+                     </div>
+                     <!--inner-banner-->
+                     <div class="container">
+                        <div class="row">
+                           <div style="width:100%;margin: 50px auto;">
+                              <div class="alert alert-success">
+                                 <p>
+                                    Thanks ! We have received your request. You will receive an email with the further process.
+                                    <br/>Please not your Request ID - 
+                                    <strong>
+                                       <t t-esc="merchant_request.name"/>
+                                    </strong>
+                                    for further references.
+                                 </p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </t>
+            </t>
+         </field>
+      </record>
+      <record id="merchant_registeration_page" model="website.page">
+         <field name="url">/merchant/registration</field>
+         <field name="website_published">True</field>
+         <field name="view_id" ref="merchant_registration"/>
+      </record>
+   </data>
+</odoo>

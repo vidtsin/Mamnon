@@ -1,0 +1,32 @@
+<odoo>
+		<record id="view_assign_card_wizard_form" model="ir.ui.view">
+			<field name="name">view.assign.create.card.wizard.form</field>
+			<field name="model">assign.card.merchant</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<group>
+							<field name="merchant_id" domain="[('is_company','=',True)]"/>
+						</group>
+					</group>
+					<group>
+						<field name="package_ids" />
+					</group>
+					<footer>
+						<button class="oe_highlight" string="Assign" type="object"
+							name="button_assign" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+		
+		<record id="action_assign_card_to_merchant" model="ir.actions.act_window">
+			<field name="name">Assign Card to Merchant</field>
+			<field name="res_model">assign.card.merchant</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+</odoo>

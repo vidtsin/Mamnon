@@ -1,0 +1,11 @@
+<odoo>
+	<data noupdate="1">
+		<record id="card_category_vcard" model="card.category">
+			<field name="name">VCard</field>
+		</record>
+
+		<record id="card_category_standard" model="card.category">
+			<field name="name">Standard Card</field>
+		</record>
+	</data>
+</odoo>

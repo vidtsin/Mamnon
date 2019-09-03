@@ -1,0 +1,43 @@
+<odoo>
+	<data>
+		<record id="cron_reset_monthly_txn" forcecreate='True' model="ir.cron">
+			<field name="name">Reset Merchant Monthly Transactions</field>
+			<field eval="True" name="active"/>
+			<field name="user_id" ref="base.user_root"/>
+			<field name="interval_number">1</field>
+			<field name="interval_type">months</field>
+			<field name="numbercall">-1</field>
+			<field name="model_id" ref="model_merchant_request"/>
+			<field name="state">code</field>
+			<field name="code">
+				model.reset_monthly_txn()
+			</field>
+		</record>
+		<record id="cron_expire_merchant" forcecreate='True' model="ir.cron">
+			<field name="name">Expire Merchant Automatically</field>
+			<field eval="True" name="active"/>
+			<field name="user_id" ref="base.user_root"/>
+			<field name="interval_number">1</field>
+			<field name="interval_type">days</field>
+			<field name="numbercall">-1</field>
+			<field name="model_id" ref="model_merchant_request"/>
+			<field name="state">code</field>
+			<field name="code">
+				model.expire_merchant()
+			</field>
+		</record>
+		<record id="cron_expire_merchant_pre_notification" forcecreate='True' model="ir.cron">
+			<field name="name">Expire Merchant Pre-Notification</field>
+			<field eval="True" name="active"/>
+			<field name="user_id" ref="base.user_root"/>
+			<field name="interval_number">1</field>
+			<field name="interval_type">days</field>
+			<field name="numbercall">-1</field>
+			<field name="model_id" ref="model_merchant_request"/>
+			<field name="state">code</field>
+			<field name="code">
+				model.expire_merchant_pre_notification()
+			</field>
+		</record>
+	</data>
+</odoo>

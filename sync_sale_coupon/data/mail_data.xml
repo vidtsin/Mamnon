@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="email_sale_coupon" model="mail.template">
+            <field name="name">Coupon: Send by email</field>
+            <field name="model_id" ref="sync_sale_coupon.model_sale_coupon"/>
+            <field name="email_from">${object.coupon_rule_id.company_id.email|safe}</field>
+            <field name="partner_to">${object.customer_id.id}</field>
+            <field name="subject">Your reward coupon from ${object.coupon_rule_id.company_id.name} </field>
+            <field name="report_template" ref="sale_coupon_report"/>
+            <field name="report_name">Your Coupon Code</field>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html" type="html">
+                <div class="text-center">
+                    % if object.customer_id.name:
+                    <h3>
+                        Congratulations
+                        ${object.customer_id.name},
+                    </h3><br/>
+                    % endif
+                    <h3>
+                        Here is your reward from ${object.coupon_rule_id.company_id.name}.
+                    </h3><br/>
+                    % if object.coupon_rule_id.reward_type == 'discount':
+                        % if object.coupon_rule_id.discount_type == 'percentage':
+                            <h1 style="font-size: 50px; color: #875A7B; font-weight: bold;">
+                                ${object.coupon_rule_id.discount_percentage} % OFF
+                            </h1><br/>
+                            % if object.coupon_rule_id.discount_apply_on == 'specific_product':
+                                <h2>
+                                    <strong>${'on %s' % object.coupon_rule_id.discount_specific_product_id.name}</strong>
+                                </h2> <br/>
+                            % elif object.coupon_rule_id.discount_apply_on == 'cheapest_product':
+                                <h2>
+                                    <strong>ON THE CHEAPEST PRODUCT</strong>
+                                </h2><br/>
+                            % else
+                                <h2>
+                                    <strong>ON YOUR NEXT ORDER</strong>
+                                </h2><br/>
+                            % endif
+                        % else
+                            <h1 style="font-size: 50px; color: #875A7B; font-weight: bold;">
+                                ${'%s' % format_amount(object.coupon_rule_id.discount_fixed_amount, object.coupon_rule_id.currency_id)} OFF
+                            </h1><br/>
+                            <strong style="font-size: 24px;">ON YOUR NEXT ORDER</strong><br/>
+                        % endif
+                    % elif object.coupon_rule_id.reward_type == 'product':
+                        <h1>
+                            ${'GET %s FREE %s' % (object.coupon_rule_id.reward_product_qty, object.coupon_rule_id.reward_product_id.name.upper())}
+                        </h1><br/>
+                    % else
+                        <h1>
+                            GET FREE SHIPPING ON YOUR NEXT ORDER
+                        </h1><br/>
+                    % endif
+                    <h3>
+                        CODE: <span class="text-success">${object.code}</span>
+                    </h3><br/>
+                    % if object.expiration_date:
+                        <h4>
+                            Use this code before
+                            ${object.expiration_date}
+                        </h4><br/>
+                    % endif
+
+                    % if object.coupon_rule_id.min_product_qty not in [0, 1]:
+                        <h4>
+                            Minimum purchase of ${object.coupon_rule_id.min_product_qty} products
+                        </h4><br/>
+                    % endif
+
+                    % if object.coupon_rule_id.rule_minimum_amount != 0.00:
+                        <h4>
+                            Valid for purchase above ${object.coupon_rule_id.company_id.currency_id.symbol} ${'%0.2f' % object.coupon_rule_id.min_amount_rule |float}
+                        </h4><br/>
+                    % endif
+                    <br/>
+                    Thank you,
+                    <br/>
+                    % if object.sale_order_id.user_id:
+                        ${object.sale_order_id.user_id.signature | safe}
+                    % endif
+                </div>
+            </field>
+            <field name="lang">${object.customer_id.lang}</field>
+        </record>
+
+        <record id="email_sale_coupon_used" model="mail.template">
+            <field name="name">Coupon Used Email</field>
+            <field name="model_id" ref="sync_sale_coupon.model_sale_coupon"/>
+            <field name="email_from">${object.coupon_rule_id.company_id.email|safe}</field>
+            <field name="partner_to">${object.sale_order_id.partner_id.id}</field>
+            <field name="subject">Coupon Usage</field>
+            <field name="body_html" type="html">
+                <div>
+                    Hello ${object.sale_order_id.partner_id.name}, <br/>
+
+                    You have used your coupon code
+                    <span class="text-success">${object.code}</span>
+                    in sale order
+                    <span class="text-info">${object.sale_order_id.name}</span>.
+                </div>
+            </field>
+            <field name="lang">${object.customer_id.lang}</field>
+        </record>
+    </data>
+</odoo>

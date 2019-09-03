@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/header/button[@name='action_cancel']" position="before">
+                <button name="%(sale_coupon_apply_code_action)d" type="action" string="Apply Coupon" states="draft"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_merchant_request_inherit" model="ir.ui.view">
+        <field name="name">merchant.request.inherited.form</field>
+        <field name="model">merchant.request</field>
+        <field name="inherit_id" ref="merchant.view_merchant_request_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Coupon Details">
+                    <group>
+                        <group>
+                            <field name="count_coupon_available" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="count_coupon_generated" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

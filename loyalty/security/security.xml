@@ -1,0 +1,188 @@
+<odoo>
+	<data>
+	   	<record id="loyalty.group_operation" model="res.groups">
+            <field name="name">Operation Team</field>
+            <field name="category_id" ref="loyalty.module_category_loyalty"/>
+        </record>
+        <record id="loyalty.group_merchant_admin" model="res.groups">
+            <field name="name">Merchant Admin</field>
+            <field name="category_id" ref="loyalty.module_category_loyalty"/>
+        </record>
+        <record id="loyalty.group_merchant_user" model="res.groups">
+            <field name="name">Merchant User</field>
+            <field name="category_id" ref="loyalty.module_category_loyalty"/>
+        </record>
+        <record id="loyalty.group_merchant_active" model="res.groups">
+            <field name="name">Active Merchant</field>
+            <field name="category_id" ref="loyalty.module_category_loyalty"/>
+        </record>
+        <record id="loyalty_restrict_merchant_customers" model="ir.rule">
+            <field name="name">Merchant Restrict Own Customer</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="groups" eval="[(4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user'))]"/>
+            <field name="domain_force">[('customer','=',True)]</field>
+        </record>
+        <record id="loyalty_allow_operation_customer" model="ir.rule">
+            <field name="name">Allow Operation Team Customer</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="groups" eval="[(4, ref('loyalty.group_operation'))]"/>
+            <field name="domain_force">[]</field>
+        </record>
+       <!--  <record id="loyalty_allow_merchant_rules" model="ir.rule">
+            <field name="name">Allow Merchant Own Rules</field>
+            <field name="model_id" ref="model_loyalty_rule"/>
+            <field name="groups" eval="[(4, ref('loyalty.group_merchant_admin'))]"/>
+            <field name="domain_force">['|', ('merchant_id','=',user.partner_id.parent_id.id), ('merchant_id','=',user.partner_id.id)]</field>
+        </record> -->
+        <delete id="base.res_partner_rule_private_employee" model="ir.rule"/>          
+        <record id="res_partner_rule_private_employee" model="ir.rule">
+            <field name="name">res.partner.rule.private.employee</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="domain_force">
+                [('type', '!=', 'private')]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('base.group_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+        
+        <record id="contacts.menu_contacts" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6,0,[ref('base.group_partner_manager')])]"/>
+        </record>
+        
+     <!--    <record id="merchant_see_own_points_customer" model="ir.rule">
+            <field name="name">Restrict Merchant to see own points</field>
+            <field name="model_id" ref="loyalty.model_loyalty_points_history"/>
+            <field name="domain_force">
+                ['|', ('merchant_id', '=', user.partner_id.parent_id.id), ('merchant_id', '=', user.partner_id.id)]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="False"/>
+        </record>
+
+        <record id="merchant_see_own_purchase_customer" model="ir.rule">
+            <field name="name">Restrict Merchant to see Purchase Lines</field>
+            <field name="model_id" ref="loyalty.model_loyalty_points_history_purchase_lines"/>
+            <field name="domain_force">
+                ['|', ('merchant_point_history_id.merchant_id', '=', user.partner_id.parent_id.id), ('merchant_point_history_id.merchant_id', '=', user.partner_id.id)]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="False"/>
+        </record>
+
+
+        <record id="merchant_see_own_purchase_redeem_customer" model="ir.rule">
+            <field name="name">Restrict Merchant to see Redeem Lines</field>
+            <field name="model_id" ref="loyalty.model_loyalty_points_history_purchase_redeem_lines"/>
+            <field name="domain_force">
+                ['|', ('reward_merchant_id', '=', user.partner_id.parent_id.id), ('redeem_merchant_id', '=', user.partner_id.id)]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="False"/>
+        </record>
+ -->
+
+        <record id="merchant_see_restrict_deal_type" model="ir.rule">
+            <field name="name">Restrict Merchant to create specific type of deal</field>
+            <field name="model_id" ref="loyalty.model_loyalty_deal_type"/>
+            <field name="domain_force">
+                [('allow_merchant_request', '=', True)]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="merchant_see_restrict_deal" model="ir.rule">
+            <field name="name">Restrict Merchant to create/see own deals</field>
+            <field name="model_id" ref="loyalty.model_loyalty_deal"/>
+            <field name="domain_force">
+                ['|', ('merchant_id','=', user.partner_id.id), ('merchant_id','=', user.partner_id.parent_id.id)]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="merchant_see_own_coupon" model="ir.rule">
+            <field name="name">Restrict Merchant to see own Coupons</field>
+            <field name="model_id" ref="model_loyalty_coupon"/>
+            <field name="domain_force">
+                ['|', ('merchant_id','=',user.partner_id.parent_id.id), ('merchant_id', '=', user.partner_id.id)]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+        
+        <record id="merchant_see_own_reward_rule" model="ir.rule">
+            <field name="name">Restrict Merchant to see Reward/Earning Rules</field>
+            <field name="model_id" ref="model_loyalty_rule"/>
+            <field name="domain_force">
+                [('rule_type','=','in'), '|', ('merchant_id','=',user.partner_id.parent_id.id), ('merchant_id','=',user.partner_id.id)]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="merchant_see_own_redeem_rule" model="ir.rule">
+            <field name="name">Restrict Merchant to see Redeem Rules</field>
+            <field name="model_id" ref="model_loyalty_rule"/>
+            <field name="domain_force">
+                [('rule_type','=','out')]
+            </field>
+            <field name="groups" eval="[
+                (4, ref('loyalty.group_merchant_admin')), (4, ref('loyalty.group_merchant_user')),
+            ]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+            <field name="active" eval="True"/>
+        </record>
+
+	</data>
+</odoo>
+

@@ -1,0 +1,2341 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* merchant
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-02 09:48+0000\n"
+"PO-Revision-Date: 2019-04-02 09:48+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: merchant
+#: model:ir.actions.act_window,name:merchant.open_suspend_wizard_action_id
+msgid "	 Reason"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,body_html:merchant.merchant_register_email_template_pre_expire
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.username},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																				You subscription is about to expire in 3 day(s). \n"
+"																				Please renew your subscription to keep using MAMNON services otherwise your account will be suspended.\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,body_html:merchant.merchant_register_email_template_expire
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.username},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																				Your Account has been \n"
+"																				<strong>\n"
+"																					Expired \n"
+"																				</strong>\n"
+"																				automatically by our system. Please renew your subscription to keep using MAMNON services.\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,body_html:merchant.merchant_register_email_template_renewal
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.username},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																				Your Account has been \n"
+"																				<strong>\n"
+"																					Renewed\n"
+"																				</strong>\n"
+"																				by our operation team.\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,body_html:merchant.merchant_register_email_template_suspend
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.username},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																				Your Account has been \n"
+"																				<strong>\n"
+"																					Suspended \n"
+"																				</strong>\n"
+"																				by our operation team.\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr style=\"text-align: left;font-weight: bold;\">\n"
+"																			<td class=\"height10\" height=\"30\">\n"
+"																					${'Reason for Suspension : '} ${object.reason}\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,body_html:merchant.merchant_register_email_template_approve_reject
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.username},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																				Your merchant registration request - <strong>\n"
+"																					${object.name} \n"
+"																				</strong> has been \n"
+"																				<strong>\n"
+"																					% if object.state == 'approved':\n"
+"																						${'Approved'}\n"
+"																					% elif object.state == 'reject':\n"
+"																						${'Rejected'}\n"
+"																					% endif  \n"
+"																				</strong>\n"
+"																				by our operation team.\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr style=\"text-align: left;font-weight: bold;\">\n"
+"																			<td class=\"height10\" height=\"30\">\n"
+"																				% if object.state == 'reject':\n"
+"																					${'Reason for Rejection : '} \n"
+"																					${ctx['reason']}\n"
+"																				% endif\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,body_html:merchant.merchant_register_template
+msgid "\n"
+"				\n"
+"					<html>\n"
+"						<head>\n"
+"							<meta charset=\"utf-8\">\n"
+"							<title>MAMNON</title>\n"
+"							<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n"
+"							<meta name=\"viewport\" content=\"width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no\">\n"
+"							<style type=\"text/css\">\n"
+"								.preheader {\n"
+"								display: none !important;\n"
+"								visibility: hidden;\n"
+"								opacity: 0;\n"
+"								color: transparent;\n"
+"								height: 0;\n"
+"								width: 0;\n"
+"								}\n"
+"								a:focus {\n"
+"								outline: none;\n"
+"								}\n"
+"								.white {\n"
+"								color: #fff !important;\n"
+"								}\n"
+"								@media only screen and (max-width:640px) {\n"
+"								.full-container {\n"
+"								width: 100% !important;\n"
+"								}\n"
+"								.no-br br {\n"
+"								display: none;\n"
+"								}\n"
+"								.full-width.height10 {\n"
+"								height: 20px;\n"
+"								}\n"
+"								}\n"
+"							</style>\n"
+"						</head>\n"
+"						<body style=\"background-color:#fff; margin:0; padding:0; font-family:Arial;\">\n"
+"							<table align=\"center\" class=\"full-container\" width=\"640\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width:640px; margin:0 auto;font-family:Arial;font-size:13px;border:none;border-collapse:collapse; background:#fff;\">\n"
+"								<tbody>\n"
+"									<tr>\n"
+"										<td width=\"100%\" style=\"width:100%;\">\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;\">\n"
+"												<tbody>\n"
+"													<tr>\n"
+"														<td>\n"
+"															<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0; \">\n"
+"																<tr>\n"
+"																	<td class=\"width150\" height=\"80\" width=\"100%\" align=\"center\" valign=\"middle\" style=\"text-align:center; height:80px;background: radial-gradient(circle, #5d9393, #0a7274, #053b3c);vertical-align:middle; padding: 23px;\">\n"
+"																		<a href=\"#\" target=\"_blank\" style=\"display:block; font-size: 24px; text-transform: uppercase; color: #fff; text-decoration: none;\">\n"
+"																			<img src=\"/merchant/static/src/images/logo.png\" alt=\"Mamnon Logo\" style=\"height: 75px;\"/>\n"
+"																		</a>\n"
+"																	</td>\n"
+"																	<td class=\"font-11\" style=\"background:#2d358e; font-size:19px; color:#262626;\" headers=\"65px;\" align=\"right\"></td>\n"
+"																	<td style=\"background:#2d358e;\" headers=\"65px;\" width=\"23\"></td>\n"
+"																</tr>\n"
+"															</table>\n"
+"														</td>\n"
+"													</tr>\n"
+"												</tbody>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--logo ends--> \n"
+"									<!--body html-->\n"
+"									<tr>\n"
+"										<td align=\"center\">\n"
+"											<table align=\"center\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"												<tr>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"													<td align=\"center\">\n"
+"														<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"															<tr>\n"
+"																<!--content1--> \n"
+"																<!--content1-->\n"
+"																<td valign=\"top\" style=\"width:100%;\">\n"
+"																	<table cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" style=\"width:100%; border:0;\">\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-14\" align=\"left\" style=\"font-size:20px; color:#3a3a3a; font-weight:bold; font-family:Arial;\"><b>Dear ${object.username},</b></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"20\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">We have successfully received your request to register as our merchant.\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"5\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr style=\"text-align: center;font-weight: bold;\">\n"
+"																			<td class=\"height10\" height=\"30\">\n"
+"																				Your Registeration Request ID : ${object.name}\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height10\" height=\"30\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">You will receive another email after approval from our team. </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:14px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; \">Sincerely, </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:20px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left; text-decoration:underline;\"><strong>MAMNON</strong> </td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"font-11\" align=\"left\" style=\"font-size:12px; font-weight:normal; font-family:Arial; color:#3a3a3a; line-height:20px; text-align:left\">In case of any queries or assistance, Write us at our support email at - <a href=\"mailto:support@mamnon.com?Subject=Support\" target=\"_top\">support@mamnon.com</a>\n"
+"																			</td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"10\"></td>\n"
+"																		</tr>\n"
+"																		<tr>\n"
+"																			<td class=\"height5\" height=\"40\"></td>\n"
+"																		</tr>\n"
+"																	</table>\n"
+"																</td>\n"
+"																<!--content1--> \n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td class=\"width15\" width=\"25\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"									<!--body html--> \n"
+"									<!--footer html-->\n"
+"									<tr>\n"
+"										<td>\n"
+"											<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"width: 100%;border:none;border-collapse:collapse;background:#f5f5f5;\">\n"
+"												<tr>\n"
+"													<td width=\"20\"></td>\n"
+"													<td>\n"
+"														<table align=\"center\" width=\"100%\" cellpadding=\"0\" cellspacing=\"\" border=\"0\" style=\"width:100%; border:0;\" >\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td class=\"font-11\" align=\"center\" style=\"font-size:14px; color:#000; text-decoration:none;\">Copyright @ Mamnon - 2019</td>\n"
+"															</tr>\n"
+"															<tr>\n"
+"																<td height=\"20\"></td>\n"
+"															</tr>\n"
+"														</table>\n"
+"													</td>\n"
+"													<td width=\"20\"></td>\n"
+"												</tr>\n"
+"											</table>\n"
+"										</td>\n"
+"									</tr>\n"
+"								</tbody>\n"
+"							</table>\n"
+"						</body>\n"
+"					</html>\n"
+"				\n"
+"			"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__email2
+msgid "2nd User Email"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "2nd User Email ? *"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__username2
+msgid "2nd User Name"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "2nd User Name ? *"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "<small>\n"
+"                                          I have read and agree to the terms and conditions.\n"
+"                                          </small>"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "<small>Check if you have multiple branches of the shop.</small>"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "<strong>Please fix errors below - </strong>"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "About Configuration"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__access_warning
+msgid "Access warning"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,subject:merchant.merchant_register_email_template_expire
+msgid "Account Expired"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,subject:merchant.merchant_register_email_template_pre_expire
+msgid "Account Expiring Soon"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,subject:merchant.merchant_register_email_template_renewal
+msgid "Account Renewed"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,subject:merchant.merchant_register_email_template_suspend
+msgid "Account Suspended"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__action
+msgid "Action"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__action_date
+msgid "Action Date"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.approval_wizard_view
+#: model_terms:ir.ui.view,arch_db:merchant.rejection_wizard_view
+msgid "Add a reason"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__email
+msgid "Admin Email"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Admin Email *"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Admin Name"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Admin Name *"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__username
+msgid "Admin Username"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Already Requested"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__approval_type
+msgid "Approval Type"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Approve"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.approval_wizard_view
+msgid "Approve & Create Users"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.act_window,name:merchant.open_approval_wizard_action_id
+msgid "Approve and Create Users"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,state:0
+msgid "Approved"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.act_window,name:merchant.action_approved_merchant
+#: model:ir.ui.menu,name:merchant.menu_merchant_approved
+msgid "Approved Merchants"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__ce_bcc
+msgid "BCC"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Become a Partner"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Branches ?"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__ce_cc
+msgid "CC"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.approval_wizard_view
+#: model_terms:ir.ui.view,arch_db:merchant.rejection_wizard_view
+msgid "Cancel"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Choose file"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__city
+msgid "City"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "City *"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__company_id
+msgid "Company"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__country_id
+msgid "Country"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Country *"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Create Users & Start Services"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__create_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__create_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__create_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__create_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard__create_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__create_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_setting__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__create_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__create_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__create_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__create_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard__create_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__create_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_setting__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__access_url
+msgid "Customer Portal URL"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__display_name
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__display_name
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__display_name
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__display_name
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard__display_name
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__display_name
+#: model:ir.model.fields,field_description:merchant.field_merchant_setting__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Enter your address"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__expire_date
+msgid "Expiration Date"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.server,name:merchant.cron_expire_merchant_ir_actions_server
+#: model:ir.cron,cron_name:merchant.cron_expire_merchant
+#: model:ir.cron,name:merchant.cron_expire_merchant
+msgid "Expire Merchant Automatically"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.server,name:merchant.cron_expire_merchant_pre_notification_ir_actions_server
+#: model:ir.cron,cron_name:merchant.cron_expire_merchant_pre_notification
+#: model:ir.cron,name:merchant.cron_expire_merchant_pre_notification
+msgid "Expire Merchant Pre-Notification"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,state:0
+msgid "Expired"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__social_fb_link
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__fb_link
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Facebook Link"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__ce_file
+msgid "File"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_channel_ids
+msgid "Followers (Channels)"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__social_gplus_link
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__gplus_link
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Google+ Link"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__has_branches
+msgid "Has Branches?"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard__id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__id
+#: model:ir.model.fields,field_description:merchant.field_merchant_setting__id
+msgid "ID"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__message_unread
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__image
+msgid "Image"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__image_count
+msgid "Image Count"
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:582
+#, python-format
+msgid "Image Size Too Large. Should not exceed %s KB"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__image_url
+msgid "Image URL"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Images"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,state:0
+msgid "In-Progress"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__insta_link
+msgid "Instagram Link"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__invoice_id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__invoice_id
+msgid "Invoice"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__invoice_line
+msgid "Invoices"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "KB."
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request____last_update
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard____last_update
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line____last_update
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line____last_update
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard____last_update
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line____last_update
+#: model:ir.model.fields,field_description:merchant.field_merchant_setting____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__write_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__write_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__write_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__write_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard__write_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__write_uid
+#: model:ir.model.fields,field_description:merchant.field_merchant_setting__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__write_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__write_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__write_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__write_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard__write_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__write_date
+#: model:ir.model.fields,field_description:merchant.field_merchant_setting__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Leave Us Feedback Configuration"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__location
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Location"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Location *"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__location_lat
+msgid "Location Latitute"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__location_lng
+msgid "Location Longitude"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Logo"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Loyality System"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__max_img_size
+msgid "Maximum Image Upload Size (In KB)"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Maximum Size of Shop Images Upload (In KB)"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Maximum Upload File Size :"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__mer_admin_email
+msgid "Merchant Admin Email"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__mer_admin_username
+msgid "Merchant Admin Username"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.act_window,name:merchant.action_merchant_configuration
+msgid "Merchant Configuration"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Merchant Configurations"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registration_success
+#: model:website.menu,name:merchant.menu_merchant_register
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Merchant Registration"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.act_window,name:merchant.action_merchant_request
+msgid "Merchant Requests"
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:461
+#, python-format
+msgid "Merchant Services Expired Automatically"
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:331
+#, python-format
+msgid "Merchant Services Suspended by %s"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__mer_user_email
+msgid "Merchant User Email"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__mer_user_username
+msgid "Merchant User Username"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_tree
+msgid "Merchants"
+msgstr ""
+
+#. module: merchant
+#: model:ir.ui.menu,name:merchant.menu_merchant_request
+msgid "Merchants Requests"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__ce_msg
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__social_msg
+msgid "Message"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Mobile *"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__mobile
+msgid "Mobile No. "
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:97
+#: code:addons/merchant/models/models.py:279
+#: code:addons/merchant/models/models.py:280
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request.approval.wizard,approval_type:0
+#: selection:merchant.request.invoice.line,action:0
+msgid "New Registration"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "No of Images requested from Merchant"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_has_error_counter
+msgid "Number of error"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: merchant
+#: model:ir.ui.menu,name:merchant.menu_operation_root
+msgid "Operations"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,activity_state:0
+msgid "Overdue"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__partner_ids
+msgid "Partners"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Payment Details"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Pincode/Zip *"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,activity_state:0
+msgid "Planned"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__social_url
+msgid "Playstore Link"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__push_api_key
+msgid "Push API Key"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Push Notification API Configuration"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard__reason
+msgid "Reason"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_reject_reason_wizard__reason_type
+msgid "Reason Type"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Reg. Request Id"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Reg. email Address"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,subject:merchant.merchant_register_email_template_approve_reject
+msgid "Registeration Request \n"
+"				% if object.state == 'approved': \n"
+"					${'Approved'}\n"
+"				% elif object.state == 'reject':\n"
+"					${'Rejected'}\n"
+"				% endif \n"
+"				- ${object.name}\n"
+"			"
+msgstr ""
+
+#. module: merchant
+#: model:mail.template,subject:merchant.merchant_register_template
+msgid "Registeration Request - ${object.name}"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Registration Details"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.rejection_wizard_view
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Reject"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,state:0
+#: selection:merchant.request.reject.reason.wizard,reason_type:0
+msgid "Rejected"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.act_window,name:merchant.open_reject_wizard_action_id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__reason
+msgid "Rejection Reason"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_approval_wizard__company_id
+msgid "Related Customer Company"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__remaining_monthly_txns
+msgid "Remaining Transactions this month"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.approval_wizard_view
+msgid "Renew Merchant"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request.approval.wizard,approval_type:0
+#: selection:merchant.request.invoice.line,action:0
+msgid "Renewal"
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:302
+#, python-format
+msgid "Request Approved by %s"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__name
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_images_line__request_id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_invoice_line__request_id
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__request_id
+#: model:ir.model.fields,field_description:merchant.field_res_partner__request_id
+#: model:ir.model.fields,field_description:merchant.field_res_users__request_id
+msgid "Request Reference"
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:312
+#, python-format
+msgid "Request Rejected by %s"
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:353
+#, python-format
+msgid "Request Resumed by %s"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,state:0
+msgid "Requested"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.server,name:merchant.cron_reset_monthly_txn_ir_actions_server
+#: model:ir.cron,cron_name:merchant.cron_reset_monthly_txn
+#: model:ir.cron,name:merchant.cron_reset_monthly_txn
+msgid "Reset Merchant Monthly Transactions"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Resume"
+msgstr ""
+
+#. module: merchant
+#: model:ir.actions.act_window,name:merchant.open_resume_wizard_action_id
+msgid "Resume Merchant"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__access_token
+msgid "Security Token"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Select City"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Select Country"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Select Plan"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Select Shop Type"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Set Current Location"
+msgstr ""
+
+#. module: merchant
+#: model:ir.ui.menu,name:merchant.menu_merchant_settings
+msgid "Settings"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Share App Configuration"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__images_line
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Shop Images"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__logo
+msgid "Shop Logo"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__shopname
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Shop Name"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Shop Name *"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__shop_type_id
+msgid "Shop Type"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Shop Type *"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__social_file
+msgid "Social File"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Social Links"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Social Networks"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__state
+msgid "State"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__activity_state
+msgid "Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__ce_subject
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__social_subject
+msgid "Subject"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__plan_id
+msgid "Subscription Plan"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Subscription Plan *"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.rejection_wizard_view
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Suspend"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,state:0
+#: selection:merchant.request.reject.reason.wizard,reason_type:0
+msgid "Suspended"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__date
+msgid "Suspension Date"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Suspension History"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request_suspend_line__reason
+msgid "Suspension Reason"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__suspend_line
+msgid "Suspensions"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registration_success
+msgid "Thanks ! We have received your request. You will receive an email with the further process.\n"
+"                                    <br/>Please not your Request ID -"
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:257
+#: code:addons/merchant/models/models.py:267
+#, python-format
+msgid "The user email address is already registered with other request. "
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.approval_wizard_view
+msgid "This may take upto 2 minutes."
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__ce_to
+msgid "To"
+msgstr ""
+
+#. module: merchant
+#: selection:merchant.request,activity_state:0
+msgid "Today"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Track your request status here. Fill in the information below"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.view_merchant_request_form
+msgid "Transactions Details"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__monthly_txns
+msgid "Transactions this month"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__twilio_token
+msgid "Twilio Auth Token"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__twilio_cid
+msgid "Twilio CID"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_res_config_settings__twilio_number
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Twilio Number"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Twilio SMS API Configuration"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "Upload Shop images"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "Use Comma Sepration to add more Email"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "User Name"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_res_users
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__user_ids
+msgid "Users"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,field_description:merchant.field_merchant_request__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model.fields,help:merchant.field_merchant_request__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: merchant
+#: code:addons/merchant/models/models.py:253
+#: code:addons/merchant/models/models.py:263
+#, python-format
+msgid "You can use only valid email address.Email address %s is invalid or does not exit"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registration_success
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "banner"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "eg. REQ001"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registration_success
+msgid "for further references."
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "https://plus.google.com"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "https://www.facebook.com/"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_merchant_request
+msgid "merchant.request"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_merchant_request_approval_wizard
+msgid "merchant.request.approval.wizard"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_merchant_request_images_line
+msgid "merchant.request.images.line"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_merchant_request_invoice_line
+msgid "merchant.request.invoice.line"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_merchant_request_reject_reason_wizard
+msgid "merchant.request.reject.reason.wizard"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_merchant_request_suspend_line
+msgid "merchant.request.suspend.line"
+msgstr ""
+
+#. module: merchant
+#: model:ir.model,name:merchant.model_merchant_setting
+msgid "merchant.setting"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.approval_wizard_view
+#: model_terms:ir.ui.view,arch_db:merchant.rejection_wizard_view
+msgid "or"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "twilio SMS API Auth Token"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchnat_settings_view2
+msgid "twilio SMS API CID"
+msgstr ""
+
+#. module: merchant
+#: model_terms:ir.ui.view,arch_db:merchant.merchant_registeration_page_ir_ui_view
+#: model_terms:website.page,arch_db:merchant.merchant_registeration_page
+msgid "yourname@email.com"
+msgstr ""
+

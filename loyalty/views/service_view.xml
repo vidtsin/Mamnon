@@ -1,0 +1,59 @@
+<odoo>
+	<data>
+
+
+		<record id="view_loyalty_txn_tree" model="ir.ui.view">
+	        <field name="name">loyalty.extra.txn.request.tree</field>
+	        <field name="model">loyalty.extra.txn.request</field>
+	        <field name="arch" type="xml">
+            	<tree string="Extra Transaction Request" >
+	            	<field name="name"/>
+					<field name="merchant_id" groups="base.group_system,loyalty.group_operation"/>
+	            	<field name="txn_count"/>
+	            	<field name="state"/>
+	            </tree>
+	        </field>
+	    </record>
+
+		<record id="view_loyalty_extra_tx_request" model="ir.ui.view">
+	        <field name="name">loyalty.extra.txn.request.form</field>
+	        <field name="model">loyalty.extra.txn.request</field>
+	        <field name="arch" type="xml">
+	            <form string="Extra Transaction Request">
+	            	<header>
+	            		<button name="send_for_approval" attrs="{'invisible':[('state','!=','new')]}" type="object" string="Send for Approval"/>
+	            		<button name="approve" attrs="{'invisible':[('state','!=','in-approval')]}" type="object" string="Approve" groups="loyalty.group_operation,base.group_system"/>
+	            		<button name="%(open_common_reject_wizard_action_id)d" type="action" groups="loyalty.group_operation,base.group_system"  string="Reject"  attrs="{'invisible':[('state','!=','in-approval')]}" />
+	            		<field name="state" widget="statusbar" statusbar_visible="new,in-approval,approved,reject"/>
+	            	</header>
+	            	<sheet>
+	            		<group>
+	            			<group>
+	            				<field name="txn_count"/>
+	            			</group>
+	            			<group>
+	            				<field name="merchant_id" groups="base.group_system,loyalty.group_operation" attrs="{'invisible':[('state','=','new')]}" invisible="0"/>
+	            				<field name="invoice_id" groups="base.group_system,loyalty.group_operation" attrs="{'invisible':[('state','=','new')]}"/>
+	            			</group>
+	            		</group>
+	            	</sheet>
+	            </form>
+	        </field>
+	    </record>
+
+		<record id="action_loyalty_extra_tx_service" model="ir.actions.act_window">
+			<field name="name">Extra Transaction Requests</field>
+			<field name="res_model">loyalty.extra.txn.request</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="menu_loyalty_extra_tx_request" name="Extra Transactions Request" sequence="2" parent="menu_loyalty_deal"  action="action_loyalty_extra_tx_service" groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_active"/>
+
+
+
+		
+
+
+	</data>
+</odoo>

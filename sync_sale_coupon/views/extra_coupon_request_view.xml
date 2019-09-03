@@ -1,0 +1,55 @@
+<odoo>
+	<data>
+		<record id="view_loyalty_coupon_tree" model="ir.ui.view">
+	        <field name="name">loyalty.extra.coupon.request.tree</field>
+	        <field name="model">loyalty.extra.coupon.request</field>
+	        <field name="arch" type="xml">
+            	<tree string="Extra Coupon Request" >
+	            	<field name="name"/>
+					<field name="merchant_id" groups="base.group_system,loyalty.group_operation"/>
+	            	<field name="coupon_count"/>
+	            	<field name="state"/>
+	            </tree>
+	        </field>
+	    </record>
+
+		<record id="view_loyalty_extra_coupon_request" model="ir.ui.view">
+	        <field name="name">loyalty.extra.coupon.request.form</field>
+	        <field name="model">loyalty.extra.coupon.request</field>
+	        <field name="arch" type="xml">
+	            <form string="Extra Coupon Request">
+	            	<header>
+	            		<button name="send_for_approval" attrs="{'invisible':[('state','!=','new')]}" type="object" string="Send for Approval"/>
+	            		<button name="generate_invoice" groups="base.group_system,loyalty.group_operation" attrs="{'invisible':[('invoice_id','!=',False), ('state','!=','in-approval')]}" type="object" string="Generate Invoice"/>
+	            		<button name="approve" attrs="{'invisible':[('state','!=','in-approval')]}" type="object" string="Approve" groups="loyalty.group_operation,base.group_system"/>
+	            		<button name="reject" attrs="{'invisible':[('state','!=','in-approval')]}" type="object" string="Reject" groups="loyalty.group_operation,base.group_system"/>
+	            		<field name="state" widget="statusbar" statusbar_visible="new,in-approval,approved,reject"/>
+	            	</header>
+	            	<sheet>
+	            		<group>
+	            			<group>
+	            				<field name="coupon_count"/>
+	            			</group>
+	            			<group>
+	            				<field name="merchant_id" groups="base.group_system,loyalty.group_operation" invisible="0"/>
+	            				<field name="merchant_id" groups="loyalty.group_merchant_active" invisible="1"/>
+	            				<field name="invoice_id" groups="base.group_system,loyalty.group_operation" attrs="{'invisible':[('state','=','new')]}"/>
+	            			</group>
+	            		</group>
+	            		<field name="reason" nolabel="1" placeholder="Rejection Reason" attrs="{'invisible':[('state','not in',['in-approval','reject'])]}"/>
+	            	</sheet>
+	            </form>
+	        </field>
+	    </record>
+
+		<record id="action_loyalty_extra_coupon_service" model="ir.actions.act_window">
+			<field name="name">Extra Coupon Requests</field>
+			<field name="res_model">loyalty.extra.coupon.request</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem id="menu_loyalty_extra_coupon_request" name="Extra Coupons Request" sequence="2" parent="sync_sale_coupon.menu_loyalty_coupon_parent"  action="action_loyalty_extra_coupon_service" groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_active"/>
+
+	</data>
+</odoo>

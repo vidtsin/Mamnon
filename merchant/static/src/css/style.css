@@ -1,0 +1,510 @@
+#merchant-form {
+	padding: 50px 15px;
+}
+
+#merchant-form h3 {
+	padding-bottom:20px;
+}
+.form-row{
+	padding-bottom: 20px
+}
+
+label.error {
+    color: #d53e3e;
+    font-weight: normal !important;
+    padding-top: 5px;
+    float: right;
+    font-size: 12px !important;
+}
+
+/*merchant form css*/
+.mechant-form-box {
+    background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,.25);
+    width: 100%;
+    margin: 50px auto;
+}
+.merchant-input{
+    width: 100%;
+    padding:50px 30px;
+     margin: 50px auto;
+     background: #fff;
+    box-shadow: 0 0 3px rgba(0,0,0,.25);
+}
+.mechant-form-box h3,.merchant-input h3{
+	text-align: center;
+	    padding-bottom: 20px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+    font-size: 20px;
+}
+#merchant-form h3:after ,.merchant-input h3:after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    height: 2px;
+    background: #ccc;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.inner-banner {
+    position: relative;
+    overflow: hidden;
+}
+.top-text-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.4);
+}
+.text-out {
+    display: table;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+.text-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+.inner-banner h3 {
+    font-size: 35px;
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+}
+.mechant-form-box .col{
+	padding: 0 15px;
+}
+.mechant-form-box label ,.input-box label{
+    font-weight: normal;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.mechant-form-box input.form-control, select.form-control, .input-box input{
+    border-radius: 0;
+    height: 40px;
+    color: #000;
+}
+.form-row {
+    padding-bottom: 30px;
+}
+.mechant-form-box input[type=checkbox] + label {
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+}
+
+.mechant-form-box input[type=checkbox] {
+/*  display: none;
+*/  opacity: 0;
+}
+
+.mechant-form-box input[type=checkbox] + label:before {
+    content: "";
+    border: 2px solid #ced4da;
+    border-radius: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 15px;
+    vertical-align: middle;
+    color: transparent;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    font-family: 'FontAwesome';
+     font-size: 10px;
+
+}
+.input-box {
+    margin-bottom: 20px;
+}
+
+.mechant-form-box input[type=checkbox] + label:active:before {
+  transform: scale(0);
+}
+
+.mechant-form-box input[type=checkbox]:checked + label:before {
+  background-color: #fff;
+  border-color:#999;
+  color: #999;
+ 
+}
+.col.checkbox-con {
+    margin-top: 33px;
+}
+.btn-box{
+	text-align: center;
+	width:100%;
+
+}
+.btn-box .btn-primary {
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 0;
+    height: 40px;
+    line-height: 36px;
+    padding: 0 15px;
+    font-size: 16px;
+    text-shadow: none;
+    font-weight: 700;
+    border: 2px solid #00A09D;
+}
+.btn-box .btn-primary:hover{
+background:transparent;
+color:#00A09D;	
+border: 2px solid #00A09D;
+}
+input.input-file {
+    display: block;
+}
+.input-file-box {
+ position: relative;
+    width: 200px;
+    background: #fff;
+    height: 40px;
+    border: 1px solid #ced4da;
+    text-align: center;
+    line-height: 38px;
+}
+input.input-file {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+.preview-img {
+    position: absolute;
+    padding:5px;
+    left: 230px;
+    top: 0;
+    border: 1px dashed #cfd4da;
+    width: 100px;
+    max-height: 100px;
+    min-height:40px;
+    overflow: hidden;
+    text-align: center;
+}
+.upload-img {
+    position: relative;
+}
+.left-padding{
+	padding-left: 15px;
+}
+/*dropdown css*/
+.dropdown-menu.radio .dropdown-item { 
+    position:relative;
+    overflow:hidden; 
+    cursor:pointer; }
+
+.dropdown-menu.radio input { 
+    visibility: hidden; 
+    position:absolute; left: -30px; }
+
+.dropdown-menu.radio i { 
+    font-weight:normal; font-style:normal; 
+    display:block; }
+
+.dropdown-item.active {
+  background-color:#555; color:#fff;
+}
+.mechant-form-box button.btn.btn-light.dropdown-toggle{
+        border: 1px solid #ced4da;
+    width: 100%;
+    text-align: left;
+    height: 41px;
+    background: #fff;
+    border-radius: 0;
+    text-decoration: none;
+}
+.mechant-form-box button.btn.btn-light.dropdown-toggle ins {
+    text-decoration: none;
+    width: 95%;
+    display: inline-block;
+}
+.mechant-form-box .dropdown-menu.show{
+    width:100%;
+}
+.mechant-form-box .form-control:focus,.mechant-form-box button.btn.btn-light.dropdown-toggle:focus{
+     border: 1px solid #ced4da;
+     box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+.preview-img img {
+    width: 100%;
+}
+.check-box-label{
+    float:left;
+}
+.checkbox-con {
+    position: relative;
+}
+.checkbox-con label.error {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+}
+ul.js-uploader__file-list.uploader__file-list {
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+}
+li.uploader__file-list__item {
+    position: relative;
+    display: table;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+li.uploader__file-list__item span{
+    display: table-cell;
+    vertical-align: middle;
+}
+uploader__file-list__thumbnail {
+    display: inline-block;
+    width: 30%;
+}
+span.uploader__file-list__button {
+   width:10%; 
+}
+span.uploader__file-list__button button {
+    background: none;
+    border: 0;
+    color: #000;
+    padding: 0;
+
+    text-align: center;
+}
+.uploader__box{
+    width: 100%;
+}
+span.uploader__file-list__thumbnail img {
+    width: 100%;
+}
+span.uploader__file-list__text, .uploader__file-list__size {
+    font-size: 14px;
+    margin: 5px 6px 0;
+    display: inline-block;
+}
+span.uploader__file-list__text{
+width:40%;
+}
+.uploader__file-list__size {
+    width: 20%;
+}
+span.uploader__file-list__thumbnail {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+}
+button.js-uploader__submit-button.uploader__submit-button {
+    margin-bottom: 20px;
+    background: #00A09D;
+    border: 0;
+    color: #fff;
+    padding: 10px 15px;
+}
+button.js-uploader__submit-button.uploader__submit-button i{
+    padding-left: 5px;
+}
+/*13-feb-2019  drag box*/ 
+ #uploads .box-drag {
+    width: 33.33%;
+}
+.uploadArea{
+margin:0 auto;
+position: relative;
+
+}
+.uploadArea .new {
+    padding-top: 15px !important;
+    width: 100%;
+    display: block;
+    position: relative;
+    height:100px;
+    z-index: 9;
+}
+.uploadArea input[type='file'] {
+    display: block;
+    color: transparent;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+}
+.image-preview {
+ display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px; 
+    overflow: hidden;
+}
+.uploadArea .image-preview img {
+    padding-top: 0px !important;
+    width: 127px;
+    height: 101px;
+
+}
+.uploadArea .image-preview .remove {
+    color: #000;
+    background-color: #fff;
+    opacity: 1;
+    position: absolute;
+    z-index: 99;
+    padding: 0;
+    width: 25px;
+    right: 0;
+    font-size: 14px;
+}
+.uploadArea .new.hidden input,.uploadArea .new.hidden p, .uploadArea .new.hidden i{
+display: none;
+}
+.uploadArea .image-preview.hidden  img,.uploadArea .image-preview.hidden .remove{
+display: none;
+
+}
+.uploadArea .image-preview .remove i {
+    font-size: 17px;
+    padding: 0px;
+    margin: 0px;
+    opacity: 1 !important;
+    display: block;
+    line-height: 25px;
+    text-align: center;
+}
+@media only screen and (max-width:1024px) {
+  
+    #merchant-form {
+    padding: 30px 15px;
+}
+.preview-img {
+    left: 0;
+    top: 50px;
+}
+    }
+    @media only screen and (max-width:1023px) {
+        .mechant-form-box{
+            margin-bottom: 0;
+        }
+.merchanht-left {
+    max-width: 100%;
+    flex: 0 0100%;
+}
+}
+
+    @media only screen and (max-width:767px) {
+
+    .mechant-form-box .col{
+        width:100%;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .mechant-form-box .form-row {
+    padding-bottom: 0;
+    display: block;
+}
+.col.checkbox-con {
+    margin-top: 0;
+}
+#merchant-form h3,.inner-banner h3{
+    font-size: 20px;
+}
+.banner-img {
+    height: 150px;
+}
+.mechant-form-box .col {
+    padding: 0 10px;
+}
+}
+    @media only screen and (max-width:480px) {
+        #merchant-form h3, .inner-banner h3 {
+    font-size: 16px;
+}
+        .preview-img{
+            position: static;
+            margin-top: 10px;
+            width:100%;
+        }
+        .input-file-box{
+            width:100%;
+        }
+    }
+
+.captcha-box{
+	max-width:50% !important;
+}
+
+.map-show-btn{
+	position: absolute;
+    top: 0;
+    right: 17px;
+    margin-top: 36px;
+}
+
+.uploader__box {
+  animation: appear 1s;
+  background-color: white;
+  box-shadow: -2px 2px 20px #d2d2d2;
+  text-align: center;
+  transition: all 0.5s;
+  margin-bottom: 1em; }
+
+@keyframes appear {
+  from {
+    margin-top: 3em;
+    opacity: 0; }
+  to {
+    margin-top: 0;
+    opacity: 1; } }
+
+.uploader__contents {
+  padding: 3em;
+  margin-top: 0;
+  opacity: 1;
+  transition: all 0.4s; }
+
+.uploader__file-label,
+.uploader__box .button--secondary {
+  margin: 2em auto; }
+
+.uploader__file-label--secondary {
+  display: inline-block;
+  margin: 0 0.5em; }
+
+.uploader__further-instructions {
+    margin: 0;
+    clear: both;
+    color: #969696;
+    font-size: 14px;
+    /* padding: 0.5em; */
+    text-align: center;
+} }
+
+
+
+
+.entry:not(:first-of-type)
+{
+    margin-top: 10px;
+}
+
+.glyphicon
+{
+    font-size: 12px;
+}

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       	<record id="view_merchant_plan_tree" model="ir.ui.view">
+			<field name="name">merchant.plan.tree</field>
+			<field name="model">merchant.plan</field>
+			<field name="arch" type="xml">
+			    <tree string="Subscription Plans">
+			        <field name="name"/>
+			    </tree>
+			</field>
+		</record>
+
+	    <record id="view_merchant_plan_form" model="ir.ui.view">
+	        <field name="name">merchant.plan.form</field>
+	        <field name="model">merchant.plan</field>
+	        <field name="arch" type="xml">
+	            <form string="Merchants">
+	                <sheet>
+	                	<group>
+	                    	<group>
+			        			<field name="name"/>
+			        			<field name="transactions"/>
+			        			<label for="price"/>
+                                <div name="amount_div" class="o_row">
+                                    <field name="price"/>
+                                    <field name="currency_id" options="{'no_create': True, 'no_open': True}" groups="base.group_multi_currency"/>
+                                </div>
+			        		</group>
+			        		<group>
+			        			<field name="free_mnth"/>
+			        			<field name="duration"/>
+			        			<field name="product_id"/>
+	                    	</group>
+	                    </group>
+	                    <field name="deal_line">
+	                    	<tree editable='bottom'>
+	                    		<field name="deal_type_id"/>
+	                    		<field name="count"/>
+	                    	</tree>
+	                    </field>
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+
+    	<!-- Top menu item -->
+
+       	<record id="action_loyalty_merchant_plan" model="ir.actions.act_window">
+            <field name="name">Subscription Plans</field>
+            <field name="res_model">merchant.plan</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+
+
+        
+        <menuitem id="menu_loyalty_merchant_plan" name="Subscription Plans" sequence="5" action="loyalty.action_loyalty_merchant_plan" parent="loyalty.menu_loyalty_configuration"/>
+
+		<!-- END CONFIG VIEW - MERCHANT PLAN -->
+		
+		<!-- START CONFIG VIEW - SHOP TYPE -->
+
+	     	
+		
+		<!-- START CONFIG VIEW - SHOP TYPE -->
+
+	 	<record id="view_merchant_shop_type_tree" model="ir.ui.view">
+			<field name="name">merchant.shop.type.tree</field>
+			<field name="model">merchant.shop.type</field>
+			<field name="arch" type="xml">
+			    <tree string="Shop Types">
+			        <field name="name"/>
+			    </tree>
+			</field>
+		</record>
+
+	    <record id="view_merchant_shop_type_form" model="ir.ui.view">
+	        <field name="name">merchant.shop.type.form</field>
+	        <field name="model">merchant.shop.type</field>
+	        <field name="arch" type="xml">
+	            <form string="Merchants">
+	            	<!-- <header>
+	            		<button name="generate_img_urls" string="Generate Image" type="object" />
+	            	</header> -->
+	                <sheet>
+	                    <group>
+			        		<field name="name"/>	                        
+			        		<field name="icon_img" widget="image"/>	                        
+			        		<field name="icon_img_with_bg" widget="image"/>  
+			        		<field name="icon_img_url" invisible="1"/>	 
+			        		<field name="icon_img_with_bg_url" invisible="1"/>	        
+	                    </group>
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+
+		<!-- Top menu item -->
+
+	   	<record id="action_loyalty_merchant_shop_type" model="ir.actions.act_window">
+	        <field name="name">Shop Types</field>
+	        <field name="res_model">merchant.shop.type</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	    </record>
+	    
+	    <menuitem id="menu_loyalty_merchant_shop_type" name="Shop Types" sequence="6" action="loyalty.action_loyalty_merchant_shop_type" parent="loyalty.menu_loyalty_configuration"/>
+
+		<!-- END CONFIG VIEW - MERCHANT PLAN -->
+		
+
+		
+		<!-- START CONFIG VIEW - SHOP TYPE -->
+
+	 	<record id="view_res_city_tree" model="ir.ui.view">
+			<field name="name">res.city.tree</field>
+			<field name="model">res.city</field>
+			<field name="arch" type="xml">
+			    <tree string="Shop Types">
+			        <field name="name"/>
+			        <field name="country_id"/>
+			    </tree>
+			</field>
+		</record>
+
+	    <record id="view_res_city_form" model="ir.ui.view">
+	        <field name="name">res.city.form</field>
+	        <field name="model">res.city</field>
+	        <field name="arch" type="xml">
+	            <form string="Merchants">
+	                <sheet>
+	                    <group>
+			        		<field name="name"/>	                        
+			        		<field name="country_id"/>
+	                    </group>
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+
+		<!-- Top menu item -->
+
+	   	<record id="action_loyalty_res_city" model="ir.actions.act_window">
+	        <field name="name">Cities</field>
+	        <field name="res_model">res.city</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	    </record>
+	    
+	    <menuitem id="menu_loyalty_res_city" name="Cities" sequence="7" action="loyalty.action_loyalty_res_city" parent="loyalty.menu_loyalty_configuration"/>
+
+		<!-- END CONFIG VIEW - MERCHANT PLAN -->
+
+
+		<!-- FAQ VIew Start -->
+
+		<record id="action_loyalty_faq" model="ir.actions.act_window">
+	        <field name="name">FAQ</field>
+	        <field name="res_model">loyalty.faq</field>
+	        <field name="view_type">form</field>
+	        <field name="view_mode">tree,form</field>
+	    </record>
+	    
+	    <menuitem id="menu_loyalty_faq" name="FAQ's" sequence="8" action="loyalty.action_loyalty_faq" parent="loyalty.menu_loyalty_configuration"/>
+
+    </data>
+</odoo>

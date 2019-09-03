@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="web.webclient_bootstrap">
+        <t t-call="web.layout">
+            <t t-set="head_web">
+                <script type="text/javascript">
+                    odoo.session_info = <t t-raw="session_info"/>;
+                </script>
+
+                <t t-call-assets="web.assets_common" t-js="false"/>
+                <t t-call-assets="web.assets_backend" t-js="false"/>
+                <t t-call-assets="web.assets_common" t-css="false"/>
+                <t t-call-assets="web.assets_backend" t-css="false"/>
+
+                <![CDATA[
+                    <!--[if lt IE 10]>
+                        <body class="ie9">
+                    <![endif]-->
+                ]]>
+
+                <script type="text/javascript">
+                    odoo.define('web.web_client', function (require) {
+                        var WebClient = require('web.WebClient');
+                        var web_client = new WebClient();
+                        $(function() {
+                            web_client.setElement($(document.body));
+                            web_client.start();
+                        });
+                        return web_client;
+                    });
+                </script>
+            </t>
+            <t t-set="head" t-value="head_web + (head or '')"/>
+            <t t-set="body_classname" t-value="'o_web_client sss ' + str(lang_direction)"/>
+            <div class="o_main">
+                <main class="o_main_content"/>
+            </div>
+        </t>
+    </template>
+
+
+     <template id="assets_backend" inherit_id="web.assets_backend" name="Direction Backend Assets" active="True" priority="1">
+        <xpath expr="link[last()]" position="after">
+            <link href="/ESCO_RTL_Arabic/static/src/css/bootstrap-rtl.css" rel="stylesheet" type="text/css"/>
+            <link href="/ESCO_RTL_Arabic/static/src/css/rtl.css" rel="stylesheet" type="text/css"/>
+            <script src="/ESCO_RTL_Arabic/static/src/js/esco_custom.js" type="text/javascript"/>
+        </xpath>
+     </template>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend" active="True" priority="1">
+        <xpath expr="//link[last()]" position="after">
+            <link href="/ESCO_RTL_Arabic/static/src/css/bootstrap-rtl.css" rel="stylesheet" type="text/css"/>
+            <link href="/ESCO_RTL_Arabic/static/src/css/rtl.css" rel="stylesheet" type="text/css"/>
+        </xpath>
+    </template>
+
+
+</odoo>

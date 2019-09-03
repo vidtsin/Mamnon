@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="coupon_rule_cancel_reason_view_form" model="ir.ui.view">
+        <field name="name">coupon.rule.cancel.reason.form</field>
+        <field name="model">coupon.rule.cancel.reason</field>
+        <field name="arch" type="xml">
+            <form>
+                <field name="reason" placeholder="Cancellation Reason.."/>
+                <footer>
+                    <button name="cancel_coupon_rule" type="object" string="Cancel Coupon Rule" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="coupon_rule_cancel_reason_action" model="ir.actions.act_window">
+        <field name="name">Enter Cancellation Reason</field>
+        <field name="res_model">coupon.rule.cancel.reason</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="coupon_rule_cancel_reason_view_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

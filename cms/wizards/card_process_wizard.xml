@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="view_card_card_wizard_form" model="ir.ui.view">
+			<field name="name">view.card.card.wizard.form</field>
+			<field name="model">card.process.wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<field name="is_force" />
+						</group>
+						<notebook>
+							<page string="Cards">
+								<field string='Cards' name="card_ids" readonly='1'>
+									<tree>
+										<field name='name'/>
+										<field name='type_id'/>
+										<field name='state'/>
+									</tree>
+								</field>
+							</page>
+						</notebook>
+					</sheet>
+					<footer>
+						<button class="oe_highlight" string="Proceed" type="object"
+							name="button_proceed" />
+							or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<!--  Button proceed Cards -->
+  		<record id="action_proceed_cards" model="ir.actions.server">
+            <field name="name">Proceed Cards</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_card_card"/>
+            <field name="state">code</field>
+            <field name="code">
+ if context.get('active_model') == 'card.card' and \
+        context.get('active_ids'):
+    action = {
+    	'name': 'Process Cards',
+        'type': 'ir.actions.act_window',
+        'res_model': 'card.process.wizard',
+        'view_mode': 'form',
+        'view_type': 'form',
+        'target': 'new',
+        'context': {'card_ids': context['active_ids']}
+    }
+            </field>
+        </record>
+		<!-- <record model="ir.values" id="button_proceed_cards">
+            <field name="name">Proceed Cards</field>
+            <field name="action_id" ref="action_proceed_cards" />
+            <field name="model" eval="'card.card'" />
+            <field name="key" >action</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.server,%d'%action_proceed_cards" />
+        </record> -->
+	</data>
+</odoo>

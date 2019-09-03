@@ -1,0 +1,94 @@
+<odoo>
+	<data>
+
+
+		<record id="search_view_loyalty_txn_settelment_tree" model="ir.ui.view">
+			<field name="name">loyalty.points.history.purchase.redeem.lines.search.view</field>
+		    <field name="model">loyalty.points.history.purchase.redeem.lines</field>
+		    <field name="arch" type="xml">
+		        <search string="Unsettled Settlements">
+		            <filter string="Unsettled Settlements" name="unsettled_settlements" domain="[('is_settled', '=', False)]">
+		            </filter>
+		        </search>
+		    </field>
+		</record>
+
+
+		<record id="view_loyalty_txn_settelment_tree" model="ir.ui.view">
+	        <field name="name">loyalty.points.history.purchase.redeem.lines.tree</field>
+	        <field name="model">loyalty.points.history.purchase.redeem.lines</field>
+	        <field name="arch" type="xml">
+            	<tree string="Merchant Settlements" create="false" edit="false">
+					<field name="reward_merchant_id"/>
+					<field name="redeem_merchant_id"/>
+					<field name="redeem_point"/>
+					<field name="is_settled"/>
+	            </tree>
+	        </field>
+	    </record>
+
+		<record id="view_loyalty_txn_settlement_request" model="ir.ui.view">
+	        <field name="name">loyalty.points.history.purchase.redeem.lines.form</field>
+	        <field name="model">loyalty.points.history.purchase.redeem.lines</field>
+	        <field name="arch" type="xml">
+	            <form string="Merchant Settlements">
+	            	<sheet>
+	            		<group>
+	            			<group>
+	            				<field name="reward_merchant_id"/>
+	            				<field name="redeem_point"/>
+	            				<field name="date_settle"/>
+	            			</group>
+	            			<group>
+	            				<field name="redeem_merchant_id"/>
+	            				<field name="is_settled"/>	            				
+	            			</group>
+	            		</group>
+	            	</sheet>
+	            </form>
+	        </field>
+	    </record>
+
+		<record id="action_loyalty_merchant_redeem_tx_settlment" model="ir.actions.act_window">
+			<field name="name">Merchant Settlements</field>
+			<field name="res_model">loyalty.points.history.purchase.redeem.lines</field>
+			<field name="view_type">form</field>
+			<field name="domain">[]</field>
+			<field name="context">{"search_default_unsettled_settlements":1, 'is_parent_view':True}</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+        <record id="loyalty_merchant_redeem_tx_settlment_confirm_view" model="ir.ui.view">
+            <field name="name">loyalty.points.history.purchase.redeem.lines.confirm.form</field>
+            <field name="model">loyalty.points.history.purchase.redeem.lines.confirm</field>
+            <field name="arch" type="xml">
+                <form string="Confirm Settlements">
+                    <p class="oe_grey">
+                        Confirm Settlement. This means that you received the payments from the
+                        merchants for whom you redeem the points.
+                    </p>
+                    <footer>
+                        <button string="Confirm Settlements" name="confirm_settlement" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Reject Settlements" name="reject_settlement" type="object" default_focus="1" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_loyalty_merchant_redeem_tx_settlment_confirm"
+            multi="True"
+            key2="client_action_multi" 
+            name="Confirm Settlements"
+            res_model="loyalty.points.history.purchase.redeem.lines.confirm" 
+            src_model="loyalty.points.history.purchase.redeem.lines"
+            view_mode="form" 
+            target="new" 
+            view_type="form" 
+        />
+
+		<menuitem id="menu_loyalty_merchant_redeem_tx_settlment" name="Settlements" sequence="4" parent="menu_loyalty_points_mgmt"  action="action_loyalty_merchant_redeem_tx_settlment" groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_admin"/>
+
+	</data>
+</odoo>
+

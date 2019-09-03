@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="loyalty_view_customer_list" model="ir.ui.view">
+            <field name="name">Customer List</field>
+            <field name="model">res.partner</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <!-- <field name="card_id"/> -->
+                    <field name="email"/>
+                    <field name="mobile_mask" groups="loyalty.group_merchant_admin,loyalty.group_merchant_user"/>
+                    <field name="mobile" widget="phone" groups="loyalty.group_operation,base.group_system"/>
+                    <field name="loyalty_points"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="loyalty_view_res_partner_search_form_inherit" model="ir.ui.view">
+            <field name="name">Loyalty Search Inherit Customer</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="replace">
+                    <field name="name" context="{'is_search':True}"/>
+                </field>
+                <field name="name" position="after">
+                    <!-- <field name="card_id" context="{'is_search':True}"/> -->
+                    <field name="mobile" context="{'is_search':True}" />
+                    <field name="email" context="{'is_search':True}"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="invoice_form_inherit_customer" model="ir.ui.view">
+            <field name="name">account.invoice.change.customer.domain.form.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="attributes">
+                    <attribute name="domain">[]</attribute>
+                </field>
+                <field name="date_invoice" position="after">
+                    <field name="is_used"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_users_form_inherit_device_id" model="ir.ui.view">
+            <field name="name">res.users.form.inherit</field>
+            <field name="model">res.users</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//group[@name='messaging']" position="after">
+                <group string="User Device" name="device_details">
+                    <field name="device_id"/>
+                    <field name="notified"/>
+                </group>
+                 <group string="Notification" name="notify_details">
+                    <group>
+                        <field name="notify_email"/>
+                        <field name="notify_push"/>
+                    </group>
+                    <group>
+                        <field name="notify_sms"/>
+                    </group>
+                </group>
+            </xpath>
+            </field>
+        </record>
+
+
+        <!-- <delete id="sms.partner_form_send_sms_form_view" model="ir.ui.view"/> -->
+        <record id="view_res_partner_form_inherit" model="ir.ui.view">
+            <field name="name">Merchant Form Custom Field</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="attributes">
+                    <attribute name="groups">base.group_system,loyalty.group_operation</attribute>
+                </xpath>                
+                <field name="mobile" position="replace">
+                </field>
+                <xpath expr="//group" position="before">
+                    <group>
+                        <group>
+                            <field name="mobile_mask" groups="loyalty.group_merchant_admin,loyalty.group_merchant_user"/>
+                            <field name="mobile" widget="phone" groups="loyalty.group_operation,base.group_system"/>
+                            <field name="mobile_verified"/>
+                            <field name="image_url" invisible="1"/>
+                            <!-- <button name="generate_img_urls" type="object" string="Generate Image URL"/> -->
+                        </group>
+                    </group>
+                </xpath>
+                
+                <field name="lang" position="after">
+                    <field name="gender" string="Gender"/>
+                    <field name="dob" string="Date of Birth"/>
+                </field>
+                <button name="toggle_active" position="before">
+                    <button type="action" class="oe_stat_button" name="%(open_point_wizard_action_id)d" icon="fa-google-wallet" attrs="{'invisible':[('customer','=',False)]}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_value">
+                                <field name="loyalty_points"/>
+                            </span>
+                            <span class="o_stat_text">Points</span>
+                        </div>
+                    </button>
+                    <button type="action" class="oe_stat_button" name="%(open_reward_point_wizard_action_id)d" icon="fa-trophy" attrs="{'invisible':[('customer','=',False)]}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Reward Points</span>
+                        </div>
+                    </button>
+                    <button type="action" class="oe_stat_button"  name="%(open_redeem_point_wizard_action_id)d"  icon="fa-shopping-cart" attrs="{'invisible':[('customer','=',False)]}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Redeem Points</span>
+                        </div>
+                    </button>
+                </button>
+               
+                <xpath expr="//notebook" position="inside">
+                    <page string="Loyalty" attrs="{'invisible':[('customer','=',False)]}">
+                        <group>
+                            <!-- <group>
+                                <field name="card_id" readonly="0"/>                            
+                            </group> -->
+                            <group>
+                                <field name="registering_merchant_id" readonly="1"/>                            
+                            </group>
+                        </group>
+                        <field name="points_line">
+                            <tree>
+                                <field name="merchant_id"/>
+                                <field name="points"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page string="Social Links">
+                        <group>
+                            <field name="social_fb_link"/>
+                        </group>
+                        <group>
+                            <field name="social_gplus_link"/>
+                        </group>
+                    </page>
+                    <page string="Favourites" attrs="{'invisible':[('customer','=',False)]}">
+                        <group>
+                            <field name="favourite_deal_ids"/>
+                        </group>                        
+                        <group>
+                            <field name="favourite_merchant_ids"/>
+                        </group>                       
+                    </page>
+                    <page string="Groups" attrs="{'invisible':[('supplier','=',False)]}">
+                        <field name="group_line">
+                        </field>
+                    </page>
+                    <page string="Reviews &amp; Ratings" attrs="{'invisible':[('parent_id','=',True), ('supplier','=', False)]}">
+                        <field name="rating_line">
+                            <tree editable="bottom">
+                                <field name="customer_id"/>
+                                <field name="review"/>
+                                <field name="rating"/> 
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                 <xpath expr="//notebook/page" position="attributes">
+                    <attribute name="groups">base.group_system,loyalty.group_operation</attribute>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="attributes">
+                    <attribute name="groups">base.group_system,loyalty.group_operation</attribute>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="groups">base.group_system,loyalty.group_operation</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <menuitem name="Loyalty System"
+            id="menu_loyalty_system"
+            sequence="9"
+            groups="base.group_user"
+            web_icon="loyalty,static/description/icon.png"/>
+        
+        <menuitem id="menu_loyalty_configuration" name="Configuration" sequence="2"  parent="loyalty.menu_loyalty_system" groups="base.group_system"/>
+        <!-- group_portal -->
+
+        <!-- Menu Customer -->
+<!-- 
+        <record id="model_loyalty_action_customer" model="ir.actions.server">
+            <field name="name">Open Filtered Customers</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">action = model.get_merchant_customer()</field>
+            <field name="activity_user_type">specific</field>
+        </record>
+ -->
+        <record id="action_loyalty_customer" model="ir.actions.act_window">
+            <field name="name">Customers</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'is_parent_view':True}</field>
+            <field name="view_id" ref="loyalty.loyalty_view_customer_list"></field>
+        </record>
+
+        <!-- Menu items -->       
+
+        <menuitem id="menu_loyalty_points_mgmt" name="Points Management" sequence="1" parent="loyalty.menu_loyalty_system"/>
+        <menuitem id="menu_loyalty_customer" name="Customers" sequence="1" parent="loyalty.menu_loyalty_points_mgmt" groups="" action="action_loyalty_customer"/>
+
+        <!-- End Menu Customer -->
+        <menuitem id="menu_operation_root" name="Operations" sequence="1" parent="loyalty.menu_loyalty_system"/>
+        
+    </data>
+</odoo>

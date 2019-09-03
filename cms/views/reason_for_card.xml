@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<record id="tree_reason_for_card_view" model="ir.ui.view">
+		<field name="name">reason.for.card.tree</field>
+		<field name="model">reason.for.card</field>
+		<field name="arch" type="xml">
+			<tree string="Crad Reason">
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	
+	<record id="form_reason_for_card_view" model="ir.ui.view">
+		<field name="name">reason.for.card</field>
+		<field name="model">reason.for.card</field>
+		<field name="arch" type="xml">
+			<form string="Crad Reason">
+				<sheet>
+					<div class="oe_title">
+						<h1>
+							<field name="name"/>
+						</h1>
+					</div>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	
+	<record id="action_reason_for_card" model="ir.actions.act_window">
+		<field name="name">Crad Reason</field>
+		<field name="res_model">reason.for.card</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree,form</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">
+				Click to define a Crad Reason...
+			</p>
+		</field>
+	</record>
+	
+	<!-- Menus For Create Crad Reason ==== -->
+	
+	<menuitem
+		name="Crad Reason"
+		parent="menu_card_conf_root"
+		action="action_reason_for_card"
+		id="sub_menu_card_conf_root"
+		sequence="5"/>
+</odoo>

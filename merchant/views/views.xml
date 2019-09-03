@@ -1,0 +1,299 @@
+<odoo>
+	<data>
+
+		<!-- SHIFTING TO LOYALTY MODULE -->
+		<record id="view_res_partner_form_inherit_request" model="ir.ui.view">
+            <field name="name">Merchant Form Custom Field</field>
+            <field name="model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="after">
+                    <field name="request_id" attrs="{'invisible':[('supplier','=',False)]}"/>
+                    <field name="shop_type_id" attrs="{'invisible':[('supplier','=',False)]}"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- Rejection Reason Wizard -->
+		<record id="rejection_wizard_view" model="ir.ui.view">
+			<field name="name">merchant.request.reject.reason.wizard</field>
+			<field name="model">merchant.request.reject.reason.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Add a reason" version="7.0">
+					<group>
+						<field name="reason"/>
+						<field name="reason_type" invisible="1"/>
+					</group>
+					<footer>
+						<button name="reject" string="Reject" type="object" class="oe_highlight" attrs="{'invisible':[('reason_type','=','suspend')]}"/>
+						<button name="suspend" string="Suspend" type="object" class="oe_highlight" attrs="{'invisible':[('reason_type','=','reject')]}"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="open_reject_wizard_action_id" model="ir.actions.act_window">
+			<field name="name">Rejection Reason</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">merchant.request.reject.reason.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'reason_type': 'reject'}</field>
+		</record>
+
+		<record id="open_suspend_wizard_action_id" model="ir.actions.act_window">
+			<field name="name">	 Reason</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">merchant.request.reject.reason.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'reason_type': 'suspend'}</field>
+		</record>
+
+		<!-- approval Wizard -->
+		<record id="approval_wizard_view" model="ir.ui.view">
+			<field name="name">merchant.request.approval.wizard</field>
+			<field name="model">merchant.request.approval.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Add a reason" version="7.0">
+					<group>
+						<group>
+							<field name="mer_admin_email" attrs="{'invisible':[('approval_type','!=','new')], 'required':[('approval_type','!=','new')]}"/>
+							<field name="mer_user_email" attrs="{'invisible':[('approval_type','!=','new')], 'required':[('approval_type','!=','new')]}"/>
+							<field name="invoice_id" options="{'no_quick_create':True,'no_create_edit':True}"  domain="[('state', '=', 'paid')]"/>
+							<field name="approval_type" invisible="1"/>			
+						</group>
+						<group>						
+							<field name="mer_admin_username" attrs="{'invisible':[('approval_type','!=','new')], 'required':[('approval_type','!=','new')]}"/>
+							<field name="mer_user_username" attrs="{'invisible':[('approval_type','!=','new')], 'required':[('approval_type','!=','new')]}"/>
+							<field name="company_id" readonly="1"/>
+						</group>
+
+						<group attrs="{'invisible':[('approval_type','!=','new')]}">
+							<p>This may take upto 2 minutes.</p>
+						</group>
+					</group>
+					<button name="view_invoice" string="View Invoice" type="object"/>
+					<footer>
+						<button name="create_users_and_start_service" string="Approve &amp; Create Users" type="object" class="oe_highlight" attrs="{'invisible':[('approval_type','!=','new')]}"/>
+						<button name="create_users_and_start_service" string="Renew Merchant" type="object" class="oe_highlight" attrs="{'invisible':[('approval_type','!=','renew')]}"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="open_approval_wizard_action_id" model="ir.actions.act_window">
+			<field name="name">Approve and Create Users</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">merchant.request.approval.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'approval_type': 'new'}</field>
+		</record>
+
+		<record id="open_resume_wizard_action_id" model="ir.actions.act_window">
+			<field name="name">Resume Merchant</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">merchant.request.approval.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+			<field name="context">{'approval_type': 'renew'}</field>
+		</record>
+
+		<!-- LIST VIEW  -->
+		<record id="view_merchant_request_tree" model="ir.ui.view">
+			<field name="name">merchant.request.tree</field>
+			<field name="model">merchant.request</field>
+			<field name="arch" type="xml">
+			    <tree string="Merchants"
+					decoration-warning="state=='approved'"
+			     	decoration-success="state=='progress'"
+					decoration-muted="state=='expire'"
+					decoration-danger="state=='suspend'">
+			        <field name="name"/>
+			        <field name="username"/>
+			        <field name="shop_type_id"/>
+			        <field name="shopname"/>
+			        <field name="plan_id"/>
+			        <field name="city"/>
+			        <field name="email"/>
+			        <field name="state"/>
+			    </tree>
+			</field>
+		</record>
+
+		<!-- Form VIEW  -->
+	    <record id="view_merchant_request_form" model="ir.ui.view">
+	        <field name="name">merchant.request.form</field>
+	        <field name="model">merchant.request</field>
+	        <field name="arch" type="xml">
+	            <form string="Merchants">
+	            	<header>
+	            		<button name="approve" type="object" string="Approve" class="btn-primary" states="new"/>
+	            		<button name="%(open_suspend_wizard_action_id)d" type="action" string="Suspend" states="progress"/>
+            		  	<button name="%(open_resume_wizard_action_id)d" type="action" class="btn-primary" states="suspend" string="Resume"/>
+            		  	<button name="%(open_approval_wizard_action_id)d" type="action" class="btn-primary" attrs="{'invisible':[('state','!=','approved')]}" string="Create Users &amp; Start Services"/>
+            		  	<button name="%(open_reject_wizard_action_id)d" type="action" string="Reject" states="new"/>
+						<field name="state" readonly="1" widget="statusbar"/>
+	            	</header>
+	                <sheet>
+                	 	<div id="o_employee_container">
+                	 		<div id="o_employee_main">
+                        		<field name="logo" widget='image' class="oe_avatar"/>
+                    		</div>
+                    	</div>
+	                	<div class="oe_title" style="margin-left:100px;">
+	                        <h1>
+	                            <field name="name" readonly="1"/>
+	                        </h1>
+	                    </div>
+	                    <group>
+	                    	<group>
+	                        	<field name="username" required="True"/>
+	                        	<field name="username2" required="True"/>
+	                        	<field name="shopname" required="True"/>
+	                        	<field name="plan_id"/>	                    		
+								<field name="city"/>
+								<field name="mobile"/>
+	                    	</group>
+	                    	<group>
+								<field name="email"/>
+								<field name="email2"/>
+								<field name="shop_type_id"/>
+								<field name="country_id"/>
+								<field name="has_branches"/>
+								<field name="location_lng"  invisible="0"/>
+								<field name="location_lat" invisible="0"/>
+	                    	</group>
+	                    </group>
+						<group><field name="location" widget="place_autocomplete"/></group>
+						<group>
+							<field name="description"/>
+						</group>
+	                    <notebook>
+	                    	<page string="Images">
+								<field name="images_line">
+	                    			<tree string="Shop Images" editable="bottom">
+	                    				<field name="image" widget="image" class="oe_avatar" />	
+	                    				<field name="image_url" invisible="1"/>	
+									</tree>
+								</field>
+	                    	</page>
+	                    	<page string="Payment Details">
+								<group>
+	                    			<h3><label for="invoice_line"/></h3>
+	                    			<field name="invoice_line" readonly="1">
+	                    				<tree editable="bottom">
+	                    					<field name="invoice_id"/>
+	                    					<field name="action_date"/>
+	                    					<field name="action"/>
+	                    				</tree>
+	                    			</field>
+	                    			<group>
+	                    				<field name="company_id" readonly="1"/>
+                    					<field name="unused_invoice_id" invisible="1"/>
+	                    			</group>
+	                    			<group>
+	                    				<field name="expire_date"/>
+	                    			</group>
+	                    		</group>
+	                    	</page>
+	                    	<page string="Registration Details">
+								<group>
+	                    			<field name="partner_ids" readonly="1"/>
+	                    		</group>
+	                    		<group>
+	                    			<field name="user_ids" readonly="1"/>
+	                    		</group>
+	                    	</page>
+	                    	<page string="Transactions Details">
+	                    		<group>
+									<group>
+		                    			<field name="remaining_monthly_txns" readonly="1"/>
+		                    		</group>
+		                    		<group>
+		                    			<field name="monthly_txns" readonly="1"/>
+		                    		</group>
+	                    		</group>
+	                    	</page>
+	                    	<page string="Suspension History" attrs="{'invisible':[('state','not in', ['progress','suspend'])]}">
+								<field name="suspend_line" readonly="0">
+                    				<tree editable="bottom">
+                    					<field name="reason"/>
+                    					<field name="date"/>
+                    				</tree>
+                    			</field>
+	                    	</page>
+	                    	<page string="Social Networks">
+	                    		<group>
+	                    			<group>
+	                    				<field name="social_fb_link"/>
+	                    			</group>
+	                    			<group>
+	                    				<field name="social_gplus_link"/>
+	                    			</group>
+                    			</group>
+	                    	</page>
+	                    </notebook>
+	                    <label for="reason" attrs="{'invisible':[('state','!=','reject')]}"/>
+	                    <field name="reason" attrs="{'invisible':[('state','!=','reject')]}"/>
+	                </sheet>
+		            <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+	                    <field name="activity_ids" widget="mail_activity"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+	            </form>
+	        </field>
+	    </record>
+	    			
+
+    	<!-- Top menu item -->
+
+       	<record id="action_merchant_request" model="ir.actions.act_window">
+            <field name="name">Merchant Requests</field>
+            <field name="res_model">merchant.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','in',['reject', 'new'])]</field>
+            <field name="context">{}</field>
+            <field name="view_id" ref="merchant.view_merchant_request_tree"/>
+        </record>
+
+        <record id="action_approved_merchant" model="ir.actions.act_window">
+            <field name="name">Approved Merchants</field>
+            <field name="res_model">merchant.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','in',['approved', 'progress','suspend', 'expire'])]</field>
+            <field name="view_id" ref="merchant.view_merchant_request_tree"/>
+        </record>
+
+<!-- 
+        <record id="action_rejected_merchant" model="ir.actions.act_window">
+            <field name="name">Rejected Requests</field>
+            <field name="res_model">merchant.request</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','reject')]</field>
+            <field name="view_id" ref="merchant.view_merchant_request_tree"/>
+        </record>
+ -->
+		<!-- Menu items -->       
+
+        <!-- <menuitem id="menu_operation_root" name="Operations" sequence="1" parent="loyalty.menu_loyalty_system" groups="loyalty.group_operation,base.group_system"/> -->
+        <menuitem id="menu_merchant_request" name="Merchants Requests" sequence="1" action="action_merchant_request" parent="loyalty.menu_operation_root"/>
+        <menuitem id="menu_merchant_approved" name="Approved Merchants" sequence="2" action="action_approved_merchant" parent="loyalty.menu_operation_root"/>
+        <!-- <menuitem id="menu_merchant_rejected" name="Rejected Requests" sequence="3" action="action_rejected_merchant" parent="merchant.menu_operation_root"/> -->
+
+	</data>
+</odoo>

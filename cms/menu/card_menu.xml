@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+		<record id="action_card_type" model="ir.actions.act_window">
+			<field name="name">Card Type</field>
+			<field name="res_model">card.type</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="action_card_period" model="ir.actions.act_window">
+			<field name="name">Card Period</field>
+			<field name="res_model">card.period</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="action_card_category" model="ir.actions.act_window">
+			<field name="name">Card Category</field>
+			<field name="res_model">card.category</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<record id="action_card_card" model="ir.actions.act_window">
+			<field name="name">Card</field>
+			<field name="res_model">card.card</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<!-- Menu: Sales/Configuration/Loyalty Card -->
+		<menuitem id="menu_sales_config_loyalty"
+			name="Card Management" sequence="1" groups="base.group_system,loyalty.group_operation"/>
+
+		<menuitem id="menu_card_root"
+			parent="menu_sales_config_loyalty"
+			name="Card" sequence="1"/>
+
+		<menuitem id="menu_card_conf_root"
+			parent="menu_sales_config_loyalty"
+			name="Card Configuration" sequence="1"/>
+
+		<menuitem id="menu_sale_loyalty_type" 
+			parent="menu_card_conf_root"
+			action="action_card_type" sequence="20" />
+
+		<menuitem id="menu_sale_loyalty_period" 
+			parent="menu_card_conf_root"
+			action="action_card_period" sequence="21" />
+
+		<menuitem id="menu_sale_loyalty_category" 
+			parent="menu_card_conf_root"
+			action="action_card_category" sequence="22" />
+
+		<menuitem id="menu_sale_loyalty_card" parent="menu_card_root"
+			action="action_card_card" sequence="20" />
+
+		<menuitem id="menu_create_card_card" parent="menu_card_root"
+			action="action_create_card_card" sequence="30" />
+			<!-- Menu assign card to merchant  -->
+		<menuitem id="menu_assign_card_card" parent="menu_card_root"
+			action="action_assign_card_to_merchant" sequence="31" />
+	</data>
+</odoo>

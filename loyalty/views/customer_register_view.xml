@@ -1,0 +1,49 @@
+<odoo>
+	<data>
+		<record id="loyalty_customer_register_wizard" model="ir.ui.view">
+			<field name="name">loyalty.customer.register.wizard</field>
+			<field name="model">loyalty.customer.register.wizard</field>
+			<field name="arch" type="xml">
+				<form string="Customer Registration" version="7.0">
+					<div id="o_employee_container">
+            	 		<div id="o_employee_main">
+                    		<field name="image" widget='image' class="oe_avatar"/>
+                		</div>
+                	</div>
+					<group>
+						<group>
+							<field name="name" required="1"/>							
+							<field name="mobile" required="1"/>							
+							<field name="street" required="1"/>							
+							<field name="city" required="1"/>							
+							<field name="gender"/>
+						</group>
+						<group>
+							<field name="email" required="1"/>
+							<!-- <field name="card_id" required="1"/> -->
+							<field name="street2"/>														
+							<field name="country_id"/>
+						</group>
+					</group>
+					<footer>
+						<button name="register" string="Register" type="object" class="oe_highlight"/>
+						or
+						<button string="Cancel" class="oe_link" special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="loyalty_customer_register_wizard_action" model="ir.actions.act_window">
+			<field name="name">Customer Registration</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">loyalty.customer.register.wizard</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+		<menuitem id="menu_loyalty_register_customer_wizard" name="Register new Customer" sequence="1" 
+ 				parent="loyalty.menu_loyalty_points_mgmt" groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_active" action="loyalty_customer_register_wizard_action"/>
+
+	</data>
+</odoo>

@@ -1,0 +1,14 @@
+<odoo>
+	<data>
+
+		<record id="action_loyalty_mobile_otp_register" model="ir.actions.act_window">
+			<field name="name">Service Type</field>
+			<field name="res_model">loyalty.mobile.otp.register</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+	
+		<menuitem id="menu_loyalty_mobile_otp_register" name="Otp Register" sequence="1" parent="loyalty.menu_loyalty_configuration" groups="base.group_system,loyalty.group_operation" action="action_loyalty_mobile_otp_register"/>
+
+	</data>
+</odoo>

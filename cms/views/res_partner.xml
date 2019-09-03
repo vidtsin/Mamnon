@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id="inherit_loyalty_partner_form_view" model="ir.ui.view">
+        <field name="name">card details</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="loyalty.view_res_partner_form_inherit"></field>
+        <field name="arch" type="xml">
+            <xpath expr='//group/group' position='after'>
+                <group attrs="{'invisible': [('customer','=', False)]}" name="card_info">
+                        <field name="card_no_id" readonly="1"/>
+                        <field name="card_type_id" options="{'no_create_edit': True,'no_open': True}" readonly="1"/>
+                </group>
+            </xpath>            
+        </field>
+    </record>
+
+    <record id="cms_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">cms Inherit Customer</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_card_history" type="object" class="oe_stat_button" icon="fa-archive">
+                    <span>Card History</span>
+                </button>
+                <button name="%(actions_card_management_view)d" type="action" class="oe_stat_button" icon="fa-credit-card" context="{'default_partner_id': active_id}">
+                  <span>Card Management</span>
+            </button>
+            </xpath>
+            
+            <field name="function" position="replace">
+
+            </field>
+            
+            <field name="phone" position="replace">
+            </field>
+            
+            <field name="email" position="replace">
+            </field>
+            
+            <field name="website" position="replace">
+            </field>
+            
+            <field name="title" position="replace">
+                
+            </field>
+            
+            <field name="lang" position="replace">
+            </field>
+            
+            <field name="gender" position="replace">
+            </field>
+            
+            <field name="dob" position="replace">
+            </field>
+            
+            <field name="category_id" position="replace">
+            </field>
+
+            <field name="vat" position="replace">
+
+            </field>
+
+            <xpath expr="//group/div[hasclass('o_address_format')]"  position="replace">
+            </xpath>
+            
+            <xpath expr="//group/group/label[@for='street']"  position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+
+
+            <xpath expr="//notebook/page[1]" position="before">            
+                <page string="Customer Information" autofocus="autofocus">
+                        <group>
+                            <group>
+                                <field name="type" attrs="{'invisible': [('parent_id','=', False)]}" groups="base.group_no_one"/>
+                                <label for="street" string="Address"/>
+                                <div class="o_address_format">
+                                    <div attrs="{'invisible': ['|', ('parent_id', '=', False), ('type', '!=', 'contact')]}" class="oe_edit_only"><b>Company Address:</b></div>
+                                    <field name="street" placeholder="Street..." class="o_address_street"
+                                        attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street"
+                                        attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                    <field name="city" placeholder="City" class="o_address_city"
+                                        attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                    <field name="state_id" class="o_address_state" placeholder="State" options='{"no_open": True}'
+                                        attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" context="{'country_id': country_id, 'zip': zip}"/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip"
+                                        attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'
+                                        attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                                </div>
+                                <field name="vat" placeholder="e.g. BE0477472701" attrs="{'readonly': [('parent_id','!=',False)]}"/>
+                               </group>
+                            <group>
+                                <field name="function" placeholder="e.g. Sales Director"
+                                    attrs="{'invisible': [('is_company','=', True)]}"/>
+                                <field name="phone" widget="phone"/>
+                                 <field name="security_check" invisible="1"/>
+                                <field name="card_id_dup" invisible="1"/>
+                                <field name="phone_dup" invisible="1"/>
+                                 <!-- <field name="card_id" readonly="0"/> -->
+                                <field name="user_ids" invisible="1"/>
+                                <field name="email" widget="email" context="{'gravatar_image': True}" attrs="{'required': [('user_ids','!=', [])]}"/>
+                                <field name="website" widget="url" placeholder="e.g. www.odoo.com"/>
+                                <field name="title" options='{"no_open": True}'
+                                    attrs="{'invisible': [('is_company', '=', True)]}"/>
+                                <field name="lang"/>
+                                <field name="category_id" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags..."/>
+                            </group>
+                        </group>
+                    </page>
+            </xpath>
+        </field>
+    </record>
+ 
+    <record model="ir.ui.view" id="card_history_tree_view">
+        <field name="name">cms tree view</field>
+        <field name="model">card.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name='card_id'/>
+                <field name="status"/>
+                <field name='start_date'/>
+                <field name='end_date'/>
+                <field name='type_id'/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="cms_mobile_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">cms mobile phone Customer</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="sms.partner_form_send_sms_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='phone']"  position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//label[@for='mobile']"  position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="cms_email_res_partner_form_inherit" model="ir.ui.view">
+        <field name="name">cms email Customer</field>
+        <field name="model">res.partner</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="mail.res_partner_view_form_inherit_mail"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='email']"  position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_users_form" model="ir.ui.view">
+        <field name="name">usability.default_warehouse.res.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <group name="messaging" position="before">
+                <group string="Warehouse Restrictions" attrs="{'invisible': [('login','=', 'admin')]}">
+                    <field name="default_picking_type_ids" widget="many2many_tags" attrs="{'invisible': [('login','=', 'admin')]}"/>
+                </group>
+            </group>
+        </field>
+    </record>
+
+    <record id="view_location_security_users_form" model="ir.ui.view">
+        <field name="name">location_security.users.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <group name="messaging" position="before">
+                <group string="Locations" attrs="{'invisible': [('login','=', 'admin')]}">
+                    <field name="restrict_locations" attrs="{'invisible': [('login','=', 'admin')]}"/>
+                </group>
+            </group>
+            <notebook>
+                <page string="Allowed Stock Locations" attrs="{'invisible': [('restrict_locations','!=', True)]}">
+                    <field name="stock_location_ids" nolabel="1" colspan="2"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

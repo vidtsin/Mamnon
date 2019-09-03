@@ -1,0 +1,16 @@
+<odoo>
+	<data noupdate="1">
+		<record id="card_type_virtual_card" model="card.type">
+			<field name="name">Virtual Card</field>
+			<field name="period_id" ref="cms.card_period_one"></field>
+			<field name="categ_id" ref="cms.card_category_vcard"></field>
+		</record>
+
+		<record id="card_type_default_vendor_data_two" model="card.type">
+			<field name="name">Standard Card</field>
+			<field name="period_id" ref="cms.card_period_one"></field>
+			<field name="categ_id" ref="cms.card_category_standard"></field>
+		</record>
+	</data>
+</odoo>
+

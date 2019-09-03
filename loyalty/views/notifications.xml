@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+         <record id="view_res_partner_form_notification" model="ir.ui.view">
+            <field name="name">Customer Notifications  View</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Notifications" attrs="{'invisible':[('customer','=',False)]}">
+                        <field name="notification_line">
+                            <tree string="Notification Lines" editable="bottom">
+                                <field name="message"/>
+                                <field name="is_read"/>
+                            </tree>
+                        </field>                    
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

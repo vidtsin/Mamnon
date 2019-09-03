@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="coupon_coupon_view_form" model="ir.ui.view">
+        <field name="name">coupon.coupon.form</field>
+        <field name="model">coupon.coupon</field>
+        <field name="arch" type="xml">
+            <form string="Number of Coupons To Generate">
+                <group>
+                    <field name="generation_type" invisible="1"/>
+                    <field name="based_on" attrs="{'invisible': [('generation_type', '!=', 'nbr_customer')], 'required': [('generation_type', '=', 'nbr_customer')]}"/>
+                    <field name="categ_ids" widget="many2many_tags" attrs="{'invisible': ['|', ('generation_type', '!=', 'nbr_customer'), ('based_on', '!=', 'customer_categ')], 'required': [('based_on', '=', 'customer_categ'), ('generation_type', '=', 'nbr_customer')]}"/>
+                    <field name="customer_ids" widget="many2many_tags" attrs="{'invisible': ['|', ('generation_type', '!=', 'nbr_customer')], 'required': [('generation_type', '=', 'nbr_customer')]}"/>
+                    <field name="nbr_coupons"/>
+                </group>
+                <footer>
+                    <button name="generate_coupons" type="object" string="Generate Coupon" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="coupon_coupon_action" model="ir.actions.act_window">
+        <field name="name">Number of Coupons To Generate</field>
+        <field name="res_model">coupon.coupon</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="coupon_coupon_view_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_coupon_apply_code_view_form" model="ir.ui.view">
+        <field name="name">sale.coupon.apply.code.form</field>
+        <field name="model">sale.coupon.apply.code</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="code"/>
+                </group>
+                <footer>
+                    <button name="apply_coupon" type="object" string="Apply Coupon" class="oe_highlight"/>
+                    <button string="Cancel" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_coupon_apply_code_action" model="ir.actions.act_window">
+        <field name="name">Enter Coupon Code</field>
+        <field name="res_model">sale.coupon.apply.code</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="sale_coupon_apply_code_view_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

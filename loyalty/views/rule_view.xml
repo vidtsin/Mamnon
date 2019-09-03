@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="loyalty_rule_merchant_list" model="ir.ui.view">
+            <field name="name">Rules</field>
+            <field name="model">loyalty.rule</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_loyalty_rule_form" model="ir.ui.view">
+            <field name="name">loyalty.rule.form</field>
+            <field name="model">loyalty.rule</field>
+            <field name="arch" type="xml">
+                <form string="Loyalty Rules">
+                    <header>
+                        <button string="Lock" class="btn-primary" attrs="{'invisible':[('is_lock','=',True)]}" type="object" name="action_lock" groups="loyalty.group_operation,base.group_system"/>
+                        <button string="Unlock" type="object" attrs="{'invisible':[('is_lock','=',False)]}" name="action_unlock" groups="loyalty.group_operation,base.group_system"/>
+                    </header>
+                    <sheet>
+                        <field name="is_lock" invisible="1"/>
+                        <group attrs="{'invisible':[('rule_type','=','out')]}">
+                            <group>
+                                <field name="minimum_edge" required="1"/>
+                                <field name="point_value" string="Equivalent Amount Value"/>
+                            </group>
+                            <group>                         
+                                <field name="merchant_id" invisible="0" groups="base.group_system,loyalty.group_operation"/>
+                                <field name="points" string="Equivalent Earn Points"/>
+                                <field name="rule_type" invisible="1"/>
+                            </group>
+                        </group>
+                        <group attrs="{'invisible':[('rule_type','=','in')]}">
+                            <field name="points"  string="If minimum points are" attrs="{'readonly':[('is_lock','=', True)]}"/>
+                        </group>
+                        <group attrs="{'invisible':[('rule_type','=','in')]}">
+                            <field name="point_value" string="Then each point value will be " attrs="{'readonly':[('is_lock','=', True)]}"/>
+                        </group>
+                        <group attrs="{'invisible':[('rule_type','=','in')]}">                          
+                            <field name="rule_type" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="merchant_transaction_history_list" model="ir.ui.view">
+            <field name="name">Merchant Transaction History List</field>
+            <field name="model">loyalty.points.history.purchase.lines</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree name="Merchant Transaction History" create="false" delete='false'>
+                        <field name="date"/>
+                        <!-- <field name="merchant_id" groups="base.group_system,loyalty.group_operation"/>                         -->
+                        <field name="merchant_id"/>                        
+                        <field name="customer_id"/>                        
+                        <field name="point_type" invisible="1"/>
+                        <field name="purchase_amount"/>
+                        <field name="point"/>
+                        <field name="merchant_point_history_id" invisible="1"/>
+                        <field name="currency_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="merchant_transaction_history_form" model="ir.ui.view">
+            <field name="name">Merchant Transaction History Form</field>
+            <field name="model">loyalty.points.history.purchase.lines</field>
+            <field name="arch" type="xml">
+                <form name="Merchant Transaction History" create="false" delete='false'>
+                    <sheet>
+                        <group>
+                            <group>
+                                <!-- <field name="merchant_id" readonly="1" groups="base.group_system,loyalty.group_operation"/>                         -->
+                                <field name="merchant_id" readonly="1" />                        
+                                <field name="date" readonly="1"/>
+                                <field name="point" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="customer_id" readonly="1"/>                        
+                                <field name="point_type" invisible="1" readonly="1"/>
+                                <field name="purchase_amount" widget="monetary" readonly="1"/>
+                                <field name="currency_id" invisible="1" readonly="1"/>
+                                <field name="merchant_point_history_id" invisible="1" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Redeem History">
+                                <field name="redeem_line" readonly="1">
+                                    <tree>
+                                        <field name="redeem_merchant_id"/>
+                                        <field name="redeem_point"/>
+                                        <field name="is_settled"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="action_loyalty_earn_rule" model="ir.actions.act_window">
+            <field name="name">Earn Rules</field>
+            <field name="res_model">loyalty.rule</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('rule_type','=','in')]</field>
+            <field name="context">{'rule_type':'in'}</field>
+        </record>
+
+        <menuitem id="menu_loyalty_earn_rule" name="Earning Rules" sequence="1" parent="loyalty.menu_loyalty_points_mgmt" groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_active"  action="action_loyalty_earn_rule"/>
+
+        <record id="action_loyalty_redeem_rule" model="ir.actions.act_window">
+            <field name="name">Redeem Rules</field>
+            <field name="res_model">loyalty.rule</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('rule_type','=','out')]</field>
+            <field name="context">{'rule_type':'out'}</field>
+        </record>
+
+        <record id="action_merchant_points_history" model="ir.actions.act_window">
+            <field name="name">Merchant Transaction History</field>
+            <field name="res_model">loyalty.points.history.purchase.lines</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_loyalty_redeem_rule" name="Redeem Rules" sequence="2" parent="loyalty.menu_loyalty_points_mgmt" groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_active" action="action_loyalty_redeem_rule"/>
+        <menuitem id="menu_merchant_transaction_history" name="Merchant Transaction History" sequence="5" parent="loyalty.menu_loyalty_points_mgmt" groups="base.group_system,loyalty.group_operation,loyalty.group_merchant_active" action="action_merchant_points_history"/>
+    </data>
+</odoo>

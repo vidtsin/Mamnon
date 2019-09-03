@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="view_card_card_form" model="ir.ui.view">
+			<field name="name">view.card.card.form</field>
+			<field name="model">card.card</field>
+			<field name="arch" type="xml">
+				<form string="Card" create="false">
+	            	<header>
+						<button name="action_sent_print" string="Sent" type="object" class="oe_highlight"
+							states="draft"/>
+						<button name="action_available_distribution" string="Available To Distribution" type="object" 
+						class="oe_highlight"
+						states="sent_to_printing"/>
+						<button name="action_merchants" string="Merchants" type="object" 
+						class="oe_highlight"
+						states="available_to_distribution"/>
+						<button name="action_active" string="Card Active" type="object" 
+						class="oe_highlight"
+						states="at_merchants"/>
+						<button name="action_terminated" string="Card Terminate" type="object" 
+						class="oe_highlight"
+						states="active"/>
+						<button name="action_lost_or_stolen" string="Card Lost or Stolen" type="object" 
+						class="oe_highlight"
+						states="terminated"/>
+						<field name="state" widget="statusbar" nolabel="1" statusbar_visible="draft,sent_to_printing,available_to_distribution,at_merchants,active,terminated,lost_or_stolen"/>
+	            	</header>
+					<sheet>
+						<div class="oe_button_box" name="button_box">
+                    	    <button name="action_quotation_view" 
+                    	    	type="object" class="oe_stat_button" 
+                    	    	icon="fa-archive">
+                    	   		<span>Quotation</span>
+                        	</button>
+                        	<button name="%(action_assign_card_user)d" 
+                    	    	type="action" 
+                    	    	attrs="{'invisible': [('partner_id','!=', False)]}"
+                    	    	class="oe_stat_button" 
+                    	    	icon="fa-user">
+                    	   		<span>Assign User</span>
+                        	</button>
+                    	</div>
+	            	
+						<h1 class="mt0">
+	                        <div>
+	                        	<field name="name" readonly="1" />
+	                        </div>
+                    	</h1>
+						<group string="Card Details">
+							<group>
+								<field name="type_id" attrs="{'readonly': [('noupdate_card', '=', True)]}"/>
+								<field name="type" readonly="1"/>
+								<field name="partner_id" readonly="1"/>
+								<field name="merchant_id" domain="[('is_company','=',True)]"/>
+								<field name="membership_id"/>
+								<field name="noupdate_card" invisible="1" />
+								<field name="upgrade_type_id" invisible="1" />
+							</group>
+							<group>
+								<field name="creation_date" readonly="1" />
+								<field name="activate_date" readonly="1"/>
+								<field name="expiry_date" readonly="1"/>
+								<field name="is_expired"/>
+								<field name="ref_name" readonly="1"/>
+							</group>
+						</group>
+						<group>
+							<group>
+								<field name="pricelist_id"/>
+								<field name="box_id"/>
+							</group>
+						</group>
+					</sheet>
+	                <div class="oe_chatter">
+	                    <field name="message_follower_ids" widget="mail_followers"/>
+	                    <field name="activity_ids" widget="mail_activity"/>
+	                    <field name="message_ids" widget="mail_thread"/>
+	                </div>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_card_card_tree" model="ir.ui.view">
+			<field name="name">view.card.card.list</field>
+			<field name="model">card.card</field>
+			<field name="arch" type="xml">
+				<tree string="Card" default_order="name DESC">
+					<field name="name" />
+
+					<field name="type_id" />
+					<field name="ref_name"/>
+					<field name="state" />
+					<field name="partner_id"/>
+					<field name="activate_date" widget='selection' />
+					<field name="expiry_date" />
+					<field name="creation_date" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_card_card_search" model="ir.ui.view">
+			<field name="name">view.card.card.search</field>
+			<field name="model">card.card</field>
+			<field name="arch" type="xml">
+				<search string="Card">
+					<field name="name" />
+					<field name="type_id" />
+					<field name="partner_id" />
+					<field name="activate_date" />
+					<field name="expiry_date" />
+					<field name="creation_date" />
+					<group expand="0" string="Group By...">
+						<filter name="group_by_type" string="Type"
+							context="{'group_by':'type_id'}" />
+						<filter name="group_by_state" string="State"
+							context="{'group_by':'state'}" />
+						<filter name="group_by_partner" string="Customer"
+							context="{'group_by':'partner_id'}" />
+						<filter name="filter_by_expiry_date" string="Expiried Card"
+							domain="[('expiry_date', '&lt;', context_today().strftime('%Y-%m-%d'))]" />
+					</group>
+				</search>
+			</field>
+		</record>
+	</data>
+</odoo>

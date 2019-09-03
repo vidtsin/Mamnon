@@ -1,0 +1,15 @@
+<odoo>
+	<data>
+	 <record id="view_merchant_request_form_custom_inherit" model="ir.ui.view">
+        <field name="name">merchant.request.inherit</field>
+        <field name="model">merchant.request</field>
+        <field name="inherit_id" ref="merchant.view_merchant_request_form"/>
+        <field name="arch" type="xml">
+            <field name="mobile" position="after">
+                <field name="is_already_invoice" invisible="1"/>
+                <field name="invoice_id" attrs="{'invisible': [('is_already_invoice', '=', False)]}"/>
+            </field>
+        </field>
+       </record>
+	</data>
+</odoo>

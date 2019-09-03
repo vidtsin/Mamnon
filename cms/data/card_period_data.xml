@@ -1,0 +1,8 @@
+<odoo>
+	<data noupdate="1">
+		<record id="card_period_one" model="card.period">
+			<field name="nb">1</field>
+			<field name="period">year</field>
+		</record>
+	</data>
+</odoo>

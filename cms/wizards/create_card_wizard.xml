@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Card Create  -->
+		<record id="view_create_card_card_wizard_form" model="ir.ui.view">
+			<field name="name">view.create.card.wizard.form</field>
+			<field name="model">create.card.wizard</field>
+			<field name="arch" type="xml">
+				<form>
+					<group col="4">
+						<field name="quantity"/>
+						<field name="type_id" widget='selection' domain="[('partner_id','!=',False)]"/>
+					</group>
+					<footer>
+						<button class="oe_highlight" string="Create" type="object"
+							name="button_create" />
+						or
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_create_card_card" model="ir.actions.act_window">
+			<field name="name">New Card Batch</field>
+			<field name="res_model">create.card.wizard</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+		<!-- ============= Card Assign User  ============= -->
+
+		<record id="view_assign_card_user_form" model="ir.ui.view">
+			<field name="name">assign.card.user.form</field>
+			<field name="model">assign.card.user</field>
+			<field name="arch" type="xml">
+				<form>
+					<group>
+						<field name="partner_id"/>
+					</group>
+					<footer>
+						<button class="oe_highlight" string="Assign Customer" type="object"
+						name="action_assign_user"/>
+						or
+						<button string="Cancel" class="oe_link" 
+						special="cancel"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_assign_card_user" model="ir.actions.act_window">
+			<field name="name">Assign Card User</field>
+			<field name="res_model">assign.card.user</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_mode">form</field>
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</odoo>
