@@ -88,12 +88,12 @@ class CardCard(models.Model):
         ('partner_uniuq', 'unique (partner_id)', "Customer must be unique"),
     ]
 
-    @api.model
-    def create(self, val):
-        rec = super(CardCard, self).create(val)
-        if rec.ref_name == False:
-            rec.ref_name = self.env['ir.sequence'].next_by_code('card.card') or _('New')
-        return rec
+    # @api.model
+    # def create(self, val):
+    #     rec = super(CardCard, self).create(val)
+    #     if rec.ref_name == False:
+    #         rec.ref_name = self.env['ir.sequence'].next_by_code('card.card') or _('New')
+    #     return rec
     
     @api.multi
     def action_quotation_view(self):
